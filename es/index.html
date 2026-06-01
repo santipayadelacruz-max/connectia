@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connectia — Agencia de Inteligencia Artificial</title>
+<meta name="description" content="Connectia es una agencia global de IA especializada en SEO, optimización LLM, SEA, automatización de procesos, desarrollo de apps y contenido con IA.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<style>
+.services-mini{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.svc-mini{background:var(--black);padding:2.2rem 1.8rem;display:flex;flex-direction:column;gap:.8rem;text-decoration:none;color:inherit;transition:background .25s;position:relative;overflow:hidden}
+.svc-mini::after{content:'→';position:absolute;top:1.8rem;right:1.8rem;color:var(--muted2);font-size:.9rem;transition:all .25s}
+.svc-mini:hover{background:var(--gray3)}
+.svc-mini:hover::after{color:var(--accent);transform:translateX(3px)}
+.svc-mini-icon{font-size:1.5rem}
+.svc-mini-name{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;letter-spacing:-.02em}
+.svc-mini-desc{font-size:.8rem;color:var(--muted);line-height:1.55;font-weight:300}
+.trust-row{display:flex;align-items:center;gap:3rem;flex-wrap:wrap;padding:3rem 4rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--gray)}
+.trust-label{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);white-space:nowrap}
+.trust-logos{display:flex;gap:3rem;align-items:center;flex-wrap:wrap}
+.trust-name{font-family:'Syne',sans-serif;font-size:.9rem;font-weight:700;color:var(--muted2);opacity:.5}
+.process-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.ps-item{background:var(--black);padding:2rem 1.8rem}
+.ps-num{font-family:'Syne',sans-serif;font-size:.65rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
+.ps-title{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;letter-spacing:-.02em;margin-bottom:.5rem}
+.ps-desc{font-size:.8rem;color:var(--muted);line-height:1.6;font-weight:300}
+.about-strip{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-body p{font-size:.95rem;color:var(--muted);line-height:1.8;font-weight:300;margin-bottom:1.1rem}
+.about-body p strong{color:var(--white);font-weight:500}
+@media(max-width:960px){.services-mini{grid-template-columns:1fr}.trust-row{padding:2rem 1.5rem;gap:1.5rem}.process-strip{grid-template-columns:1fr 1fr}.about-strip{grid-template-columns:1fr;gap:3rem}}
+</style>
+</head>
+<body class="page-wrap">
+
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Agencia Global de IA</div>
+    <h1>
+      Hacemos que la IA<br>
+      <span class="accent">trabaje para</span>
+      <span class="dim">tu negocio.</span>
+    </h1>
+    <p class="lead" style="font-size:1.15rem">
+      Desde SEO y paid media hasta apps a medida y automatización de procesos — Connectia convierte la inteligencia artificial en ingresos medibles.
+    </p>
+    <div class="hero-actions">
+      <a href="contacto.html" class="btn-primary">Solicitar auditoría gratuita →</a>
+      <a href="servicios.html" class="btn-secondary">Ver servicios</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">3<em>x</em></div><div class="stat-label">Crecimiento medio de tráfico</div></div>
+      <div><div class="stat-num">60<em>%</em></div><div class="stat-label">Reducción tiempo en procesos</div></div>
+      <div><div class="stat-num">48<em>h</em></div><div class="stat-label">Primera entrega</div></div>
+      <div><div class="stat-num">12<em>+</em></div><div class="stat-label">Países atendidos</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-bar">
+  <div class="marquee-track">
+    <span class="marquee-item">SEO con IA</span><span class="marquee-item">Optimización LLM</span><span class="marquee-item">Paid Media & SEA</span><span class="marquee-item">Automatización de Procesos</span><span class="marquee-item">Desarrollo de Apps</span><span class="marquee-item">Copywriting con IA</span><span class="marquee-item">RAG & Fine-tuning</span>
+    <span class="marquee-item">SEO con IA</span><span class="marquee-item">Optimización LLM</span><span class="marquee-item">Paid Media & SEA</span><span class="marquee-item">Automatización de Procesos</span><span class="marquee-item">Desarrollo de Apps</span><span class="marquee-item">Copywriting con IA</span><span class="marquee-item">RAG & Fine-tuning</span>
+  </div>
+</div>
+
+<div class="trust-row">
+  <span class="trust-label">Han confiado en nosotros</span>
+  <div class="trust-logos">
+    <span class="trust-name">Mettler-Toledo</span>
+    <span class="trust-name">Estudio34</span>
+    <span class="trust-name">Good Rebels</span>
+    <span class="trust-name">Pronovias</span>
+    <span class="trust-name">Rituals</span>
+    <span class="trust-name">General Óptica</span>
+    <span class="trust-name">Typeform</span>
+  </div>
+</div>
+
+<section style="background:var(--gray)">
+  <div class="section-label">Lo que hacemos</div>
+  <h2>Seis formas de hacer crecer<br><span class="dim">tu negocio con IA</span></h2>
+  <p class="lead">Cada servicio está diseñado para generar ROI medible — no informes y promesas.</p>
+  <div class="services-mini">
+    <a href="seo.html" class="svc-mini"><span class="svc-mini-icon">🔍</span><div class="svc-mini-name">SEO con IA</div><p class="svc-mini-desc">Estrategia de contenido con LLMs, auditorías técnicas y clustering de keywords que te pone en primera página.</p></a>
+    <a href="llm.html" class="svc-mini"><span class="svc-mini-icon">🧠</span><div class="svc-mini-name">Optimización LLM</div><p class="svc-mini-desc">Ingeniería de prompts, arquitecturas RAG y fine-tuning que hacen rendir los modelos de IA en tu contexto de negocio.</p></a>
+    <a href="sea.html" class="svc-mini"><span class="svc-mini-icon">📈</span><div class="svc-mini-name">SEA & Paid Media IA</div><p class="svc-mini-desc">Campañas Google y Meta optimizadas con IA. Pujas inteligentes, creatividades dinámicas y pipelines de conversión.</p></a>
+    <a href="apps.html" class="svc-mini"><span class="svc-mini-icon">📱</span><div class="svc-mini-name">Apps y Herramientas</div><p class="svc-mini-desc">Apps web, dashboards internos, portales de cliente y chatbots con IA construidos rápido y listos para escalar.</p></a>
+    <a href="automatizacion.html" class="svc-mini"><span class="svc-mini-icon">⚙️</span><div class="svc-mini-name">Automatización de Procesos</div><p class="svc-mini-desc">Mapeamos tus flujos de trabajo, identificamos cuellos de botella y los automatizamos con IA.</p></a>
+    <a href="contenido.html" class="svc-mini"><span class="svc-mini-icon">✍️</span><div class="svc-mini-name">Contenido y Copywriting IA</div><p class="svc-mini-desc">Contenido a escala con tu voz de marca: artículos, anuncios, landing pages y secuencias de email optimizados para SEO.</p></a>
+  </div>
+</section>
+
+<section>
+  <div class="section-label">Cómo trabajamos</div>
+  <h2>Del primer contacto<br><span class="dim">a resultados medibles.</span></h2>
+  <p class="lead">Sin planes de proyecto inflados. Sin facturas sorpresa. Entrega estructurada que avanza rápido.</p>
+  <div class="process-strip">
+    <div class="ps-item"><div class="ps-num">Paso 01</div><div class="ps-title">Auditoría gratuita</div><p class="ps-desc">Llamada estratégica de 30 min para entender tus objetivos, tu stack actual y dónde la IA puede crear más impacto.</p></div>
+    <div class="ps-item"><div class="ps-num">Paso 02</div><div class="ps-title">Propuesta clara</div><p class="ps-desc">Propuesta a precio fijo con entregables definidos, plazos y KPIs. Cero ambigüedad, cero costes ocultos.</p></div>
+    <div class="ps-item"><div class="ps-num">Paso 03</div><div class="ps-title">Ejecución ágil</div><p class="ps-desc">Empezamos en 48h. Entrega iterativa con checkpoints semanales para que siempre sepas dónde estamos.</p></div>
+    <div class="ps-item"><div class="ps-num">Paso 04</div><div class="ps-title">Entrega y escala</div><p class="ps-desc">Documentación completa, formación del equipo y soporte continuo. Construimos para durar — y para entregar.</p></div>
+  </div>
+</section>
+
+<section style="background:var(--gray)">
+  <div class="about-strip">
+    <div class="about-body">
+      <div class="section-label">Por qué Connectia</div>
+      <h2>Construido por profesionales,<br><span class="dim">no por consultores.</span></h2>
+      <p>Connectia fue fundada por un equipo con <strong>experiencia real en SEO a escala multinacional</strong>, marketing digital e implementación de IA. No recomendamos herramientas — las desplegamos.</p>
+      <p>Todo lo que proponemos ha sido <strong>testado en producción</strong>. Usamos los mismos sistemas de IA que vendemos, cada día, en nuestros propios proyectos.</p>
+      <p>Trabajamos globalmente, en remoto, con clientes en <strong>España, Reino Unido, DACH, América y más.</strong></p>
+      <div style="margin-top:2rem"><a href="nosotros.html" class="btn-secondary">Conoce al equipo →</a></div>
+    </div>
+    <div>
+      <div class="kpi-list">
+        <div class="kpi"><div class="kpi-num">3<em>x</em></div><div class="kpi-label">Crecimiento SEO</div></div>
+        <div class="kpi"><div class="kpi-num">60<em>%</em></div><div class="kpi-label">Procesos más rápidos</div></div>
+        <div class="kpi"><div class="kpi-num">12<em>+</em></div><div class="kpi-label">Países atendidos</div></div>
+        <div class="kpi"><div class="kpi-num">100<em>%</em></div><div class="kpi-label">Entrega en plazo</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="section-label">Empieza ahora</div>
+  <h2>¿Listo para ver lo que<br><span class="dim">la IA puede hacer por ti?</span></h2>
+  <p>Auditoría gratuita de 30 minutos. Sin compromiso. Respuestas claras sobre lo que es posible para tu negocio.</p>
+  <a href="contacto.html" class="btn-primary" style="font-size:1rem;padding:1rem 2.4rem">Reservar auditoría gratuita →</a>
+</section>
+
+<script src="shared.js"></script>
+</body>
+</html>
