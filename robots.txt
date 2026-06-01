@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /es/shared.js
+
+Sitemap: https://connectia.one/sitemap.xml

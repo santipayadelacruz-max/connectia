@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://connectia.one/</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://connectia.one/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://connectia.one/es/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://connectia.one/"/>
+  </url>
+  <url>
+    <loc>https://connectia.one/servicios.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://connectia.one/servicios.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://connectia.one/es/servicios.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://connectia.one/servicios.html"/>
+  </url>
+  <url>
+    <loc>https://connectia.one/seo.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://connectia.one/seo.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://connectia.one/es/seo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://connectia.one/seo.html"/>
+  </url>
+  <url>
+    <loc>https://connectia.one/llm.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://connectia.one/llm.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://connectia.one/es/llm.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://connectia.one/llm.html"/>
+  </url>
+  <url>
+    <loc>https://connectia.one/sea.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://connectia.one/sea.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://connectia.one/es/sea.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://connectia.one/sea.html"/>
+  </url>
+  <url>
+    <loc>https://connectia.one/apps.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://connectia.one/apps.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://connectia.one/es/apps.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://connectia.one/apps.html"/>
+  </url>
+  <url>
+    <loc>https://connectia.one/automatizacion.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://connectia.one/automatizacion.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://connectia.one/es/automatizacion.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://connectia.one/automatizacion.html"/>
+  </url>
+  <url>
+    <loc>https://connectia.one/contenido.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://connectia.one/contenido.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://connectia.one/es/contenido.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://connectia.one/contenido.html"/>
+  </url>
+  <url>
+    <loc>https://connectia.one/nosotros.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://connectia.one/nosotros.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://connectia.one/es/nosotros.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://connectia.one/nosotros.html"/>
+  </url>
+  <url>
+    <loc>https://connectia.one/proceso.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://connectia.one/proceso.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://connectia.one/es/proceso.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://connectia.one/proceso.html"/>
+  </url>
+  <url>
+    <loc>https://connectia.one/contacto.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://connectia.one/contacto.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://connectia.one/es/contacto.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://connectia.one/contacto.html"/>
+  </url>
+  <url>
+    <loc>https://connectia.one/index.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://connectia.one/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://connectia.one/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://connectia.one/"/>
+  </url>
+  <url>
+    <loc>https://connectia.one/es/servicios.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://connectia.one/es/servicios.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://connectia.one/servicios.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://connectia.one/servicios.html"/>
+  </url>
+  <url>
+    <loc>https://connectia.one/es/seo.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://connectia.one/es/seo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://connectia.one/seo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://connectia.one/seo.html"/>
+  </url>
+  <url>
+    <loc>https://connectia.one/es/llm.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://connectia.one/es/llm.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://connectia.one/llm.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://connectia.one/llm.html"/>
+  </url>
+  <url>
+    <loc>https://connectia.one/es/sea.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://connectia.one/es/sea.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://connectia.one/sea.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://connectia.one/sea.html"/>
+  </url>
+  <url>
+    <loc>https://connectia.one/es/apps.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://connectia.one/es/apps.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://connectia.one/apps.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://connectia.one/apps.html"/>
+  </url>
+  <url>
+    <loc>https://connectia.one/es/automatizacion.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://connectia.one/es/automatizacion.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://connectia.one/automatizacion.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://connectia.one/automatizacion.html"/>
+  </url>
+  <url>
+    <loc>https://connectia.one/es/contenido.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://connectia.one/es/contenido.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://connectia.one/contenido.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://connectia.one/contenido.html"/>
+  </url>
+  <url>
+    <loc>https://connectia.one/es/nosotros.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://connectia.one/es/nosotros.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://connectia.one/nosotros.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://connectia.one/nosotros.html"/>
+  </url>
+  <url>
+    <loc>https://connectia.one/es/proceso.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://connectia.one/es/proceso.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://connectia.one/proco.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://connectia.one/proco.html"/>
+  </url>
+  <url>
+    <loc>https://connectia.one/es/contacto.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://connectia.one/es/contacto.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://connectia.one/contacto.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://connectia.one/contacto.html"/>
+  </url>
+</urlset>
