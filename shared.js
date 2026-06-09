@@ -4,57 +4,36 @@
   const lang = isES ? 'es' : 'en';
   const currentFile = location.pathname.split('/').pop() || 'index.html';
 
-  /* ── File maps ── */
   const EN = {
     index:'index.html', services:'services.html',
     seo:'seo.html', geo:'geo.html', sea:'sea.html',
     apps:'apps.html', automation:'automation.html',
     content:'content.html', webdesign:'web-design.html',
     about:'about.html', contact:'contact.html',
-    // SEO subpages
-    'seo-audit':'seo/audit.html',
-    'seo-technical':'seo/technical.html',
-    'seo-content':'seo/content-strategy.html',
-    'seo-international':'seo/international.html',
+    'seo-audit':'seo/audit.html','seo-technical':'seo/technical.html',
+    'seo-content':'seo/content-strategy.html','seo-international':'seo/international.html',
     'seo-local':'seo/local.html',
-    // GEO subpages
-    'geo-optimization':'geo/optimization.html',
-    'geo-content':'geo/content.html',
-    'geo-monitoring':'geo/monitoring.html',
-    // SEA subpages
-    'sea-google':'sea/google-ads.html',
-    'sea-meta':'sea/meta-ads.html',
-    'sea-linkedin':'sea/linkedin-ads.html',
-    // Content subpages
-    'content-blog':'content/blog.html',
-    'content-copy':'content/copywriting.html',
-    'content-email':'content/email.html',
+    'geo-opt':'geo/optimization.html','geo-content':'geo/content.html','geo-mon':'geo/monitoring.html',
+    'sea-google':'sea/google-ads.html','sea-meta':'sea/meta-ads.html','sea-linkedin':'sea/linkedin-ads.html',
+    'cont-blog':'content/blog.html','cont-copy':'content/copywriting.html','cont-email':'content/email.html',
   };
-
   const ES = {
     index:'index.html', services:'servicios.html',
     seo:'seo.html', geo:'geo.html', sea:'sea.html',
     apps:'apps.html', automation:'automatizacion.html',
     content:'contenido.html', webdesign:'webs.html',
     about:'nosotros.html', contact:'contacto.html',
-    'seo-audit':'seo/auditoria.html',
-    'seo-technical':'seo/tecnico.html',
-    'seo-content':'seo/estrategia-contenidos.html',
-    'seo-international':'seo/internacional.html',
+    'seo-audit':'seo/auditoria.html','seo-technical':'seo/tecnico.html',
+    'seo-content':'seo/estrategia-contenidos.html','seo-international':'seo/internacional.html',
     'seo-local':'seo/local.html',
-    'geo-optimization':'geo/optimizacion.html',
-    'geo-content':'geo/contenido.html',
-    'geo-monitoring':'geo/monitorizacion.html',
-    'sea-google':'sea/google-ads.html',
-    'sea-meta':'sea/meta-ads.html',
-    'sea-linkedin':'sea/linkedin-ads.html',
-    'content-blog':'contenido/blog.html',
-    'content-copy':'contenido/copywriting.html',
-    'content-email':'contenido/email.html',
+    'geo-opt':'geo/optimizacion.html','geo-content':'geo/contenido.html','geo-mon':'geo/monitorizacion.html',
+    'sea-google':'sea/google-ads.html','sea-meta':'sea/meta-ads.html','sea-linkedin':'sea/linkedin-ads.html',
+    'cont-blog':'contenido/blog.html','cont-copy':'contenido/copywriting.html','cont-email':'contenido/email.html',
   };
 
   const S = isES ? ES : EN;
   const keys = Object.keys(EN);
+  const t = (e, s) => isES ? s : e;
 
   window.switchLang = function(target) {
     const srcMap = isES ? ES : EN;
@@ -64,86 +43,44 @@
     else if (target === 'en' && isES) location.href = '../' + destMap[key];
   };
 
-  const t = (e, s) => isES ? s : e;
-
-  /* ── Services with subpages for mega menu ── */
+  /* Services with subpages — shown DIRECTLY in nav, no "Services" parent */
   const services = [
-    {
-      file: S.seo, icon:'🔍',
-      label: t('SEO','SEO'),
-      desc: t('Organic rankings that last','Posicionamiento orgánico duradero'),
-      subs: [
-        {file: S['seo-audit'],       label: t('SEO Audit','Auditoría SEO')},
-        {file: S['seo-technical'],   label: t('Technical SEO','SEO Técnico')},
-        {file: S['seo-content'],     label: t('Content Strategy','Estrategia de Contenidos')},
-        {file: S['seo-international'],label: t('International SEO','SEO Internacional')},
-        {file: S['seo-local'],       label: t('Local SEO','SEO Local')},
-      ]
-    },
-    {
-      file: S.geo, icon:'🤖',
-      label: t('GEO Optimization','Optimización GEO'),
-      desc: t('Visibility in AI search engines','Visibilidad en buscadores IA'),
-      subs: [
-        {file: S['geo-optimization'], label: t('GEO Strategy','Estrategia GEO')},
-        {file: S['geo-content'],      label: t('AI-optimised Content','Contenido para IA')},
-        {file: S['geo-monitoring'],   label: t('Monitoring & Reporting','Monitorización')},
-      ]
-    },
-    {
-      file: S.sea, icon:'📈',
-      label: t('SEA & Paid Media','SEA & Paid Media'),
-      desc: t('Campaigns that return more than they cost','Campañas que devuelven más de lo que cuestan'),
-      subs: [
-        {file: S['sea-google'],   label: t('Google Ads','Google Ads')},
-        {file: S['sea-meta'],     label: t('Meta Ads','Meta Ads')},
-        {file: S['sea-linkedin'], label: t('LinkedIn Ads','LinkedIn Ads')},
-      ]
-    },
-    {
-      file: S.content, icon:'✍️',
-      label: t('Content & Copy','Contenido y Copy'),
-      desc: t('Content that ranks and converts','Contenido que posiciona y convierte'),
-      subs: [
-        {file: S['content-blog'],  label: t('Blog & Articles','Blog y Artículos')},
-        {file: S['content-copy'],  label: t('Copywriting','Copywriting')},
-        {file: S['content-email'], label: t('Email Marketing','Email Marketing')},
-      ]
-    },
-    {
-      file: S.webdesign, icon:'🌐',
-      label: t('Web Design','Diseño Web'),
-      desc: t('Fast sites that convert visitors','Webs rápidas que convierten visitas'),
-      subs: []
-    },
-    {
-      file: S.apps, icon:'📱',
-      label: t('Apps & Tools','Apps y Herramientas'),
-      desc: t('Custom software for real problems','Software a medida para problemas reales'),
-      subs: []
-    },
-    {
-      file: S.automation, icon:'⚙️',
-      label: t('Process Automation','Automatización'),
-      desc: t('Eliminate repetitive work permanently','Elimina el trabajo repetitivo'),
-      subs: []
-    },
+    { key:'seo', icon:'🔍', label:t('SEO','SEO'),
+      subs:[{f:S['seo-audit'],l:t('SEO Audit','Auditoría SEO')},{f:S['seo-technical'],l:t('Technical SEO','SEO Técnico')},
+            {f:S['seo-content'],l:t('Content Strategy','Estrategia de Contenidos')},
+            {f:S['seo-international'],l:t('International SEO','SEO Internacional')},{f:S['seo-local'],l:t('Local SEO','SEO Local')}]},
+    { key:'geo', icon:'🤖', label:t('GEO','GEO'),
+      subs:[{f:S['geo-opt'],l:t('GEO Strategy','Estrategia GEO')},{f:S['geo-content'],l:t('AI Content','Contenido para IA')},
+            {f:S['geo-mon'],l:t('Monitoring','Monitorización')}]},
+    { key:'sea', icon:'📈', label:t('SEA','SEA'),
+      subs:[{f:S['sea-google'],l:'Google Ads'},{f:S['sea-meta'],l:'Meta Ads'},{f:S['sea-linkedin'],l:'LinkedIn Ads'}]},
+    { key:'content', icon:'✍️', label:t('Content','Contenido'),
+      subs:[{f:S['cont-blog'],l:t('Blog & Articles','Blog y Artículos')},{f:S['cont-copy'],l:'Copywriting'},
+            {f:S['cont-email'],l:'Email Marketing'}]},
+    { key:'webdesign', icon:'🌐', label:t('Web Design','Diseño Web'), subs:[]},
+    { key:'apps', icon:'📱', label:t('Apps','Apps'), subs:[]},
+    { key:'automation', icon:'⚙️', label:t('Automation','Automatización'), subs:[]},
   ];
 
-  /* ── Build dd items ── */
-  const ddItems = services.map(s => {
-    const subsHtml = s.subs.length ? `<div class="dd-sub">${s.subs.map(sub=>`<a href="${sub.file}">${sub.label}</a>`).join('')}</div>` : '';
-    return `<div class="dd-item" style="position:relative" onclick="location.href='${s.file}'">
+  /* Desktop: mega dropdown with all services listed directly inside */
+  const megaItems = services.map(s => {
+    const subsHtml = s.subs.length
+      ? `<div style="margin-top:.35rem;display:flex;flex-direction:column;gap:.1rem">
+          ${s.subs.map(sub => `<a href="${sub.f}" class="dd-sub-link">↳ ${sub.l}</a>`).join('')}
+         </div>`
+      : '';
+    const isActive = currentFile === S[s.key];
+    return `<a href="${S[s.key]}" class="dd-item ${isActive?'dd-active':''}">
       <span class="dd-icon">${s.icon}</span>
       <div>
         <div class="dd-label">${s.label}</div>
-        <div class="dd-desc">${s.desc}</div>
+        ${subsHtml}
       </div>
-      ${subsHtml}
-    </div>`;
+    </a>`;
   }).join('');
 
-  /* ── NAV ── */
+  const isServiceActive = services.some(s => s.key === currentFile.replace('.html','') || S[s.key] === currentFile);
+
   const nav = document.createElement('nav');
   nav.innerHTML = `
     <div class="nav-inner">
@@ -153,17 +90,9 @@
       <ul class="nav-links">
         <li class="nav-item"><a href="${S.index}" class="${currentFile===S.index?'active':''}">${t('Home','Inicio')}</a></li>
         <li class="nav-item">
-          <a href="${S.services}" class="${services.some(s=>s.file===currentFile)?'active':''}">${t('Services','Servicios')} <span class="chev">▼</span></a>
-          <div class="nav-dropdown mega">
-            ${ddItems}
-            <div class="dd-divider"></div>
-            <div class="dd-item" onclick="location.href='${S.services}'" style="grid-column:1/-1;cursor:pointer">
-              <span class="dd-icon">📋</span>
-              <div>
-                <div class="dd-label">${t('All services','Todos los servicios')}</div>
-                <div class="dd-desc">${t('Compare and explore','Comparar y explorar')}</div>
-              </div>
-            </div>
+          <a href="${S.services}" class="${isServiceActive?'active':''}">${t('Services','Servicios')} <span class="chev">▼</span></a>
+          <div class="nav-dropdown mega-new">
+            ${megaItems}
           </div>
         </li>
         <li class="nav-item"><a href="${S.about}" class="${currentFile===S.about?'active':''}">${t('About','Nosotros')}</a></li>
@@ -182,9 +111,9 @@
     <div class="nav-mobile" id="nav-mobile">
       <a href="${S.index}">${t('Home','Inicio')}</a>
       <div class="m-section">${t('Services','Servicios')}</div>
-      ${services.map(s=>`
-        <a href="${s.file}">${s.icon} ${s.label}</a>
-        ${s.subs.length ? s.subs.map(sub=>`<a href="${sub.file}" style="padding-left:1.4rem;font-size:.83rem;color:var(--text-muted);border-bottom:1px solid rgba(255,255,255,.04)">↳ ${sub.label}</a>`).join('') : ''}
+      ${services.map(s => `
+        <a href="${S[s.key]}">${s.icon} ${s.label}</a>
+        ${s.subs.map(sub => `<a href="${sub.f}" style="padding-left:1.4rem;font-size:.82rem;color:var(--text-muted);border-bottom:1px solid rgba(255,255,255,.04)">↳ ${sub.l}</a>`).join('')}
       `).join('')}
       <a href="${S.about}">${t('About','Nosotros')}</a>
       <a href="${S.contact}" style="color:var(--accent);font-weight:600">${t('Contact','Contactar')}</a>
@@ -195,21 +124,21 @@
     </div>`;
   document.body.prepend(nav);
 
-  /* ── FOOTER ── */
+  /* Footer */
   const footer = document.createElement('footer');
   footer.innerHTML = `
     <div class="footer-inner">
       <div class="footer-brand">
         <div class="footer-logo">Connectia<span>.</span></div>
         <p class="footer-tagline">${t('Digital growth partner. Direct access, measurable results.','Partner de crecimiento digital. Trato directo, resultados medibles.')}</p>
-        <a href="${S.contact}" class="btn-primary" style="margin-top:1.5rem;display:inline-flex">${t('Get in touch →','Contactar →')}</a>
+        <a href="${S.contact}" class="btn-primary" style="margin-top:1.4rem;display:inline-flex">${t('Get in touch →','Contactar →')}</a>
       </div>
       <div class="footer-col">
         <div class="footer-col-title">SEO</div>
         <ul>
           <li><a href="${S['seo-audit']}">${t('SEO Audit','Auditoría SEO')}</a></li>
           <li><a href="${S['seo-technical']}">${t('Technical SEO','SEO Técnico')}</a></li>
-          <li><a href="${S['seo-content']}">${t('Content Strategy','Estrategia de Contenidos')}</a></li>
+          <li><a href="${S['seo-content']}">${t('Content Strategy','Estrategia Contenidos')}</a></li>
           <li><a href="${S['seo-international']}">${t('International SEO','SEO Internacional')}</a></li>
           <li><a href="${S['seo-local']}">${t('Local SEO','SEO Local')}</a></li>
         </ul>
@@ -240,7 +169,7 @@
     </div>`;
   document.body.append(footer);
 
-  /* ── CURSOR ── */
+  /* Cursor */
   if (!window.matchMedia('(hover:none)').matches) {
     const dot  = Object.assign(document.createElement('div'), {id:'cursor-dot'});
     const ring = Object.assign(document.createElement('div'), {id:'cursor-ring'});
@@ -255,18 +184,20 @@
       requestAnimationFrame(loop); })();
   }
 
-  /* ── Scroll nav + logo morph ── */
+  /* Scroll nav + logo morph */
   window.addEventListener('scroll', () => {
     const y = window.scrollY;
     nav.classList.toggle('scrolled', y > 40);
     nav.classList.toggle('logo-morphed', y > 80);
   }, {passive:true});
 
-  /* ── Scroll reveal ── */
+  /* Scroll reveal */
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }});
   }, {threshold:.08, rootMargin:'0px 0px -30px 0px'});
-  document.querySelectorAll('section>.section-label,section>h2,section>.lead,.card,.kpi,.value-card,.service-row,.step,.ps-item,.svc-mini,.tl-item,.faq-item').forEach((el,i) => {
+  document.querySelectorAll(
+    'section>.section-label,section>h2,section>.lead,.card,.kpi,.value-card,.service-row,.step,.ps-item,.svc-mini,.tl-item,.faq-item'
+  ).forEach((el,i) => {
     el.classList.add('reveal');
     if(i%4===1) el.classList.add('reveal-d1');
     if(i%4===2) el.classList.add('reveal-d2');
@@ -274,7 +205,7 @@
     io.observe(el);
   });
 
-  /* ── Stat counters ── */
+  /* Stat counters */
   const cio = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (!e.isIntersecting) return;
@@ -296,7 +227,7 @@
   }, {threshold:.5});
   document.querySelectorAll('.stat-num').forEach(el => cio.observe(el));
 
-  /* ── FAQ accordion ── */
+  /* FAQ accordion */
   document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', () => {
       const answer = btn.nextElementSibling;
