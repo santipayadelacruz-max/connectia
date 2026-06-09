@@ -25,8 +25,8 @@ html{scroll-behavior:smooth}
 
   --ease:cubic-bezier(0.22,1,0.36,1);
   /* Heading font changed to DM Serif Display — much more readable, premium feel */
-  --font-head:'DM Serif Display',serif;
-  --font-body:'Inter',sans-serif;
+  --font-head:'Plus Jakarta Sans',sans-serif;
+  --font-body:'Plus Jakarta Sans',sans-serif;
 }
 
 body{
@@ -42,7 +42,7 @@ body{
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 strong,b{color:var(--text-primary);font-weight:600}
-p{color:var(--text-body);line-height:1.8;font-size:.975rem}
+p{color:var(--text-body);line-height:1.78;font-size:.95rem}
 li{color:var(--text-body);font-size:.95rem;line-height:1.7}
 
 /* ══ CURSOR ══════════════════════════════════════════════════════════════════ */
@@ -88,7 +88,7 @@ nav.scrolled{background:rgba(8,8,8,.99)}
 
 /* Logo */
 .nav-logo{
-  font-family:var(--font-head);font-weight:400;font-size:1.25rem;
+  font-family:var(--font-head);font-weight:800;font-size:1.2rem;
   letter-spacing:-.01em;color:var(--text-primary);
   flex-shrink:0;display:flex;align-items:baseline;
   overflow:hidden;
@@ -197,10 +197,10 @@ nav.logo-morphed .logo-one{max-width:80px;opacity:1;transform:translateX(0)}
 
 h1{
   font-family:var(--font-head);
-  font-size:clamp(2.6rem,5.5vw,5.5rem);
-  font-weight:400;
-  line-height:1.08;
-  letter-spacing:-.025em;
+  font-size:clamp(2.5rem,5.2vw,5.2rem);
+  font-weight:800;
+  line-height:1.06;
+  letter-spacing:-.035em;
   margin-bottom:1.4rem;
   color:var(--text-primary);
 }
@@ -209,9 +209,9 @@ h1 .dim{color:var(--text-muted);font-style:italic}
 
 h2{
   font-family:var(--font-head);
-  font-size:clamp(1.75rem,3.2vw,2.8rem);
-  font-weight:400;
-  letter-spacing:-.02em;
+  font-size:clamp(1.7rem,3.0vw,2.6rem);
+  font-weight:700;
+  letter-spacing:-.028em;
   line-height:1.14;
   margin-bottom:1.2rem;
   color:var(--text-primary);
@@ -219,11 +219,11 @@ h2{
 h2 .dim{color:var(--text-muted);font-style:italic}
 
 h3{
-  font-family:var(--font-body);
-  font-size:1rem;
-  font-weight:600;
-  letter-spacing:-.01em;
-  margin-bottom:.55rem;
+  font-family:var(--font-head);
+  font-size:.98rem;
+  font-weight:700;
+  letter-spacing:-.02em;
+  margin-bottom:.5rem;
   color:var(--text-primary);
   line-height:1.35;
 }
@@ -261,7 +261,7 @@ section{padding:5rem 3.5rem}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.4)}}
 .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
 .hero-stats{display:flex;gap:3rem;margin-top:4rem;border-top:1px solid var(--border);padding-top:2.5rem;flex-wrap:wrap}
-.stat-num{font-family:var(--font-head);font-size:2.2rem;font-weight:400;color:var(--text-primary);line-height:1;letter-spacing:-.02em}
+.stat-num{font-family:var(--font-head);font-size:2.1rem;font-weight:800;color:var(--text-primary);line-height:1;letter-spacing:-.02em}
 .stat-num em{color:var(--accent);font-style:normal}
 .stat-label{font-size:.68rem;color:var(--text-secondary);margin-top:.3rem;letter-spacing:.05em;text-transform:uppercase}
 
@@ -293,7 +293,7 @@ p.body{font-size:.9rem;color:var(--text-body);line-height:1.72;font-weight:300}
 /* ══ TWO COL ═════════════════════════════════════════════════════════════════ */
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
 .visual-panel{background:var(--surface2);border:1px solid var(--border2);border-radius:20px;padding:2.8rem 2.4rem;position:relative;overflow:hidden}
-.big-stat{font-family:var(--font-head);font-size:clamp(2.8rem,5.5vw,5rem);font-weight:400;color:var(--accent);letter-spacing:-.02em;line-height:1;display:block;margin-bottom:.4rem}
+.big-stat{font-family:var(--font-head);font-size:clamp(2.6rem,5vw,4.6rem);font-weight:800;color:var(--accent);letter-spacing:-.02em;line-height:1;display:block;margin-bottom:.4rem}
 .big-stat-label{font-size:.875rem;color:var(--text-body);font-weight:300}
 
 /* ══ STEPS ═══════════════════════════════════════════════════════════════════ */
@@ -334,7 +334,7 @@ p.body{font-size:.9rem;color:var(--text-body);line-height:1.72;font-weight:300}
 .kpi-list{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
 .kpi{background:var(--surface2);border:1px solid var(--border2);border-radius:14px;padding:1.5rem 1.4rem;transition:border-color .2s,transform .2s}
 .kpi:hover{border-color:rgba(200,247,58,.2);transform:translateY(-2px)}
-.kpi-num{font-family:var(--font-head);font-size:1.9rem;font-weight:400;letter-spacing:-.02em;color:var(--text-primary);line-height:1}
+.kpi-num{font-family:var(--font-head);font-size:1.8rem;font-weight:800;letter-spacing:-.02em;color:var(--text-primary);line-height:1}
 .kpi-num em{color:var(--accent);font-style:normal}
 .kpi-label{font-size:.68rem;color:var(--text-secondary);margin-top:.3rem;text-transform:uppercase;letter-spacing:.07em}
 
