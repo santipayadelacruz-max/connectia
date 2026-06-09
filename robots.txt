@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /es/shared.js
-Disallow: /geo-redirect.js
 
 Sitemap: https://connectia.one/sitemap.xml
