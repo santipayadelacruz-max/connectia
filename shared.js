@@ -62,24 +62,22 @@
     { key:'automation', icon:'⚙️', label:t('Automation','Automatización'), subs:[]},
   ];
 
-  /* Desktop: mega dropdown with all services listed directly inside */
-  const megaItems = services.map(s => {
-    const subsHtml = s.subs.length
-      ? `<div style="margin-top:.35rem;display:flex;flex-direction:column;gap:.1rem">
-          ${s.subs.map(sub => `<a href="${sub.f}" class="dd-sub-link">↳ ${sub.l}</a>`).join('')}
+  /* Nav — services as direct top-level items with simple dropdown for subpages */
+  const serviceItems = services.map(s => {
+    const isActive = currentFile === S[s.key];
+    const hasSubs  = s.subs.length > 0;
+    const subsHtml = hasSubs
+      ? `<div class="nav-dropdown">
+          ${s.subs.map(sub => `<a href="${sub.f}">${sub.l}</a>`).join('')}
          </div>`
       : '';
-    const isActive = currentFile === S[s.key];
-    return `<a href="${S[s.key]}" class="dd-item ${isActive?'dd-active':''}">
-      <span class="dd-icon">${s.icon}</span>
-      <div>
-        <div class="dd-label">${s.label}</div>
-        ${subsHtml}
-      </div>
-    </a>`;
+    return `<li class="nav-item">
+      <a href="${S[s.key]}" class="${isActive ? 'active' : ''}">
+        ${s.label}${hasSubs ? ' <span class="chev">▾</span>' : ''}
+      </a>
+      ${subsHtml}
+    </li>`;
   }).join('');
-
-  const isServiceActive = services.some(s => s.key === currentFile.replace('.html','') || S[s.key] === currentFile);
 
   const nav = document.createElement('nav');
   nav.innerHTML = `
@@ -88,13 +86,7 @@
         <span class="logo-full">Connectia</span><span class="logo-short">c</span><span class="logo-dot">.</span><span class="logo-one">one</span>
       </a>
       <ul class="nav-links">
-        <li class="nav-item"><a href="${S.index}" class="${currentFile===S.index?'active':''}">${t('Home','Inicio')}</a></li>
-        <li class="nav-item">
-          <a href="${S.services}" class="${isServiceActive?'active':''}">${t('Services','Servicios')} <span class="chev">▼</span></a>
-          <div class="nav-dropdown mega-new">
-            ${megaItems}
-          </div>
-        </li>
+        ${serviceItems}
         <li class="nav-item"><a href="${S.about}" class="${currentFile===S.about?'active':''}">${t('About','Nosotros')}</a></li>
       </ul>
       <div class="nav-right">
@@ -109,15 +101,15 @@
       </div>
     </div>
     <div class="nav-mobile" id="nav-mobile">
-      <a href="${S.index}">${t('Home','Inicio')}</a>
       <div class="m-section">${t('Services','Servicios')}</div>
       ${services.map(s => `
         <a href="${S[s.key]}">${s.icon} ${s.label}</a>
-        ${s.subs.map(sub => `<a href="${sub.f}" style="padding-left:1.4rem;font-size:.82rem;color:var(--text-muted);border-bottom:1px solid rgba(255,255,255,.04)">↳ ${sub.l}</a>`).join('')}
+        ${s.subs.map(sub => `<a class="m-sub" href="${sub.f}">↳ ${sub.l}</a>`).join('')}
       `).join('')}
-      <a href="${S.about}">${t('About','Nosotros')}</a>
-      <a href="${S.contact}" style="color:var(--accent);font-weight:600">${t('Contact','Contactar')}</a>
-      <div style="display:flex;gap:.5rem;padding:.8rem 0">
+      <div class="m-section">${t('Company','Empresa')}</div>
+      <a href="${S.about}">${t('About us','Nosotros')}</a>
+      <a href="${S.contact}" style="color:var(--accent);font-weight:600;border-color:var(--border)">${t('Contact →','Contactar →')}</a>
+      <div style="display:flex;gap:.5rem;padding:.8rem 0;border-bottom:none">
         <button class="lang-btn ${!isES?'active':''}" onclick="switchLang('en')">EN</button>
         <button class="lang-btn ${isES?'active':''}" onclick="switchLang('es')">ES</button>
       </div>
@@ -169,19 +161,31 @@
     </div>`;
   document.body.append(footer);
 
-  /* Cursor */
+  /* Cursor — smooth magnetic follow */
   if (!window.matchMedia('(hover:none)').matches) {
     const dot  = Object.assign(document.createElement('div'), {id:'cursor-dot'});
     const ring = Object.assign(document.createElement('div'), {id:'cursor-ring'});
     document.body.append(dot, ring);
-    let mx=0,my=0,rx=0,ry=0;
+    let mx=window.innerWidth/2, my=window.innerHeight/2;
+    let rx=mx, ry=my;
+    let visible = false;
     document.addEventListener('mousemove', e => {
       mx=e.clientX; my=e.clientY;
-      dot.style.cssText=`left:${mx}px;top:${my}px`;
+      if(!visible){
+        visible=true;
+        dot.style.opacity='1';
+        ring.style.opacity='1';
+      }
+      dot.style.transform=`translate(calc(${mx}px - 50%), calc(${my}px - 50%))`;
     });
-    (function loop(){ rx+=(mx-rx)*.3; ry+=(my-ry)*.3;
-      ring.style.cssText=`left:${rx}px;top:${ry}px`;
-      requestAnimationFrame(loop); })();
+    // Start hidden
+    dot.style.opacity='0';
+    ring.style.opacity='0';
+    (function loop(){
+      rx+=(mx-rx)*.18; ry+=(my-ry)*.18;
+      ring.style.transform=`translate(calc(${rx}px - 50%), calc(${ry}px - 50%))`;
+      requestAnimationFrame(loop);
+    })();
   }
 
   /* Scroll nav + logo morph */
