@@ -251,12 +251,20 @@ section{
   box-sizing:border-box;
   position:relative;
 }
-/* Sections with inline background color: extend the color full-bleed via box-shadow,
-   while padding/margin keep content centered at 1400px like every other section */
+/* Sections with inline background color: extend the color full-bleed using
+   a ::before pseudo-element positioned behind the content, instead of the
+   background property itself — keeps content centered at 1400px safely */
 section[style*="background"]{
-  box-shadow:0 0 0 100vmax var(--surface);
-  clip-path:inset(-100vmax -100vmax);
   background:none!important;
+}
+section[style*="background"]::before{
+  content:'';
+  position:absolute;
+  top:0;bottom:0;left:50%;
+  width:100vw;
+  transform:translateX(-50%);
+  background:var(--surface);
+  z-index:-1;
 }
 .bg-alt{background:var(--surface)}
 
@@ -329,10 +337,10 @@ p.body{font-size:.9rem;color:var(--text-body);line-height:1.72;font-weight:300}
 .tag:hover{background:rgba(45,212,168,.13);border-color:rgba(45,212,168,.28)}
 
 /* ══ CTA BANNER ══════════════════════════════════════════════════════════════ */
-.cta-banner{text-align:center;padding:8rem 3.5rem;background:var(--black);position:relative;box-shadow:0 0 0 100vmax var(--black);clip-path:inset(-100vmax -100vmax)}
+.cta-banner{text-align:center;padding:8rem 3.5rem;position:relative}
 .cta-banner::before,.cta-banner::after{content:'';position:absolute}
-.cta-banner::before{inset:0;background:radial-gradient(ellipse 70% 70% at 50% 50%,rgba(45,212,168,.038) 0%,transparent 70%);pointer-events:none}
-.cta-banner::after{width:500px;height:500px;border-radius:50%;border:1px solid rgba(45,212,168,.045);top:50%;left:50%;transform:translate(-50%,-50%);animation:ring-pulse 4s ease-in-out infinite}
+.cta-banner::before{top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:var(--black);z-index:-2}
+.cta-banner::after{width:500px;height:500px;border-radius:50%;border:1px solid rgba(45,212,168,.045);top:50%;left:50%;transform:translate(-50%,-50%);animation:ring-pulse 4s ease-in-out infinite;z-index:-1}
 @keyframes ring-pulse{0%,100%{width:500px;height:500px;opacity:.5}50%{width:700px;height:700px;opacity:.1}}
 .cta-banner>*{position:relative;z-index:1}
 .cta-banner h2{max-width:600px;margin:0 auto 1.1rem}
