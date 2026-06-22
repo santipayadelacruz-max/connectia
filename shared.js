@@ -79,11 +79,9 @@
     { key:'seo', icon:'🔍', label:t('SEO','SEO'),
       subs:[{f:h('seo-audit'),l:t('SEO Audit','Auditoría SEO')},
             {f:h('seo-technical'),l:t('Technical SEO','SEO Técnico')},
-            {f:h('seo-content'),l:t('Content Strategy','Estrategia de Contenidos')},
             {f:h('seo-international'),l:t('International SEO','SEO Internacional')},
             {f:h('seo-local'),l:t('Local SEO','SEO Local')}]},
-    { key:'geo', icon:'🤖', label:t('GEO','GEO'),
-      subs:[{f:h('geo-opt'),l:t('GEO Strategy','Estrategia GEO')}]},
+    { key:'geo', icon:'🤖', label:t('GEO','GEO'), subs:[]},
     { key:'automation',icon:'⚙️', label:t('AI Automation','Automatización IA'), subs:[]},
     { key:'sea', icon:'📈', label:t('Paid Media','Paid Media'),
       subs:[{f:h('sea-google'),l:'Google Ads'},
@@ -152,14 +150,14 @@
       <div class="footer-brand">
         <div class="footer-logo">Connectia<span>.</span></div>
         <p class="footer-tagline">${t('Digital growth partner. Direct access, measurable results.','Partner de crecimiento digital. Trato directo, resultados medibles.')}</p>
-        <a href="${h('contact')}" class="btn-primary" style="margin-top:1.4rem;display:inline-flex">${t('Get in touch →','Contactar →')}</a>
+        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQwIiBoZWlnaHQ9IjQ0IiB2aWV3Qm94PSIwIDAgMTQwIDQ0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHJvbGU9ImltZyI+Cjx0aXRsZT5Hb29nbGUgUGFydG5lcjwvdGl0bGU+CjxkZXNjPkdvb2dsZSBQYXJ0bmVyIGNlcnRpZmljYXRpb24gYmFkZ2U8L2Rlc2M+CjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI0IiBoZWlnaHQ9IjQ0IiBmaWxsPSIjNDI4NUY0Ii8+CjxnIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNTAwIj4KICA8dGV4dCB4PSIxNiIgeT0iMjAiIGZvbnQtc2l6ZT0iMTUiIGxldHRlci1zcGFjaW5nPSItMC4zIj4KICAgIDx0c3BhbiBmaWxsPSIjNDI4NUY0Ij5HPC90c3Bhbj48dHNwYW4gZmlsbD0iI0VBNDMzNSI+bzwvdHNwYW4+PHRzcGFuIGZpbGw9IiNGQkJDMDUiPm88L3RzcGFuPjx0c3BhbiBmaWxsPSIjNDI4NUY0Ij5nPC90c3Bhbj48dHNwYW4gZmlsbD0iIzM0QTg1MyI+bDwvdHNwYW4+PHRzcGFuIGZpbGw9IiNFQTQzMzUiPmU8L3RzcGFuPgogIDwvdGV4dD4KICA8dGV4dCB4PSIxNiIgeT0iMzciIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IiM3NTc1NzUiIGxldHRlci1zcGFjaW5nPSItMC4yIj5QYXJ0bmVyPC90ZXh0Pgo8L2c+Cjwvc3ZnPgo=" alt="Google Partner" width="120" height="38" style="margin-top:1.4rem;display:block;opacity:.92" loading="lazy">
+        <a href="${h('contact')}" class="btn-primary" style="margin-top:1.2rem;display:inline-flex">${t('Get in touch →','Contactar →')}</a>
       </div>
       <div class="footer-col">
         <div class="footer-col-title">SEO</div>
         <ul>
           <li><a href="${h('seo-audit')}">${t('SEO Audit','Auditoría SEO')}</a></li>
           <li><a href="${h('seo-technical')}">${t('Technical SEO','SEO Técnico')}</a></li>
-          <li><a href="${h('seo-content')}">${t('Content Strategy','Estrategia Contenidos')}</a></li>
           <li><a href="${h('seo-international')}">${t('International SEO','SEO Internacional')}</a></li>
           <li><a href="${h('seo-local')}">${t('Local SEO','SEO Local')}</a></li>
         </ul>

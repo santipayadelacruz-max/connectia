@@ -1,0 +1,11 @@
+<svg width="140" height="44" viewBox="0 0 140 44" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Google Partner</title>
+<desc>Google Partner certification badge</desc>
+<rect x="0" y="0" width="4" height="44" fill="#4285F4"/>
+<g font-family="Arial, Helvetica, sans-serif" font-weight="500">
+  <text x="16" y="20" font-size="15" letter-spacing="-0.3">
+    <tspan fill="#4285F4">G</tspan><tspan fill="#EA4335">o</tspan><tspan fill="#FBBC05">o</tspan><tspan fill="#4285F4">g</tspan><tspan fill="#34A853">l</tspan><tspan fill="#EA4335">e</tspan>
+  </text>
+  <text x="16" y="37" font-size="16" fill="#757575" letter-spacing="-0.2">Partner</text>
+</g>
+</svg>
