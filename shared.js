@@ -83,19 +83,16 @@
             {f:h('seo-international'),l:t('International SEO','SEO Internacional')},
             {f:h('seo-local'),l:t('Local SEO','SEO Local')}]},
     { key:'geo', icon:'🤖', label:t('GEO','GEO'),
-      subs:[{f:h('geo-opt'),l:t('GEO Strategy','Estrategia GEO')},
-            {f:h('geo-content'),l:t('AI Content','Contenido para IA')},
-            {f:h('geo-mon'),l:t('Monitoring','Monitorización')}]},
+      subs:[{f:h('geo-opt'),l:t('GEO Strategy','Estrategia GEO')}]},
+    { key:'automation',icon:'⚙️', label:t('AI Automation','Automatización IA'), subs:[]},
     { key:'sea', icon:'📈', label:t('Paid Media','Paid Media'),
       subs:[{f:h('sea-google'),l:'Google Ads'},
             {f:h('sea-meta'),l:'Meta Ads'},
             {f:h('sea-linkedin'),l:'LinkedIn Ads'}]},
-    { key:'content', icon:'✍️', label:t('Content','Contenido'),
-      subs:[{f:h('cont-blog'),l:t('Blog & Articles','Blog y Artículos')},
-            {f:h('cont-copy'),l:'Copywriting'}]},
     { key:'webdesign', icon:'🌐', label:t('Web','Web'), subs:[]},
     { key:'apps',      icon:'📱', label:t('Apps','Apps'), subs:[]},
-    { key:'automation',icon:'⚙️', label:t('Automation','Automatización'), subs:[]},
+    { key:'content', icon:'✍️', label:t('Content','Contenido'),
+      subs:[{f:h('cont-copy'),l:'Copywriting'}]},
   ];
 
   /* ── Build nav ── */
@@ -175,7 +172,7 @@
           <li><a href="${h('content')}">${t('Content & Copy','Contenido y Copy')}</a></li>
           <li><a href="${h('webdesign')}">${t('Web Design','Diseño Web')}</a></li>
           <li><a href="${h('apps')}">${t('Apps & Tools','Apps')}</a></li>
-          <li><a href="${h('automation')}">${t('Automation','Automatización')}</a></li>
+          <li><a href="${h('automation')}">${t('AI Automation','Automatización IA')}</a></li>
         </ul>
       </div>
       <div class="footer-col">
