@@ -1,0 +1,31 @@
+<svg width="400" height="380" viewBox="0 0 400 380" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Strategy and growth illustration</title>
+<desc>Line illustration showing a laptop, a magnifying glass over a growth chart, and orbiting dots representing strategic digital growth</desc>
+<style>
+  .ln{fill:none;stroke:#4d9fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .ln-soft{fill:none;stroke:#3a3836;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+  .fill-soft{fill:#171717;stroke:#4d9fff;stroke-width:1.5}
+  .dot{fill:#4d9fff}
+</style>
+
+<circle cx="200" cy="190" r="150" class="ln-soft" stroke-dasharray="2 6" opacity="0.4"/>
+<circle cx="200" cy="190" r="110" class="ln-soft" stroke-dasharray="2 6" opacity="0.3"/>
+
+<rect x="95" y="150" width="150" height="95" rx="6" class="fill-soft"/>
+<rect x="95" y="150" width="150" height="14" rx="6" class="ln"/>
+<polyline points="115,225 140,195 160,210 190,165 220,180" class="ln"/>
+<circle cx="220" cy="180" r="4" class="dot"/>
+
+<rect x="70" y="248" width="200" height="10" rx="4" class="fill-soft"/>
+
+<circle cx="270" cy="140" r="34" class="ln"/>
+<line x1="293" y1="163" x2="315" y2="185" class="ln"/>
+
+<circle cx="120" cy="90" r="3" class="dot"/>
+<circle cx="305" cy="250" r="4" class="dot"/>
+<circle cx="80" cy="280" r="3" class="dot"/>
+<circle cx="330" cy="110" r="3" class="dot"/>
+
+<path d="M 60 60 L 70 60 M 65 55 L 65 65" class="ln-soft"/>
+<path d="M 340 290 L 350 290 M 345 285 L 345 295" class="ln-soft"/>
+</svg>

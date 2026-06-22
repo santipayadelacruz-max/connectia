@@ -29,7 +29,7 @@
     'seo-local':'seo/local.html',
     'geo-opt':'geo/optimization.html','geo-content':'geo/content.html','geo-mon':'geo/monitoring.html',
     'sea-google':'sea/google-ads.html','sea-meta':'sea/meta-ads.html','sea-linkedin':'sea/linkedin-ads.html',
-    'cont-blog':'content/blog.html','cont-copy':'content/copywriting.html','cont-email':'content/email.html',
+    'cont-blog':'content/blog.html','cont-copy':'content/copywriting.html',
   };
   const ES = {
     index:'index.html', services:'servicios.html',
@@ -42,7 +42,7 @@
     'seo-local':'seo/local.html',
     'geo-opt':'geo/optimizacion.html','geo-content':'geo/contenido.html','geo-mon':'geo/monitorizacion.html',
     'sea-google':'sea/google-ads.html','sea-meta':'sea/meta-ads.html','sea-linkedin':'sea/linkedin-ads.html',
-    'cont-blog':'contenido/blog.html','cont-copy':'contenido/copywriting.html','cont-email':'contenido/email.html',
+    'cont-blog':'contenido/blog.html','cont-copy':'contenido/copywriting.html',
   };
 
   const MAP  = isES ? ES : EN;
@@ -92,8 +92,7 @@
             {f:h('sea-linkedin'),l:'LinkedIn Ads'}]},
     { key:'content', icon:'✍️', label:t('Content','Contenido'),
       subs:[{f:h('cont-blog'),l:t('Blog & Articles','Blog y Artículos')},
-            {f:h('cont-copy'),l:'Copywriting'},
-            {f:h('cont-email'),l:'Email'}]},
+            {f:h('cont-copy'),l:'Copywriting'}]},
     { key:'webdesign', icon:'🌐', label:t('Web','Web'), subs:[]},
     { key:'apps',      icon:'📱', label:t('Apps','Apps'), subs:[]},
     { key:'automation',icon:'⚙️', label:t('Automation','Automatización'), subs:[]},
