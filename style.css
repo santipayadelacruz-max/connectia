@@ -38,6 +38,30 @@ body{
   line-height:1.75;
   -webkit-font-smoothing:antialiased;
   cursor:none;
+  position:relative;
+}
+
+/* ══ AMBIENT BACKGROUND — slow-moving gradient glow behind everything ══════ */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  z-index:-10;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse 50% 40% at 20% 15%, rgba(45,212,168,.05) 0%, transparent 60%),
+    radial-gradient(ellipse 45% 35% at 85% 70%, rgba(45,212,168,.04) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 50% at 50% 95%, rgba(45,212,168,.03) 0%, transparent 60%);
+  animation:ambient-drift 28s ease-in-out infinite;
+  will-change:transform;
+}
+@keyframes ambient-drift{
+  0%,100%{transform:translate(0,0) scale(1)}
+  33%{transform:translate(2%,-3%) scale(1.06)}
+  66%{transform:translate(-3%,2%) scale(1.03)}
+}
+@media(prefers-reduced-motion:reduce){
+  body::before{animation:none}
 }
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
