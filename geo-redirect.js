@@ -14,10 +14,10 @@
         /* map EN filename to ES */
         const map = {
           'index.html':'index.html','services.html':'servicios.html',
-          'seo.html':'seo.html','llm.html':'llm.html','sea.html':'sea.html',
+          'seo.html':'seo.html','geo.html':'geo.html','sea.html':'sea.html',
           'apps.html':'apps.html','automation.html':'automatizacion.html',
           'content.html':'contenido.html','web-design.html':'webs.html',
-          'about.html':'nosotros.html','process.html':'proceso.html',
+          'about.html':'nosotros.html',
           'contact.html':'contacto.html'
         };
         location.replace('/es/' + (map[file] || 'index.html'));

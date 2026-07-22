@@ -5,17 +5,25 @@
   const currentFile = location.pathname.split('/').pop() || 'index.html';
 
   /* ── Calculate depth prefix ──────────────────────────────────────────────
+   * Depth must be relative to the LANGUAGE ROOT (the 'es/' folder for
+   * Spanish pages), because the MAP objects below are already relative
+   * to their own language root. The 'es' segment itself must NOT count
+   * as a depth level, or every generated link ends up one folder too
+   * high (landing on the EN site, or on a Spanish filename that doesn't
+   * exist at that level → 404).
+   *
    * /index.html            → depth 0 → prefix ''
    * /seo.html              → depth 0 → prefix ''
-   * /es/index.html         → depth 1 → prefix '../'
+   * /es/index.html         → depth 0 → prefix ''
+   * /es/seo.html           → depth 0 → prefix ''
    * /seo/audit.html        → depth 1 → prefix '../'
-   * /es/seo/auditoria.html → depth 2 → prefix '../../'
+   * /es/seo/auditoria.html → depth 1 → prefix '../'
    */
   const parts = path.replace(/^\//, '').split('/').filter(Boolean);
-  const depth = parts.length > 0 ? parts.length - 1 : 0;
+  const langParts = isES ? parts.slice(1) : parts.slice();
+  const relFile = langParts.join('/') || 'index.html'; // path relative to language root, e.g. 'seo/audit.html'
+  const depth = langParts.length > 0 ? langParts.length - 1 : 0;
   const pre   = depth === 0 ? '' : depth === 1 ? '../' : '../../';
-  // For ES subpages loaded via /es/seo/auditoria.html, pre = '../../'
-  // nav links like pre+'seo.html' = '../../seo.html' — correct from /es/seo/
 
   /* ── File maps — all paths relative to their language root ── */
   const EN = {
@@ -57,20 +65,18 @@
   window.switchLang = function(target) {
     const srcMap  = isES ? ES : EN;
     const destMap = target === 'es' ? ES : EN;
-    const key = keys.find(k => srcMap[k] === currentFile) || 'index';
+    // Match against relFile (path relative to the current language root),
+    // not the bare filename — subpages like 'seo/audit.html' only match this way.
+    const key = keys.find(k => srcMap[k] === relFile) || 'index';
     const destFile = destMap[key];
     if (target === 'es' && !isES) {
-      // From EN root or subpage → go to /es/...
+      // From EN root or subpage → go into /es/...
       location.href = pre + 'es/' + destFile;
     } else if (target === 'en' && isES) {
-      // From /es/ or /es/sub/ → go up to root EN
-      const ups = isES ? (depth === 0 ? '../' : depth === 1 ? '../' : '../../') : '';
-      // Actually just go relative: from /es/seo/file → ../../ + en file
-      // pre already accounts for depth within language folder
-      // For ES: pre='../../' from /es/seo/, so pre+EN[key] = '../../seo.html' ✓
-      // But we want EN root, not ES root. Add one more '../' if isES
-      const enPre = depth === 0 ? '../' : pre + '../';
-      location.href = (isES ? enPre : pre) + destFile;
+      // From /es/ or /es/sub/ → go up out of the es/ folder, then to the EN file.
+      // pre already accounts for depth within the es/ folder; one more '../' exits it.
+      const enPre = pre + '../';
+      location.href = enPre + destFile;
     }
   };
 
