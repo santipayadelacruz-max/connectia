@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hreflang Mistakes That Kill International SEO Rankings | Connectia</title>
+<meta name="description" content="The hreflang mistakes that quietly wreck rankings on multi-country websites, and how to check whether your site has them.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://connectia.one/blog/seo-multi-country-websites-hreflang-mistakes.html">
+<link rel="alternate" hreflang="en" href="https://connectia.one/blog/seo-multi-country-websites-hreflang-mistakes.html">
+<link rel="alternate" hreflang="es" href="https://connectia.one/es/blog/seo-webs-multipais-errores-hreflang-que-hunden-el-posicionamiento.html">
+<link rel="alternate" hreflang="x-default" href="https://connectia.one/blog/seo-multi-country-websites-hreflang-mistakes.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23080808'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial Black,sans-serif' font-weight='900' font-size='20' fill='%232dd4a8'>c.</text></svg>">
+<meta property="og:type" content="article"><meta property="og:title" content="Hreflang Mistakes That Kill International SEO Rankings | Connectia">
+<meta property="og:description" content="The hreflang mistakes that quietly wreck rankings on multi-country websites, and how to check whether your site has them."><meta property="og:url" content="https://connectia.one/blog/seo-multi-country-websites-hreflang-mistakes.html">
+<meta property="og:image" content="https://connectia.one/og.jpg"><meta property="og:site_name" content="Connectia">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://connectia.one/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://connectia.one/blog.html"},{"@type":"ListItem","position":3,"name":"SEO for Multi-Country Websites: Hreflang Mistakes That Kill Rankings","item":"https://connectia.one/blog/seo-multi-country-websites-hreflang-mistakes.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"SEO for Multi-Country Websites: Hreflang Mistakes That Kill Rankings","description":"The hreflang mistakes that quietly wreck rankings on multi-country websites, and how to check whether your site has them.","datePublished":"2026-03-03","author":{"@type":"Person","name":"Santiago Payá de la Cruz"},"publisher":{"@type":"Organization","name":"Connectia","logo":{"@type":"ImageObject","url":"https://connectia.one/og.jpg"}},"mainEntityOfPage":"https://connectia.one/blog/seo-multi-country-websites-hreflang-mistakes.html"}</script>
+</head>
+<body class="page-wrap">
+<section class="page-hero"><div class="hero-glow"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="../blog.html">Blog</a><span>/</span><span>SEO</span></div>
+    <div class="section-label">SEO</div>
+    <h1>Hreflang mistakes<br><span class="accent">that quietly</span><br><span class="dim">kill international SEO.</span></h1>
+    <p class="lead">Hreflang looks like a simple tag. In practice, it's one of the most commonly broken pieces of technical SEO on multi-country sites.</p>
+    <div class="post-meta">
+      <span>By Santiago Payá de la Cruz</span><span class="dot">•</span>
+      <span>March 3, 2026</span><span class="dot">•</span>
+      <span>8 min read</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="article-body">
+<p>Hreflang tells Google which version of a page to show a visitor based on their language and location. When it's set up correctly, it's invisible, the right person lands on the right version and nobody thinks about it. When it's broken, the symptoms are confusing: the wrong country's page ranks in the wrong market, two language versions compete against each other, or a perfectly good local page simply never shows up. <a href="https://developers.google.com/search/docs/specialty/international/localized-versions" target="_blank" rel="noopener">Google's own documentation</a> on this is thorough, but the implementation details are where most sites go wrong.</p>
+<h2>Missing return tags</h2>
+<p>This is the single most common hreflang error. Every language version of a page needs to reference every other version, including itself, and every one of those references needs to point back. If your English page links to the Spanish version but the Spanish page doesn't link back to the English one, Google treats the whole cluster as unreliable and may ignore the annotations entirely. On a site with more than a handful of pages, this usually happens because hreflang is generated manually or semi-manually and one language gets missed during an update.</p>
+<h2>Pointing to redirects or broken URLs instead of live pages</h2>
+<p>Hreflang tags need to point directly to the final, live URL, not to a redirect chain. A common cause is a URL structure change, moving from subfolders to subdomains, for example, where the hreflang tags don't get updated to match, and every reference silently starts pointing at a redirect. This is invisible to a normal visitor since redirects work fine for humans. It's specifically a problem for how Google interprets the relationship between the pages.</p>
+<h2>Wrong language or region codes</h2>
+<p>Hreflang codes follow a specific format: a language code, optionally followed by a region code. "es" targets Spanish speakers generally. "es-mx" targets Spanish speakers specifically in Mexico. Mixing these up, or using a country code where a language code was needed, is a frequent and easy mistake, especially on sites that expanded into new markets incrementally and never audited the full set.</p>
+<h2>No x-default page</h2>
+<p>The x-default tag tells Google which version to show a visitor whose language or location doesn't match any of your specific targets. Without it, Google has to guess, and the guess isn't always the version you'd choose. This matters more than it sounds like it should, especially for sites getting meaningful traffic from countries or languages outside their main markets.</p>
+<h2>How to actually check your site</h2>
+<p>Search Console's International Targeting report used to be the easiest way to check this, though its exact location has shifted over time as Google reorganises Search Console, so it's worth confirming where it currently lives. Beyond that, a simple manual check is more reliable than it sounds: view source on a page, find the hreflang tags, and manually click through every URL listed. If any of them redirect, 404, or point to the wrong content, that's the fix that needs to happen first, before anything more sophisticated. For sites with dozens of pages per language, a proper <a href="../seo/audit.html">technical SEO audit</a> that specifically checks hreflang consistency is worth the time, since the errors compound the more languages and pages are involved.</p>
+<h2>Why this keeps happening even on well-run sites</h2>
+<p>Hreflang usually breaks not because a team doesn't understand it, but because it's implemented once at launch and then never revisited as the site evolves. A new page gets added in one language and not the other. A URL gets restructured for unrelated reasons and the hreflang reference doesn't get updated to match. None of these are dramatic failures on their own, but each one chips away at how much Google trusts the overall signal, which is exactly why a periodic audit matters more than a one-time setup, no matter how carefully that setup was done.</p>
+  </div>
+
+  <div class="author-box">
+    <div class="author-avatar">SP</div>
+    <div>
+      <div class="author-name">Santiago Payá de la Cruz</div>
+      <div class="author-role">Founder, Connectia</div>
+      <div class="author-bio">SEO and growth specialist with experience across multinationals (Mettler-Toledo) and agencies (Estudio34, adSalsa). Founder of Connectia. <a href="../about.html">More about Santiago →</a></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--surface)">
+  <div class="section-label">FAQ</div>
+  <h2>Common questions</h2>
+  <div class="faq-list"><div class="faq-item"><button class="faq-question">Do I need hreflang if I only have one language on my site?<span class="faq-icon">+</span></button><div class="faq-answer"><p>No. Hreflang exists specifically to manage multiple language or regional versions of the same content. A single-language site doesn't need it.</p></div></div><div class="faq-item"><button class="faq-question">Can hreflang errors cause a full ranking drop?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Usually not a full drop, but they can cause the wrong version of a page to rank in a given market, or cause language versions to compete with each other instead of reinforcing one another, which has a similar practical effect on visibility.</p></div></div><div class="faq-item"><button class="faq-question">Should hreflang be in the HTML head, a sitemap, or HTTP headers?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Any of the three works for Google, but they shouldn't be mixed inconsistently across the same site. Pick one method and apply it consistently, since conflicting signals from different methods create more confusion than using none at all.</p></div></div><div class="faq-item"><button class="faq-question">How often should hreflang be audited?<span class="faq-icon">+</span></button><div class="faq-answer"><p>After any site migration, URL structure change, or new language launch, at minimum. For established multi-country sites, a periodic check every few months catches issues introduced by routine content updates before they compound.</p></div></div></div>
+</section>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need hreflang if I only have one language on my site?","acceptedAnswer":{"@type":"Answer","text":"No. Hreflang exists specifically to manage multiple language or regional versions of the same content. A single-language site doesn't need it."}},{"@type":"Question","name":"Can hreflang errors cause a full ranking drop?","acceptedAnswer":{"@type":"Answer","text":"Usually not a full drop, but they can cause the wrong version of a page to rank in a given market, or cause language versions to compete with each other instead of reinforcing one another, which has a similar practical effect on visibility."}},{"@type":"Question","name":"Should hreflang be in the HTML head, a sitemap, or HTTP headers?","acceptedAnswer":{"@type":"Answer","text":"Any of the three works for Google, but they shouldn't be mixed inconsistently across the same site. Pick one method and apply it consistently, since conflicting signals from different methods create more confusion than using none at all."}},{"@type":"Question","name":"How often should hreflang be audited?","acceptedAnswer":{"@type":"Answer","text":"After any site migration, URL structure change, or new language launch, at minimum. For established multi-country sites, a periodic check every few months catches issues introduced by routine content updates before they compound."}}]}</script>
+
+<section class="cta-banner">
+  <div class="section-label">Get in touch</div>
+  <h2>Ready to fix this<br><span class="dim">on your own site?</span></h2>
+  <p>A 30-minute call is enough to identify where your biggest opportunity actually is. No pitch, no template audit.</p>
+  <a href="../contact.html" class="btn-primary">Let's talk →</a>
+</section>
+
+<section>
+  <div class="section-label">Keep reading</div>
+  <h2>More from the blog</h2>
+  <div class="related-grid"><a href="how-long-does-seo-take-to-show-results.html" class="blog-card"><span class="tag">SEO</span><div class="blog-card-title">How Long Does SEO Take to Show Results? A Realistic Timeline</div><div class="blog-card-excerpt">The honest timeline for SEO results, why new domains take longer, and the early signals that tell you it's working before rankings move.</div></a><a href="how-to-get-your-brand-cited-by-chatgpt.html" class="blog-card"><span class="tag">GEO</span><div class="blog-card-title">How to Get Your Brand Cited by ChatGPT (and Other AI Search Engines)</div><div class="blog-card-excerpt">The practical signals that get brands cited in ChatGPT, Perplexity and Gemini answers, and where to start if you're at zero right now.</div></a><a href="why-your-website-is-fast-in-tests-but-feels-slow.html" class="blog-card"><span class="tag">Web & UX</span><div class="blog-card-title">Why Your Website Is Fast in Tests but Feels Slow to Real Users</div><div class="blog-card-excerpt">A 95 on PageSpeed doesn't mean your visitors experience a fast site. Here's the gap between lab scores and real-world speed, and how to close it.</div></a></div>
+</section>
+
+<script src="../shared.js"></script>
+</body>
+</html>

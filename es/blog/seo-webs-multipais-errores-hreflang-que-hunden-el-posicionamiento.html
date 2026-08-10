@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Errores de hreflang que hunden el SEO internacional | Connectia</title>
+<meta name="description" content="Los errores de hreflang que hunden silenciosamente el posicionamiento en webs multipaís, y cómo comprobar si tu web los tiene.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://connectia.one/es/blog/seo-webs-multipais-errores-hreflang-que-hunden-el-posicionamiento.html">
+<link rel="alternate" hreflang="en" href="https://connectia.one/blog/seo-multi-country-websites-hreflang-mistakes.html">
+<link rel="alternate" hreflang="es" href="https://connectia.one/es/blog/seo-webs-multipais-errores-hreflang-que-hunden-el-posicionamiento.html">
+<link rel="alternate" hreflang="x-default" href="https://connectia.one/blog/seo-multi-country-websites-hreflang-mistakes.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23080808'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial Black,sans-serif' font-weight='900' font-size='20' fill='%232dd4a8'>c.</text></svg>">
+<meta property="og:type" content="article"><meta property="og:title" content="Errores de hreflang que hunden el SEO internacional | Connectia">
+<meta property="og:description" content="Los errores de hreflang que hunden silenciosamente el posicionamiento en webs multipaís, y cómo comprobar si tu web los tiene."><meta property="og:url" content="https://connectia.one/es/blog/seo-webs-multipais-errores-hreflang-que-hunden-el-posicionamiento.html">
+<meta property="og:image" content="https://connectia.one/og.jpg"><meta property="og:site_name" content="Connectia">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://connectia.one/es/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://connectia.one/es/blog.html"},{"@type":"ListItem","position":3,"name":"SEO para webs multipaís: los errores de hreflang que hunden el posicionamiento","item":"https://connectia.one/es/blog/seo-webs-multipais-errores-hreflang-que-hunden-el-posicionamiento.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"SEO para webs multipaís: los errores de hreflang que hunden el posicionamiento","description":"Los errores de hreflang que hunden silenciosamente el posicionamiento en webs multipaís, y cómo comprobar si tu web los tiene.","datePublished":"2026-03-03","author":{"@type":"Person","name":"Santiago Payá de la Cruz"},"publisher":{"@type":"Organization","name":"Connectia","logo":{"@type":"ImageObject","url":"https://connectia.one/og.jpg"}},"mainEntityOfPage":"https://connectia.one/es/blog/seo-webs-multipais-errores-hreflang-que-hunden-el-posicionamiento.html"}</script>
+</head>
+<body class="page-wrap">
+<section class="page-hero"><div class="hero-glow"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="../index.html">Inicio</a><span>/</span><a href="../blog.html">Blog</a><span>/</span><span>SEO</span></div>
+    <div class="section-label">SEO</div>
+    <h1>Los errores de hreflang<br><span class="accent">que hunden</span><br><span class="dim">el SEO internacional.</span></h1>
+    <p class="lead">Hreflang parece una etiqueta sencilla. En la práctica, es una de las piezas de SEO técnico que más se rompe en webs multipaís.</p>
+    <div class="post-meta">
+      <span>Por Santiago Payá de la Cruz</span><span class="dot">•</span>
+      <span>3 de marzo de 2026</span><span class="dot">•</span>
+      <span>8 min de lectura</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="article-body">
+<p>Hreflang le dice a Google qué versión de una página mostrar a un visitante según su idioma y ubicación. Cuando está bien configurado, es invisible: la persona correcta llega a la versión correcta y nadie piensa en ello. Cuando está roto, los síntomas son confusos: la página del país equivocado posiciona en el mercado equivocado, dos versiones de idioma compiten entre sí, o una página local perfectamente buena simplemente nunca aparece. La <a href="https://developers.google.com/search/docs/specialty/international/localized-versions" target="_blank" rel="noopener">propia documentación de Google</a> sobre esto es completa, pero los detalles de implementación son donde la mayoría de webs se equivocan.</p>
+<h2>Etiquetas de retorno que faltan</h2>
+<p>Este es el error de hreflang más habitual con diferencia. Cada versión de idioma de una página necesita hacer referencia a todas las demás versiones, incluida ella misma, y cada una de esas referencias necesita apuntar de vuelta. Si tu página en inglés enlaza a la versión en español pero la página en español no enlaza de vuelta a la de inglés, Google trata todo el grupo como poco fiable y puede ignorar las anotaciones por completo. En una web con más de un puñado de páginas, esto suele pasar porque el hreflang se genera de forma manual o semi-manual y a algún idioma se le olvida actualizarlo.</p>
+<h2>Apuntar a redirecciones o URLs rotas en vez de a páginas activas</h2>
+<p>Las etiquetas hreflang tienen que apuntar directamente a la URL final y activa, no a una cadena de redirecciones. Una causa habitual es un cambio de estructura de URLs, pasar de subcarpetas a subdominios, por ejemplo, donde las etiquetas hreflang no se actualizan para reflejarlo, y todas las referencias empiezan a apuntar silenciosamente a una redirección. Esto es invisible para un visitante normal, ya que las redirecciones funcionan bien para humanos. Es un problema específicamente en cómo Google interpreta la relación entre las páginas.</p>
+<h2>Códigos de idioma o región equivocados</h2>
+<p>Los códigos de hreflang siguen un formato específico: un código de idioma, opcionalmente seguido de un código de región. "es" apunta a hispanohablantes en general. "es-mx" apunta específicamente a hispanohablantes en México. Confundir esto, o usar un código de país donde hacía falta un código de idioma, es un error frecuente y fácil de cometer, sobre todo en webs que se expandieron a nuevos mercados de forma progresiva y nunca auditaron el conjunto completo.</p>
+<h2>Falta de página x-default</h2>
+<p>La etiqueta x-default le dice a Google qué versión mostrar a un visitante cuyo idioma o ubicación no coincide con ninguno de tus objetivos específicos. Sin ella, Google tiene que adivinar, y la suposición no siempre es la versión que tú elegirías. Esto importa más de lo que parece, sobre todo para webs que reciben tráfico significativo de países o idiomas fuera de sus mercados principales.</p>
+<h2>Cómo comprobarlo de verdad en tu propia web</h2>
+<p>El informe de Segmentación Internacional de Search Console solía ser la forma más fácil de comprobar esto, aunque su ubicación exacta ha ido cambiando con el tiempo a medida que Google reorganiza Search Console, así que conviene confirmar dónde está ahora. Más allá de eso, una comprobación manual sencilla es más fiable de lo que parece: ver el código fuente de una página, localizar las etiquetas hreflang, y hacer clic manualmente en cada URL listada. Si alguna redirige, da error 404, o apunta al contenido equivocado, esa es la corrección que hay que hacer primero, antes que nada más sofisticado. Para webs con decenas de páginas por idioma, una <a href="../seo/auditoria.html">auditoría técnica de SEO</a> que revise específicamente la consistencia del hreflang merece la pena, porque los errores se multiplican cuantos más idiomas y páginas hay implicados.</p>
+<h2>Por qué esto sigue pasando incluso en webs bien gestionadas</h2>
+<p>El hreflang normalmente se rompe no porque un equipo no lo entienda, sino porque se implementa una vez en el lanzamiento y luego nunca se vuelve a revisar a medida que la web evoluciona. Se añade una página nueva en un idioma y no en el otro. Se reestructura una URL por motivos que no tienen nada que ver y la referencia de hreflang no se actualiza para coincidir. Ninguno de estos fallos es dramático por sí solo, pero cada uno erosiona un poco la confianza que Google deposita en la señal general, y esa es exactamente la razón por la que una auditoría periódica importa más que una configuración inicial única, por muy cuidadosa que haya sido esa configuración.</p>
+  </div>
+
+  <div class="author-box">
+    <div class="author-avatar">SP</div>
+    <div>
+      <div class="author-name">Santiago Payá de la Cruz</div>
+      <div class="author-role">Fundador de Connectia</div>
+      <div class="author-bio">Especialista en SEO y crecimiento digital con experiencia en multinacionales (Mettler-Toledo) y agencias (Estudio34, adSalsa). Fundador de Connectia. <a href="../nosotros.html">Más sobre Santiago →</a></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--surface)">
+  <div class="section-label">FAQ</div>
+  <h2>Preguntas frecuentes</h2>
+  <div class="faq-list"><div class="faq-item"><button class="faq-question">¿Necesito hreflang si mi web solo tiene un idioma?<span class="faq-icon">+</span></button><div class="faq-answer"><p>No. Hreflang existe específicamente para gestionar varias versiones de idioma o región del mismo contenido. Una web de un solo idioma no lo necesita.</p></div></div><div class="faq-item"><button class="faq-question">¿Pueden los errores de hreflang provocar una caída total de posiciones?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Normalmente no una caída total, pero pueden hacer que la versión equivocada de una página posicione en un mercado concreto, o que las versiones de idioma compitan entre sí en vez de reforzarse mutuamente, lo cual tiene un efecto práctico parecido sobre la visibilidad.</p></div></div><div class="faq-item"><button class="faq-question">¿El hreflang debe ir en el head del HTML, en un sitemap, o en las cabeceras HTTP?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Cualquiera de los tres métodos funciona para Google, pero no deberían mezclarse de forma inconsistente en la misma web. Elige un método y aplícalo de forma coherente, porque señales contradictorias entre distintos métodos generan más confusión que no usar ninguno.</p></div></div><div class="faq-item"><button class="faq-question">¿Con qué frecuencia hay que auditar el hreflang?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Como mínimo, después de cualquier migración de la web, cambio de estructura de URLs, o lanzamiento de un nuevo idioma. Para webs multipaís ya establecidas, una revisión periódica cada pocos meses detecta problemas introducidos por actualizaciones de contenido rutinarias antes de que se acumulen.</p></div></div></div>
+</section>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Necesito hreflang si mi web solo tiene un idioma?","acceptedAnswer":{"@type":"Answer","text":"No. Hreflang existe específicamente para gestionar varias versiones de idioma o región del mismo contenido. Una web de un solo idioma no lo necesita."}},{"@type":"Question","name":"¿Pueden los errores de hreflang provocar una caída total de posiciones?","acceptedAnswer":{"@type":"Answer","text":"Normalmente no una caída total, pero pueden hacer que la versión equivocada de una página posicione en un mercado concreto, o que las versiones de idioma compitan entre sí en vez de reforzarse mutuamente, lo cual tiene un efecto práctico parecido sobre la visibilidad."}},{"@type":"Question","name":"¿El hreflang debe ir en el head del HTML, en un sitemap, o en las cabeceras HTTP?","acceptedAnswer":{"@type":"Answer","text":"Cualquiera de los tres métodos funciona para Google, pero no deberían mezclarse de forma inconsistente en la misma web. Elige un método y aplícalo de forma coherente, porque señales contradictorias entre distintos métodos generan más confusión que no usar ninguno."}},{"@type":"Question","name":"¿Con qué frecuencia hay que auditar el hreflang?","acceptedAnswer":{"@type":"Answer","text":"Como mínimo, después de cualquier migración de la web, cambio de estructura de URLs, o lanzamiento de un nuevo idioma. Para webs multipaís ya establecidas, una revisión periódica cada pocos meses detecta problemas introducidos por actualizaciones de contenido rutinarias antes de que se acumulen."}}]}</script>
+
+<section class="cta-banner">
+  <div class="section-label">Contactar</div>
+  <h2>¿Quieres arreglar esto<br><span class="dim">en tu propia web?</span></h2>
+  <p>Una llamada de 30 minutos basta para identificar dónde está de verdad tu mayor oportunidad. Sin discurso de venta, sin auditoría plantilla.</p>
+  <a href="../contacto.html" class="btn-primary">Hablemos →</a>
+</section>
+
+<section>
+  <div class="section-label">Sigue leyendo</div>
+  <h2>Más artículos del blog</h2>
+  <div class="related-grid"><a href="cuanto-tarda-el-seo-en-dar-resultados.html" class="blog-card"><span class="tag">SEO</span><div class="blog-card-title">¿Cuánto tarda el SEO en dar resultados? Un calendario realista</div><div class="blog-card-excerpt">El calendario real del SEO, por qué un dominio nuevo tarda más, y las señales que indican que está funcionando antes de que se muevan las posiciones.</div></a><a href="como-conseguir-que-chatgpt-cite-tu-marca.html" class="blog-card"><span class="tag">GEO</span><div class="blog-card-title">Cómo conseguir que ChatGPT (y otros buscadores IA) citen tu marca</div><div class="blog-card-excerpt">Las señales prácticas que consiguen que una marca aparezca citada en las respuestas de ChatGPT, Perplexity y Gemini, y por dónde empezar si partes de cero.</div></a><a href="por-que-tu-web-es-rapida-en-tests-pero-lenta-para-usuarios.html" class="blog-card"><span class="tag">Web y UX</span><div class="blog-card-title">Por qué tu web es rápida en los tests pero lenta para los usuarios reales</div><div class="blog-card-excerpt">Un 95 en PageSpeed no significa que tus visitantes perciban una web rápida. Esta es la diferencia entre las puntuaciones de laboratorio y la velocidad real.</div></a></div>
+</section>
+
+<script src="../../shared.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cómo documentar una automatización que tu equipo pueda mantener | Connectia</title>
+<meta name="description" content="Qué necesita contener realmente la documentación de una automatización, para que sobreviva a que la persona que la construyó pase a otra cosa.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://connectia.one/es/blog/como-documentar-una-automatizacion-para-que-tu-equipo-la-mantenga.html">
+<link rel="alternate" hreflang="en" href="https://connectia.one/blog/how-to-document-an-automation-so-your-team-can-maintain-it.html">
+<link rel="alternate" hreflang="es" href="https://connectia.one/es/blog/como-documentar-una-automatizacion-para-que-tu-equipo-la-mantenga.html">
+<link rel="alternate" hreflang="x-default" href="https://connectia.one/blog/how-to-document-an-automation-so-your-team-can-maintain-it.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23080808'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial Black,sans-serif' font-weight='900' font-size='20' fill='%232dd4a8'>c.</text></svg>">
+<meta property="og:type" content="article"><meta property="og:title" content="Cómo documentar una automatización que tu equipo pueda mantener | Connectia">
+<meta property="og:description" content="Qué necesita contener realmente la documentación de una automatización, para que sobreviva a que la persona que la construyó pase a otra cosa."><meta property="og:url" content="https://connectia.one/es/blog/como-documentar-una-automatizacion-para-que-tu-equipo-la-mantenga.html">
+<meta property="og:image" content="https://connectia.one/og.jpg"><meta property="og:site_name" content="Connectia">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://connectia.one/es/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://connectia.one/es/blog.html"},{"@type":"ListItem","position":3,"name":"Cómo documentar una automatización para que tu equipo pueda mantenerla","item":"https://connectia.one/es/blog/como-documentar-una-automatizacion-para-que-tu-equipo-la-mantenga.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Cómo documentar una automatización para que tu equipo pueda mantenerla","description":"Qué necesita contener realmente la documentación de una automatización, para que sobreviva a que la persona que la construyó pase a otra cosa.","datePublished":"2026-07-14","author":{"@type":"Person","name":"Santiago Payá de la Cruz"},"publisher":{"@type":"Organization","name":"Connectia","logo":{"@type":"ImageObject","url":"https://connectia.one/og.jpg"}},"mainEntityOfPage":"https://connectia.one/es/blog/como-documentar-una-automatizacion-para-que-tu-equipo-la-mantenga.html"}</script>
+</head>
+<body class="page-wrap">
+<section class="page-hero"><div class="hero-glow"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="../index.html">Inicio</a><span>/</span><a href="../blog.html">Blog</a><span>/</span><span>Automatización</span></div>
+    <div class="section-label">Automatización</div>
+    <h1>Una automatización<br><span class="accent">que nadie entiende</span><br><span class="dim">es un riesgo esperando a pasar.</span></h1>
+    <p class="lead">Una buena documentación es lo que separa una automatización que el equipo puede mantener de una que solo funciona mientras esté quien la construyó.</p>
+    <div class="post-meta">
+      <span>Por Santiago Payá de la Cruz</span><span class="dot">•</span>
+      <span>14 de julio de 2026</span><span class="dot">•</span>
+      <span>7 min de lectura</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="article-body">
+<p>Una automatización que solo una persona entiende es un punto único de fallo disfrazado de victoria de productividad. Funciona bien justo hasta que esa persona está de vacaciones, cambia de puesto, o deja el negocio, momento en el que un proceso que nadie más puede tocar con seguridad se rompe en silencio o se abandona por completo en vez de arreglarse. Ambos desenlaces cuestan más que la documentación habría costado, y por eso tratarla como opcional rara vez se sostiene en la práctica.</p>
+<h2>Lo que necesita de verdad la documentación, más allá de una descripción vaga</h2>
+<p>Un resumen de una línea de lo que hace la automatización no es documentación, es un título. Una documentación útil cubre el disparador que la inicia, cada paso principal en lenguaje sencillo, qué pasa cuando algo sale mal en cada uno de esos pasos, y dónde mirar cuando claramente no está funcionando como se espera. Esto no necesita ser un detalle técnico exhaustivo línea a línea, necesita ser suficiente para que alguien que no conoce la construcción concreta entienda su lógica y pueda hacer con seguridad un cambio pequeño.</p>
+<h2>Las capturas de pantalla envejecen mal, la lógica en lenguaje sencillo no</h2>
+<p>Una captura de pantalla de la interfaz de una herramienta concreta se queda desactualizada en el momento en que esa interfaz se rediseña, algo que ocurre con regularidad en la mayoría de plataformas. Describir la lógica de fondo en lenguaje sencillo, cuando pasa X, revisa Y, luego haz Z, sobrevive a un rediseño de plataforma de una forma que un tutorial lleno de capturas no lo hace, aunque las capturas se sientan más útiles de inmediato cuando se escriben.</p>
+<h2>Documenta las excepciones, no solo el camino feliz</h2>
+<p>El flujo principal de una automatización suele ser la parte más fácil de entender solo con abrirla y leer los pasos. Lo que es genuinamente difícil de reconstruir después es por qué una excepción concreta se maneja de la forma en que se maneja, por qué se salta cierto tipo de registro, por qué una condición particular dispara una revisión manual en vez de continuar automáticamente. Ese razonamiento vive en la cabeza de quien lo construyó a menos que se escriba explícitamente.</p>
+<h2>Mantén la documentación junto a la automatización, no en una wiki aparte</h2>
+<p>La documentación guardada en algún sitio desconectado de la automatización real tiende a desincronizarse a medida que la automatización se ajusta con el tiempo, porque actualizar una página de wiki lejana es un paso fácil de saltarse bajo presión de tiempo. Un campo de descripción breve dentro de la propia plataforma de automatización, o un documento enlazado directamente desde la herramienta, se mantiene conectado a lo que describe de una forma que un sistema separado a menudo no consigue.</p>
+<h2>Una plantilla mínima que cubre lo esencial</h2>
+<ul><li>Qué dispara esta automatización, y qué condiciones tienen que cumplirse para que se ejecute</li><li>Los pasos principales, descritos en lenguaje sencillo en vez de jerga técnica específica de la herramienta</li><li>Excepciones conocidas y cómo se maneja cada una actualmente</li><li>A quién contactar y dónde mirar primero si algo parece roto</li></ul>
+<p>Esto lleva quizá veinte minutos escribirlo para una automatización moderadamente compleja, y son veinte minutos que se amortizan la primera vez que alguien distinto de quien la construyó necesita solucionar un problema, que es exactamente el escenario para el que debería planificarse desde el principio cada <a href="../automatizacion.html">proyecto de automatización</a> bien construido, no tratarse como un caso extremo improbable. Los equipos que se saltan este paso casi siempre lo lamentan en el momento menos oportuno posible, normalmente cuando quien lo construyó no está disponible.</p>
+  </div>
+
+  <div class="author-box">
+    <div class="author-avatar">SP</div>
+    <div>
+      <div class="author-name">Santiago Payá de la Cruz</div>
+      <div class="author-role">Fundador de Connectia</div>
+      <div class="author-bio">Especialista en SEO y crecimiento digital con experiencia en multinacionales (Mettler-Toledo) y agencias (Estudio34, adSalsa). Fundador de Connectia. <a href="../nosotros.html">Más sobre Santiago →</a></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--surface)">
+  <div class="section-label">FAQ</div>
+  <h2>Preguntas frecuentes</h2>
+  <div class="faq-list"><div class="faq-item"><button class="faq-question">¿Quién debería escribir la documentación, quien construyó la automatización u otra persona?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Quien la construyó, porque tiene el contexto, pero merece la pena que alguien que no conoce la automatización la revise después para comprobar que de verdad se entiende sin ese mismo trasfondo.</p></div></div><div class="faq-item"><button class="faq-question">¿Debería vivir la documentación en la plataforma de automatización o en una herramienta aparte?<span class="faq-icon">+</span></button><div class="faq-answer"><p>La opción que genuinamente tenga más probabilidades de mantenerse actualizada. Para automatizaciones más sencillas, un campo de descripción dentro de la propia plataforma suele ser más fiable que una página de wiki aparte que es fácil olvidar.</p></div></div><div class="faq-item"><button class="faq-question">¿Cuánto tiempo debería llevar realistamente la documentación?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Para la mayoría de automatizaciones de negocio, quince a treinta minutos es un objetivo razonable, suficiente para cubrir disparadores, pasos principales y excepciones conocidas sin convertirse en un proyecto en sí mismo.</p></div></div><div class="faq-item"><button class="faq-question">¿Necesita documentación una automatización sencilla también?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Una versión breve, sí. Incluso una automatización sencilla acaba necesitando que alguien distinto de quien la construyó solucione un problema, y unas pocas frases de contexto ahorran considerablemente más tiempo del que cuesta escribirlas.</p></div></div></div>
+</section>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Quién debería escribir la documentación, quien construyó la automatización u otra persona?","acceptedAnswer":{"@type":"Answer","text":"Quien la construyó, porque tiene el contexto, pero merece la pena que alguien que no conoce la automatización la revise después para comprobar que de verdad se entiende sin ese mismo trasfondo."}},{"@type":"Question","name":"¿Debería vivir la documentación en la plataforma de automatización o en una herramienta aparte?","acceptedAnswer":{"@type":"Answer","text":"La opción que genuinamente tenga más probabilidades de mantenerse actualizada. Para automatizaciones más sencillas, un campo de descripción dentro de la propia plataforma suele ser más fiable que una página de wiki aparte que es fácil olvidar."}},{"@type":"Question","name":"¿Cuánto tiempo debería llevar realistamente la documentación?","acceptedAnswer":{"@type":"Answer","text":"Para la mayoría de automatizaciones de negocio, quince a treinta minutos es un objetivo razonable, suficiente para cubrir disparadores, pasos principales y excepciones conocidas sin convertirse en un proyecto en sí mismo."}},{"@type":"Question","name":"¿Necesita documentación una automatización sencilla también?","acceptedAnswer":{"@type":"Answer","text":"Una versión breve, sí. Incluso una automatización sencilla acaba necesitando que alguien distinto de quien la construyó solucione un problema, y unas pocas frases de contexto ahorran considerablemente más tiempo del que cuesta escribirlas."}}]}</script>
+
+<section class="cta-banner">
+  <div class="section-label">Contactar</div>
+  <h2>¿Quieres arreglar esto<br><span class="dim">en tu propia web?</span></h2>
+  <p>Una llamada de 30 minutos basta para identificar dónde está de verdad tu mayor oportunidad. Sin discurso de venta, sin auditoría plantilla.</p>
+  <a href="../contacto.html" class="btn-primary">Hablemos →</a>
+</section>
+
+<section>
+  <div class="section-label">Sigue leyendo</div>
+  <h2>Más artículos del blog</h2>
+  <div class="related-grid"><a href="cuanto-tarda-el-seo-en-dar-resultados.html" class="blog-card"><span class="tag">SEO</span><div class="blog-card-title">¿Cuánto tarda el SEO en dar resultados? Un calendario realista</div><div class="blog-card-excerpt">El calendario real del SEO, por qué un dominio nuevo tarda más, y las señales que indican que está funcionando antes de que se muevan las posiciones.</div></a><a href="como-conseguir-que-chatgpt-cite-tu-marca.html" class="blog-card"><span class="tag">GEO</span><div class="blog-card-title">Cómo conseguir que ChatGPT (y otros buscadores IA) citen tu marca</div><div class="blog-card-excerpt">Las señales prácticas que consiguen que una marca aparezca citada en las respuestas de ChatGPT, Perplexity y Gemini, y por dónde empezar si partes de cero.</div></a><a href="por-que-tu-web-es-rapida-en-tests-pero-lenta-para-usuarios.html" class="blog-card"><span class="tag">Web y UX</span><div class="blog-card-title">Por qué tu web es rápida en los tests pero lenta para los usuarios reales</div><div class="blog-card-excerpt">Un 95 en PageSpeed no significa que tus visitantes perciban una web rápida. Esta es la diferencia entre las puntuaciones de laboratorio y la velocidad real.</div></a></div>
+</section>
+
+<script src="../../shared.js"></script>
+</body>
+</html>

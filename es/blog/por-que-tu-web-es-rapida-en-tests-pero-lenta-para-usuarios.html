@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Por qué tu web se siente lenta aunque tenga buena puntuación | Connectia</title>
+<meta name="description" content="Una buena puntuación en PageSpeed no garantiza que tu web se sienta rápida. Esta es la diferencia entre los tests de laboratorio y la experiencia real.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://connectia.one/es/blog/por-que-tu-web-es-rapida-en-tests-pero-lenta-para-usuarios.html">
+<link rel="alternate" hreflang="en" href="https://connectia.one/blog/why-your-website-is-fast-in-tests-but-feels-slow.html">
+<link rel="alternate" hreflang="es" href="https://connectia.one/es/blog/por-que-tu-web-es-rapida-en-tests-pero-lenta-para-usuarios.html">
+<link rel="alternate" hreflang="x-default" href="https://connectia.one/blog/why-your-website-is-fast-in-tests-but-feels-slow.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23080808'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial Black,sans-serif' font-weight='900' font-size='20' fill='%232dd4a8'>c.</text></svg>">
+<meta property="og:type" content="article"><meta property="og:title" content="Por qué tu web se siente lenta aunque tenga buena puntuación | Connectia">
+<meta property="og:description" content="Una buena puntuación en PageSpeed no garantiza que tu web se sienta rápida. Esta es la diferencia entre los tests de laboratorio y la experiencia real."><meta property="og:url" content="https://connectia.one/es/blog/por-que-tu-web-es-rapida-en-tests-pero-lenta-para-usuarios.html">
+<meta property="og:image" content="https://connectia.one/og.jpg"><meta property="og:site_name" content="Connectia">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://connectia.one/es/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://connectia.one/es/blog.html"},{"@type":"ListItem","position":3,"name":"Por qué tu web es rápida en los tests pero lenta para los usuarios reales","item":"https://connectia.one/es/blog/por-que-tu-web-es-rapida-en-tests-pero-lenta-para-usuarios.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Por qué tu web es rápida en los tests pero lenta para los usuarios reales","description":"Una buena puntuación en PageSpeed no garantiza que tu web se sienta rápida. Esta es la diferencia entre los tests de laboratorio y la experiencia real.","datePublished":"2026-02-17","author":{"@type":"Person","name":"Santiago Payá de la Cruz"},"publisher":{"@type":"Organization","name":"Connectia","logo":{"@type":"ImageObject","url":"https://connectia.one/og.jpg"}},"mainEntityOfPage":"https://connectia.one/es/blog/por-que-tu-web-es-rapida-en-tests-pero-lenta-para-usuarios.html"}</script>
+</head>
+<body class="page-wrap">
+<section class="page-hero"><div class="hero-glow"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="../index.html">Inicio</a><span>/</span><a href="../blog.html">Blog</a><span>/</span><span>Web y UX</span></div>
+    <div class="section-label">Web y UX</div>
+    <h1>Tu web saca un 95<br><span class="accent">en PageSpeed.</span><br><span class="dim">¿Por qué se siente lenta?</span></h1>
+    <p class="lead">La diferencia entre las puntuaciones de los tests de laboratorio y cómo se percibe realmente una web, y por qué esa diferencia importa más que la nota en sí.</p>
+    <div class="post-meta">
+      <span>Por Santiago Payá de la Cruz</span><span class="dot">•</span>
+      <span>17 de febrero de 2026</span><span class="dot">•</span>
+      <span>7 min de lectura</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="article-body">
+<p>Es una frustración habitual: el informe de PageSpeed dice 95, los Core Web Vitals están todos en verde, y aun así los visitantes reales siguen describiendo la web como lenta. No es una contradicción, es una diferencia entre dos cosas distintas que se suelen confundir bajo la etiqueta "velocidad".</p>
+<h2>Datos de laboratorio frente a datos del mundo real</h2>
+<p>Herramientas como PageSpeed Insights o Lighthouse hacen lo que se llama un test de laboratorio: una visita simulada desde un navegador limpio, en una conexión controlada, sin interferencias de bloqueadores de anuncios, extensiones, o el dispositivo real de un visitante. Los datos del mundo real, a veces llamados field data, vienen de visitantes reales en dispositivos reales con conexiones reales, que varían muchísimo.</p>
+<p>Una web puede sacar buena nota en el laboratorio y aun así sentirse lenta en el mundo real porque el test de laboratorio no tiene en cuenta un móvil Android de cinco años con una conexión 4G irregular, algo completamente normal para una parte importante del tráfico de cualquier web.</p>
+<h2>Las métricas que importan más que la puntuación global</h2>
+<p>La <a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">documentación oficial de Core Web Vitals de Google</a> desglosa la experiencia real en tres métricas que importan más que una única puntuación global:</p>
+<ul><li><strong>Largest Contentful Paint (LCP)</strong>: cuánto tarda en cargar el elemento visible más grande. Es la métrica más ligada a la percepción de "¿ya está lista esta página?"</li><li><strong>Interaction to Next Paint (INP)</strong>: cómo de receptiva se siente la página cuando alguien hace clic o toca algo, no solo lo rápido que cargó</li><li><strong>Cumulative Layout Shift (CLS)</strong>: si el contenido salta mientras carga la página, algo que se siente caótico incluso en una conexión técnicamente rápida</li></ul>
+<p>Una página puede cargar rápido al principio y aun así sentirse rota si los botones tardan un segundo en responder al tocarlos, o si una imagen carga tarde y empuja hacia abajo el texto que estabas a punto de leer. Ninguno de esos dos fallos aparece necesariamente reflejado con claridad en una única puntuación general.</p>
+<h2>Por qué se suele pasar por alto</h2>
+<p>La mayoría de las auditorías de velocidad se quedan en la puntuación de laboratorio porque es lo más fácil de medir y de reportar. Los datos del mundo real requieren o bien tráfico suficiente para alimentar el Chrome User Experience Report, o una monitorización dedicada, y su interpretación exige más criterio que leer un único número. Es sinceramente más fácil optimizar para una buena nota de laboratorio que arreglar lo que experimentan los visitantes reales, y esa es exactamente la razón por la que esta diferencia persiste en tantas webs.</p>
+<h2>Qué es lo que de verdad cierra esa diferencia</h2>
+<p>Probar con conexiones limitadas y dispositivos antiguos, no solo con el wifi rápido de la oficina en un portátil nuevo. Revisar los datos de campo de Core Web Vitals en Google Search Console, que reflejan visitantes reales y no una simulación. Priorizar la capacidad de respuesta a la interacción (INP) tanto como la velocidad de carga inicial, porque una página que carga rápido pero se siente torpe al interactuar sigue ahuyentando visitantes. Y tratar la estabilidad del layout como un problema real de UX, no como un detalle técnico menor, porque una página que salta es una de las formas más rápidas de que un sitio se sienta poco fiable aunque objetivamente sea rápido.</p>
+<h2>Una forma rápida de comprobarlo en tu propia web</h2>
+<p>Abre las herramientas de desarrollador de Chrome, ve a la pestaña Red (Network), y pon el throttling en "Slow 4G" o similar. Recarga la página que te preocupa y obsérvala cargar de verdad, no solo el cronómetro final. Después revisa el informe de Core Web Vitals de Search Console, dentro de la sección de Experiencia, que muestra datos de visitantes reales agrupados por URL. Si los datos de campo son notablemente peores que la puntuación de laboratorio, esa diferencia es exactamente donde debe enfocarse la solución, y suele ser más concreta y más fácil de arreglar de lo que sugiere una queja vaga de "la web se siente lenta". Es exactamente el tipo de comprobación que debería formar parte de cualquier proyecto de <a href="../webs.html">diseño web</a> desde el principio, no un añadido de última hora una vez la web ya está publicada.</p>
+  </div>
+
+  <div class="author-box">
+    <div class="author-avatar">SP</div>
+    <div>
+      <div class="author-name">Santiago Payá de la Cruz</div>
+      <div class="author-role">Fundador de Connectia</div>
+      <div class="author-bio">Especialista en SEO y crecimiento digital con experiencia en multinacionales (Mettler-Toledo) y agencias (Estudio34, adSalsa). Fundador de Connectia. <a href="../nosotros.html">Más sobre Santiago →</a></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--surface)">
+  <div class="section-label">FAQ</div>
+  <h2>Preguntas frecuentes</h2>
+  <div class="faq-list"><div class="faq-item"><button class="faq-question">¿Qué puntuación de PageSpeed es buena?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Por encima de 90 es un objetivo razonable en laboratorio, pero no debería ser lo único que se revise. Los datos de campo de visitantes reales, disponibles en el informe de Core Web Vitals de Google Search Console, importan más para entender la experiencia real del usuario.</p></div></div><div class="faq-item"><button class="faq-question">¿Por qué mi web se siente más lenta en móvil que en ordenador?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Los dispositivos móviles varían enormemente en potencia, y las conexiones móviles son menos constantes que la mayoría de wifis de oficina o de casa. Una página que se siente instantánea en un ordenador puede sentirse torpe en un móvil antiguo o económico con una conexión más débil, que es exactamente la diferencia entre datos de laboratorio y datos de campo.</p></div></div><div class="faq-item"><button class="faq-question">¿El tamaño de las imágenes influye tanto de verdad?<span class="faq-icon">+</span></button><div class="faq-answer"><p>A menudo más que cualquier otro factor individual. Las imágenes sin optimizar son la causa más común de un Largest Contentful Paint lento, y suelen ser lo más fácil de arreglar: comprimir y dimensionar correctamente las imágenes puede producir una mejora mayor que la mayoría de otros cambios técnicos.</p></div></div><div class="faq-item"><button class="faq-question">¿Core Web Vitals es realmente un factor de posicionamiento de Google?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Sí, aunque es una señal más entre muchas, no la decisiva. Lo que importa de forma más directa es que una web lenta y torpe pierde visitantes independientemente de en qué posición aparezca, lo que hace que merezca la pena arreglarla por sí misma, no solo por el SEO.</p></div></div></div>
+</section>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué puntuación de PageSpeed es buena?","acceptedAnswer":{"@type":"Answer","text":"Por encima de 90 es un objetivo razonable en laboratorio, pero no debería ser lo único que se revise. Los datos de campo de visitantes reales, disponibles en el informe de Core Web Vitals de Google Search Console, importan más para entender la experiencia real del usuario."}},{"@type":"Question","name":"¿Por qué mi web se siente más lenta en móvil que en ordenador?","acceptedAnswer":{"@type":"Answer","text":"Los dispositivos móviles varían enormemente en potencia, y las conexiones móviles son menos constantes que la mayoría de wifis de oficina o de casa. Una página que se siente instantánea en un ordenador puede sentirse torpe en un móvil antiguo o económico con una conexión más débil, que es exactamente la diferencia entre datos de laboratorio y datos de campo."}},{"@type":"Question","name":"¿El tamaño de las imágenes influye tanto de verdad?","acceptedAnswer":{"@type":"Answer","text":"A menudo más que cualquier otro factor individual. Las imágenes sin optimizar son la causa más común de un Largest Contentful Paint lento, y suelen ser lo más fácil de arreglar: comprimir y dimensionar correctamente las imágenes puede producir una mejora mayor que la mayoría de otros cambios técnicos."}},{"@type":"Question","name":"¿Core Web Vitals es realmente un factor de posicionamiento de Google?","acceptedAnswer":{"@type":"Answer","text":"Sí, aunque es una señal más entre muchas, no la decisiva. Lo que importa de forma más directa es que una web lenta y torpe pierde visitantes independientemente de en qué posición aparezca, lo que hace que merezca la pena arreglarla por sí misma, no solo por el SEO."}}]}</script>
+
+<section class="cta-banner">
+  <div class="section-label">Contactar</div>
+  <h2>¿Quieres arreglar esto<br><span class="dim">en tu propia web?</span></h2>
+  <p>Una llamada de 30 minutos basta para identificar dónde está de verdad tu mayor oportunidad. Sin discurso de venta, sin auditoría plantilla.</p>
+  <a href="../contacto.html" class="btn-primary">Hablemos →</a>
+</section>
+
+<section>
+  <div class="section-label">Sigue leyendo</div>
+  <h2>Más artículos del blog</h2>
+  <div class="related-grid"><a href="cuanto-tarda-el-seo-en-dar-resultados.html" class="blog-card"><span class="tag">SEO</span><div class="blog-card-title">¿Cuánto tarda el SEO en dar resultados? Un calendario realista</div><div class="blog-card-excerpt">El calendario real del SEO, por qué un dominio nuevo tarda más, y las señales que indican que está funcionando antes de que se muevan las posiciones.</div></a><a href="como-conseguir-que-chatgpt-cite-tu-marca.html" class="blog-card"><span class="tag">GEO</span><div class="blog-card-title">Cómo conseguir que ChatGPT (y otros buscadores IA) citen tu marca</div><div class="blog-card-excerpt">Las señales prácticas que consiguen que una marca aparezca citada en las respuestas de ChatGPT, Perplexity y Gemini, y por dónde empezar si partes de cero.</div></a><a href="que-procesos-merece-la-pena-automatizar.html" class="blog-card"><span class="tag">Automatización</span><div class="blog-card-title">Qué procesos de tu empresa merece la pena automatizar (y cuáles no)</div><div class="blog-card-excerpt">No toda tarea repetitiva merece ser automatizada. Un marco práctico para priorizar qué automatizar primero, según tiempo ahorrado, complejidad y riesgo.</div></a></div>
+</section>
+
+<script src="../../shared.js"></script>
+</body>
+</html>

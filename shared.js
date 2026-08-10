@@ -31,7 +31,7 @@
     seo:'seo.html', geo:'geo.html', sea:'sea.html',
     apps:'apps.html', automation:'automation.html',
     content:'content.html', webdesign:'web-design.html',
-    about:'about.html', contact:'contact.html',
+    about:'about.html', contact:'contact.html', blog:'blog.html',
     'seo-audit':'seo/audit.html','seo-technical':'seo/technical.html',
     'seo-content':'seo/content-strategy.html','seo-international':'seo/international.html',
     'seo-local':'seo/local.html',
@@ -44,7 +44,7 @@
     seo:'seo.html', geo:'geo.html', sea:'sea.html',
     apps:'apps.html', automation:'automatizacion.html',
     content:'contenido.html', webdesign:'webs.html',
-    about:'nosotros.html', contact:'contacto.html',
+    about:'nosotros.html', contact:'contacto.html', blog:'blog.html',
     'seo-audit':'seo/auditoria.html','seo-technical':'seo/tecnico.html',
     'seo-content':'seo/estrategia-contenidos.html','seo-international':'seo/internacional.html',
     'seo-local':'seo/local.html',
@@ -120,6 +120,7 @@
       </a>
       <ul class="nav-links">
         ${serviceItems}
+        <li class="nav-item"><a href="${h('blog')}" class="${currentFile===MAP.blog?'active':''}">Blog</a></li>
         <li class="nav-item"><a href="${h('about')}" class="${currentFile===MAP.about?'active':''}">${t('About','Nosotros')}</a></li>
       </ul>
       <div class="nav-right">
@@ -140,6 +141,7 @@
         ${s.subs.map(sub=>`<a class="m-sub" href="${sub.f}">↳ ${sub.l}</a>`).join('')}
       `).join('')}
       <div class="m-section">${t('Company','Empresa')}</div>
+      <a href="${h('blog')}">Blog</a>
       <a href="${h('about')}">${t('About','Nosotros')}</a>
       <a href="${h('contact')}" style="color:var(--accent);font-weight:600">${t('Contact','Contactar')}</a>
       <div style="display:flex;gap:.5rem;padding:.75rem 0;border-bottom:none">
@@ -184,6 +186,7 @@
         <ul>
           <li><a href="${h('about')}">${t('About','Nosotros')}</a></li>
           <li><a href="${h('services')}">${t('All services','Todos los servicios')}</a></li>
+          <li><a href="${h('blog')}">Blog</a></li>
           <li><a href="${h('contact')}">${t('Contact','Contactar')}</a></li>
         </ul>
       </div>

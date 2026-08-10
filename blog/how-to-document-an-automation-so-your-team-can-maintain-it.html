@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Document an Automation Your Team Can Maintain | Connectia</title>
+<meta name="description" content="What automation documentation actually needs to contain, so it survives the person who built it moving on to something else.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://connectia.one/blog/how-to-document-an-automation-so-your-team-can-maintain-it.html">
+<link rel="alternate" hreflang="en" href="https://connectia.one/blog/how-to-document-an-automation-so-your-team-can-maintain-it.html">
+<link rel="alternate" hreflang="es" href="https://connectia.one/es/blog/como-documentar-una-automatizacion-para-que-tu-equipo-la-mantenga.html">
+<link rel="alternate" hreflang="x-default" href="https://connectia.one/blog/how-to-document-an-automation-so-your-team-can-maintain-it.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23080808'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial Black,sans-serif' font-weight='900' font-size='20' fill='%232dd4a8'>c.</text></svg>">
+<meta property="og:type" content="article"><meta property="og:title" content="How to Document an Automation Your Team Can Maintain | Connectia">
+<meta property="og:description" content="What automation documentation actually needs to contain, so it survives the person who built it moving on to something else."><meta property="og:url" content="https://connectia.one/blog/how-to-document-an-automation-so-your-team-can-maintain-it.html">
+<meta property="og:image" content="https://connectia.one/og.jpg"><meta property="og:site_name" content="Connectia">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://connectia.one/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://connectia.one/blog.html"},{"@type":"ListItem","position":3,"name":"How to Document an Automation So Your Team Can Maintain It","item":"https://connectia.one/blog/how-to-document-an-automation-so-your-team-can-maintain-it.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Document an Automation So Your Team Can Maintain It","description":"What automation documentation actually needs to contain, so it survives the person who built it moving on to something else.","datePublished":"2026-07-14","author":{"@type":"Person","name":"Santiago Payá de la Cruz"},"publisher":{"@type":"Organization","name":"Connectia","logo":{"@type":"ImageObject","url":"https://connectia.one/og.jpg"}},"mainEntityOfPage":"https://connectia.one/blog/how-to-document-an-automation-so-your-team-can-maintain-it.html"}</script>
+</head>
+<body class="page-wrap">
+<section class="page-hero"><div class="hero-glow"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="../blog.html">Blog</a><span>/</span><span>Automation</span></div>
+    <div class="section-label">Automation</div>
+    <h1>An automation<br><span class="accent">nobody understands</span><br><span class="dim">is a liability waiting to happen.</span></h1>
+    <p class="lead">Good documentation is what separates an automation the team can maintain from one that only works as long as its builder is around.</p>
+    <div class="post-meta">
+      <span>By Santiago Payá de la Cruz</span><span class="dot">•</span>
+      <span>July 14, 2026</span><span class="dot">•</span>
+      <span>7 min read</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="article-body">
+<p>An automation that only one person understands is a single point of failure disguised as a productivity win. It works fine right up until that person is on holiday, changes roles, or leaves the business, at which point a process nobody else can safely touch either breaks silently or gets abandoned entirely rather than fixed. Both outcomes cost more than the documentation would have, which is exactly why treating it as optional rarely holds up in practice.</p>
+<h2>What documentation actually needs, beyond a vague description</h2>
+<p>A one-line summary of what the automation does isn't documentation, it's a title. Useful documentation covers the trigger that starts it, each major step in plain language, what happens when something goes wrong at each of those steps, and where to look when it clearly isn't working as expected. This doesn't need to be exhaustive line-by-line technical detail, it needs to be enough for someone unfamiliar with the specific build to understand its logic and safely make a small change.</p>
+<h2>Screenshots age badly, plain-language logic doesn't</h2>
+<p>A screenshot of a specific tool's interface becomes outdated the moment that interface gets redesigned, which happens regularly on most platforms. Describing the underlying logic in plain language, when X happens, check Y, then do Z, survives a platform redesign in a way that a screenshot-heavy walkthrough doesn't, even though screenshots feel more immediately helpful when first written.</p>
+<h2>Document the exceptions, not just the happy path</h2>
+<p>The main flow of an automation is usually the easiest part to understand just by opening it and reading through the steps. What's genuinely hard to reconstruct later is why a specific exception gets handled the way it does, why a certain record type gets skipped, why a particular condition triggers a manual review instead of continuing automatically. That reasoning lives in the original builder's head unless it's written down explicitly.</p>
+<h2>Keep documentation next to the automation, not in a separate wiki</h2>
+<p>Documentation stored somewhere disconnected from the actual automation tends to drift out of sync as the automation gets tweaked over time, since updating a distant wiki page is an easy step to skip under time pressure. A brief description field within the automation platform itself, or a linked document referenced directly from the tool, stays connected to what it's describing in a way a separate system often doesn't.</p>
+<h2>What good documentation prevents, concretely</h2>
+<p>Without it, a small workflow change from a connected app, a renamed field, a new required value, can silently break an automation with no obvious trail back to the cause. With clear documentation of what each step expects and why, that same investigation takes minutes instead of hours spent reverse-engineering logic nobody wrote down.</p>
+<h2>A minimal template that covers the essentials</h2>
+<ul><li>What triggers this automation, and what conditions need to be true for it to run</li><li>The main steps, described in plain language rather than tool-specific technical jargon</li><li>Known exceptions and how each one is currently handled</li><li>Who to contact and where to look first if something appears broken</li></ul>
+<p>This takes perhaps twenty minutes to write for a moderately complex automation, and it's twenty minutes that pays for itself the first time someone other than the original builder needs to troubleshoot it, which is exactly the scenario every properly built <a href="../automation.html">automation project</a> should be planning for from the start, not treating as an unlikely edge case. Teams that skip this step almost always regret it at the least convenient possible moment, usually when the original builder is unreachable.</p>
+  </div>
+
+  <div class="author-box">
+    <div class="author-avatar">SP</div>
+    <div>
+      <div class="author-name">Santiago Payá de la Cruz</div>
+      <div class="author-role">Founder, Connectia</div>
+      <div class="author-bio">SEO and growth specialist with experience across multinationals (Mettler-Toledo) and agencies (Estudio34, adSalsa). Founder of Connectia. <a href="../about.html">More about Santiago →</a></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--surface)">
+  <div class="section-label">FAQ</div>
+  <h2>Common questions</h2>
+  <div class="faq-list"><div class="faq-item"><button class="faq-question">Who should write the documentation, the builder or someone else?<span class="faq-icon">+</span></button><div class="faq-answer"><p>The builder, since they have the context, but it's worth having someone unfamiliar with the automation review it afterward to check it's actually understandable to someone without that same background. That review step catches jargon and assumptions the original builder no longer notices simply because they're too close to the work. A five-minute read-through from a colleague outside the project is usually enough to surface the gaps.</p></div></div><div class="faq-item"><button class="faq-question">Should documentation live in the automation platform or a separate tool?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Whichever option is genuinely more likely to stay updated. For simpler automations, a description field within the platform itself is often more reliable than a separate wiki page that's easy to forget, since the closer the documentation lives to the thing it describes, the more likely it stays accurate.</p></div></div><div class="faq-item"><button class="faq-question">How much time should documentation realistically take?<span class="faq-icon">+</span></button><div class="faq-answer"><p>For most business automations, fifteen to thirty minutes is a reasonable target, enough to cover triggers, main steps and known exceptions without becoming a project of its own. Automations touching sensitive data or multiple systems justify more time, since the cost of a misunderstanding there is proportionally higher.</p></div></div><div class="faq-item"><button class="faq-question">Does a simple automation still need documentation?<span class="faq-icon">+</span></button><div class="faq-answer"><p>A brief version, yes. Even a simple automation eventually needs troubleshooting by someone other than its builder, and a few sentences of context save considerably more time than they cost to write.</p></div></div></div>
+</section>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Who should write the documentation, the builder or someone else?","acceptedAnswer":{"@type":"Answer","text":"The builder, since they have the context, but it's worth having someone unfamiliar with the automation review it afterward to check it's actually understandable to someone without that same background. That review step catches jargon and assumptions the original builder no longer notices simply because they're too close to the work. A five-minute read-through from a colleague outside the project is usually enough to surface the gaps."}},{"@type":"Question","name":"Should documentation live in the automation platform or a separate tool?","acceptedAnswer":{"@type":"Answer","text":"Whichever option is genuinely more likely to stay updated. For simpler automations, a description field within the platform itself is often more reliable than a separate wiki page that's easy to forget, since the closer the documentation lives to the thing it describes, the more likely it stays accurate."}},{"@type":"Question","name":"How much time should documentation realistically take?","acceptedAnswer":{"@type":"Answer","text":"For most business automations, fifteen to thirty minutes is a reasonable target, enough to cover triggers, main steps and known exceptions without becoming a project of its own. Automations touching sensitive data or multiple systems justify more time, since the cost of a misunderstanding there is proportionally higher."}},{"@type":"Question","name":"Does a simple automation still need documentation?","acceptedAnswer":{"@type":"Answer","text":"A brief version, yes. Even a simple automation eventually needs troubleshooting by someone other than its builder, and a few sentences of context save considerably more time than they cost to write."}}]}</script>
+
+<section class="cta-banner">
+  <div class="section-label">Get in touch</div>
+  <h2>Ready to fix this<br><span class="dim">on your own site?</span></h2>
+  <p>A 30-minute call is enough to identify where your biggest opportunity actually is. No pitch, no template audit.</p>
+  <a href="../contact.html" class="btn-primary">Let's talk →</a>
+</section>
+
+<section>
+  <div class="section-label">Keep reading</div>
+  <h2>More from the blog</h2>
+  <div class="related-grid"><a href="how-long-does-seo-take-to-show-results.html" class="blog-card"><span class="tag">SEO</span><div class="blog-card-title">How Long Does SEO Take to Show Results? A Realistic Timeline</div><div class="blog-card-excerpt">The honest timeline for SEO results, why new domains take longer, and the early signals that tell you it's working before rankings move.</div></a><a href="how-to-get-your-brand-cited-by-chatgpt.html" class="blog-card"><span class="tag">GEO</span><div class="blog-card-title">How to Get Your Brand Cited by ChatGPT (and Other AI Search Engines)</div><div class="blog-card-excerpt">The practical signals that get brands cited in ChatGPT, Perplexity and Gemini answers, and where to start if you're at zero right now.</div></a><a href="why-your-website-is-fast-in-tests-but-feels-slow.html" class="blog-card"><span class="tag">Web & UX</span><div class="blog-card-title">Why Your Website Is Fast in Tests but Feels Slow to Real Users</div><div class="blog-card-excerpt">A 95 on PageSpeed doesn't mean your visitors experience a fast site. Here's the gap between lab scores and real-world speed, and how to close it.</div></a></div>
+</section>
+
+<script src="../shared.js"></script>
+</body>
+</html>
