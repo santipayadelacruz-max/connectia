@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Datos estructurados para visibilidad en IA: qué schema ayuda | Connectia</title>
+<title>Datos estructurados para visibilidad en IA: qué schema ayuda</title>
 <meta name="description" content="No todo el marcado schema ayuda a que los motores de IA entiendan tu marca. Esto es lo que de verdad importa para GEO, y lo que es prácticamente ruido.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://connectia.one/es/blog/datos-estructurados-para-visibilidad-en-ia-que-schema-ayuda.html">
@@ -14,10 +14,10 @@
 <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="192x192" href="../../favicon-192.png">
 <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
-<meta property="og:type" content="article"><meta property="og:title" content="Datos estructurados para visibilidad en IA: qué schema ayuda | Connectia">
+<meta property="og:type" content="article"><meta property="og:title" content="Datos estructurados para visibilidad en IA: qué schema ayuda">
 <meta property="og:description" content="No todo el marcado schema ayuda a que los motores de IA entiendan tu marca. Esto es lo que de verdad importa para GEO, y lo que es prácticamente ruido."><meta property="og:url" content="https://connectia.one/es/blog/datos-estructurados-para-visibilidad-en-ia-que-schema-ayuda.html">
-<meta property="og:image" content="https://connectia.one/og.jpg"><meta property="og:site_name" content="Connectia">
-<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://connectia.one/assets/blog/es-datos-estructurados-para-visibilidad-en-ia-que-schema-ayuda.jpg"><meta property="og:site_name" content="Connectia">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://connectia.one/assets/blog/es-datos-estructurados-para-visibilidad-en-ia-que-schema-ayuda.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -40,7 +40,7 @@
   </div>
 </section>
 
-<section>
+<section class="post-cover-wrap"><figure class="post-cover"><img src="../../assets/blog/es-datos-estructurados-para-visibilidad-en-ia-que-schema-ayuda.jpg" alt="Portada del artículo: Datos estructurados para visibilidad en IA: qué schema ayuda" width="1200" height="630" fetchpriority="high"></figure>
   <div class="article-body">
 <p>Los datos estructurados llevan años formando parte del SEO, sobre todo para resultados enriquecidos: valoraciones con estrellas, desplegables de FAQ, tarjetas de recetas. Su papel en GEO es distinto y, en cierto modo, más fundamental: es una de las formas más claras de decirle a un modelo de IA exactamente quién eres, a qué te dedicas y cómo se relaciona tu contenido con entidades del mundo real, en vez de dejar que lo adivine a partir de texto sin estructurar.</p>
 <h2>Schema de Organization: la base</h2>
@@ -50,7 +50,7 @@
 <h2>Schema de FAQPage</h2>
 <p>Esto estructura el contenido de preguntas y respuestas en un formato legible por máquinas, lo cual encaja de forma inusualmente buena con cómo los modelos de IA responden a consultas conversacionales de entrada. Una sección de FAQ bien estructurada con el schema correcto es, funcionalmente, material preformateado para una respuesta de IA, lo cual puede explicar en parte por qué las páginas ricas en FAQ parecen aparecer de forma desproporcionada en respuestas generadas por IA.</p>
 <h2>Lo que es prácticamente irrelevante para GEO en concreto</h2>
-<p>El schema de reseñas y valoraciones, el de breadcrumbs, y la mayoría de los tipos específicos de e-commerce son genuinamente útiles para los resultados enriquecidos de búsqueda tradicional, pero no aportan mucho a cómo un modelo de IA construye confianza en una fuente. No son perjudiciales de incluir, simplemente resuelven un problema distinto al que le preocupa al GEO. Merece la pena implementarlos por los beneficios de búsqueda que sí aportan, solo que no como prioridad de una estrategia GEO.</p>
+<p>El schema de <a href="como-conseguir-mas-resenas-en-google-sin-saltarse-las-normas.html">reseñas</a> y valoraciones, el de breadcrumbs, y la mayoría de los tipos específicos de e-commerce son genuinamente útiles para los resultados enriquecidos de búsqueda tradicional, pero no aportan mucho a cómo un modelo de IA construye confianza en una fuente. No son perjudiciales de incluir, simplemente resuelven un problema distinto al que le preocupa al GEO. Merece la pena implementarlos por los beneficios de búsqueda que sí aportan, solo que no como prioridad de una estrategia GEO.</p>
 <h2>La implementación sigue teniendo que seguir las reglas</h2>
 <p>Las <a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" target="_blank" rel="noopener">directrices de datos estructurados de Google</a> siguen siendo la base de referencia incluso para fines de GEO: el marcado tiene que representar con precisión lo que realmente hay en la página, usando el vocabulario de <a href="https://schema.org/" target="_blank" rel="noopener">schema.org</a> correctamente en vez de inventar o usar mal las propiedades. Unos datos estructurados inexactos o manipuladores no solo arriesgan una acción manual de Google, también dañan activamente la señal de confianza que se suponía que iban a construir, lo cual anula por completo el propósito.</p>
 <h2>Un punto de partida realista</h2>
@@ -74,13 +74,33 @@
 </section>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Necesito un desarrollador para añadir datos estructurados?","acceptedAnswer":{"@type":"Answer","text":"Para tipos sencillos como Organization o Article, no; muchas plataformas CMS y plugins lo gestionan sin código a medida. Las implementaciones más complejas, o webs sin un CMS flexible, suelen necesitar sí a un desarrollador."}},{"@type":"Question","name":"¿Añadir schema garantiza que mi marca sea citada por IA?","acceptedAnswer":{"@type":"Answer","text":"Ningún cambio técnico aislado garantiza una cita. El schema es una señal más entre varias, junto con la calidad del contenido y la autoridad general, que en conjunto aumentan la probabilidad de ser reconocido como fuente fiable."}},{"@type":"Question","name":"¿Es JSON-LD mejor que otros formatos de schema?","acceptedAnswer":{"@type":"Answer","text":"Google recomienda JSON-LD como el formato más fácil de implementar y mantener, y es el formato que más se usa en la práctica en implementaciones orientadas a GEO, principalmente porque no requiere modificar directamente el marcado HTML existente."}},{"@type":"Question","name":"¿Cómo compruebo si mis datos estructurados están bien implementados?","acceptedAnswer":{"@type":"Answer","text":"La Prueba de Resultados Enriquecidos de Google valida la sintaxis y la elegibilidad para funciones de búsqueda. No mide específicamente el impacto en GEO porque todavía no existe una herramienta equivalente para eso, pero una sintaxis correcta es el punto de partida necesario de todas formas."}}]}</script>
 
-<section class="cta-banner">
-  <div class="section-label">Contactar</div>
-  <h2>¿Quieres arreglar esto<br><span class="dim">en tu propia web?</span></h2>
-  <p>Una llamada de 30 minutos basta para identificar dónde está de verdad tu mayor oportunidad. Sin discurso de venta, sin auditoría plantilla.</p>
-  <a href="../contacto.html" class="btn-primary">Hablemos →</a>
+<section id="presupuesto" style="background:var(--surface)">
+  <div class="contact-grid">
+    <div>
+      <div class="section-label">Presupuesto</div>
+      <h2>Cuéntame qué necesitas.<br><span class="dim">Te contesto con precio.</span></h2>
+      <p>Sin comerciales por medio: lees mi respuesta, decides y, si no encaja, no pasa nada. Cuanto más concreto seas, más ajustado va el presupuesto.</p>
+      <ul class="trust-bar" style="flex-direction:column;margin-top:1.4rem"><li>Te respondo yo, en menos de 24 h laborables</li><li>Alcance, plazo y precio cerrado, por escrito</li><li>Si no veo una oportunidad real, te lo digo</li><li>Sin permanencia ni letra pequeña</li></ul>
+      <ol class="q-steps"><li><b>1</b><div><strong>Me lees</strong><span>Me cuentas tu caso en un minuto.</span></div></li><li><b>2</b><div><strong>Te contesto</strong><span>Te llamo o te escribo con dudas y una primera idea.</span></div></li><li><b>3</b><div><strong>Propuesta</strong><span>Alcance, plazo y precio cerrado por escrito.</span></div></li></ol>
+    </div>
+    <div>
+      <form class="contact-form quote-form" action="https://formspree.io/f/mpqngnoa" method="POST" data-lang="es">
+        <input type="hidden" name="_subject" value="Nuevo presupuesto web: Blog: datos-estructurados-para-visibilidad-en-ia-que-schema-ayuda">
+        <input type="hidden" name="topic" value="Blog: datos-estructurados-para-visibilidad-en-ia-que-schema-ayuda">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <div class="form-group"><label for="q-name-8907">Nombre</label><input id="q-name-8907" type="text" name="name" autocomplete="name" required></div>
+        <div class="form-group"><label for="q-mail-8907">Email</label><input id="q-mail-8907" type="email" name="email" autocomplete="email" required></div>
+        <div class="form-group"><label for="q-tel-8907">Teléfono (opcional)</label><input id="q-tel-8907" type="tel" name="phone" autocomplete="tel"></div>
+        <div class="form-group"><label for="q-msg-8907">¿Qué necesitas y para cuándo?</label><textarea id="q-msg-8907" name="message" rows="4" placeholder="Ej.: Tengo una clínica en Alcoy y quiero salir en Google Maps antes de septiembre" required></textarea></div>
+        <button type="submit" class="btn-primary" style="width:100%;justify-content:center;padding:1rem">Pedir presupuesto gratis →</button>
+        <p style="font-size:.75rem;color:var(--text-muted);text-align:center;margin:0">Respondo personalmente. Tus datos se usan solo para contestarte.</p>
+        <p style="font-size:.85rem;text-align:center;margin:.2rem 0 0">¿Prefieres escribir directamente? <a href="mailto:santipayadelacruz@gmail.com?subject=Nuevo presupuesto web: Blog: datos-estructurados-para-visibilidad-en-ia-que-schema-ayuda">santipayadelacruz@gmail.com</a></p>
+      </form>
+    </div>
+  </div>
 </section>
 
+<!--autolinks--><section class="related-links"><div class="section-label">Relacionado</div><h2>Sigue explorando</h2><h3 style="margin:1.6rem 0 .6rem;font-size:1rem;opacity:.8">Servicios relacionados</h3><div class="acc-links"><a href="../geo.html">Optimización GEO</a><a href="../geo/optimizacion.html">Estrategia GEO</a><a href="../geo/monitorizacion.html">Monitorización GEO</a></div><h3 style="margin:1.6rem 0 .6rem;font-size:1rem;opacity:.8">Guías relacionadas</h3><div class="acc-links"><a href="estudio-como-medir-si-chatgpt-recomienda-a-tu-negocio-local.html">Estudio: cómo medir si ChatGPT recomienda a tu negocio local</a><a href="geo-para-negocios-locales-aplica-siquiera.html">GEO para negocios locales: ¿aplica de verdad?</a><a href="construir-autoridad-de-marca-para-citas-de-ia-un-marco-practico.html">Construir autoridad de marca para citas de IA: marco</a></div><h3 style="margin:1.6rem 0 .6rem;font-size:1rem;opacity:.8">Dónde trabajamos</h3><div class="acc-links"><a href="../seo-local.html">SEO local por zonas: Alcoy, Alicante y toda España</a><a href="../web-rapida.html">Página web en pocos días: 24 h, 3 días, 1 semana</a><a href="../blog.html">Blog</a></div><h3 style="margin:1.6rem 0 .6rem;font-size:1rem;opacity:.8">Fuentes oficiales</h3><div class="acc-links"><a href="https://schema.org" target="_blank" rel="noopener">Schema.org ↗</a><a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" target="_blank" rel="noopener">Google: datos estructurados ↗</a></div></section><!--/autolinks-->
 <section>
   <div class="section-label">Sigue leyendo</div>
   <h2>Más artículos del blog</h2>

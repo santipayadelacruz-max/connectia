@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Por qué tu web se siente lenta aunque tenga buena puntuación | Connectia</title>
+<title>Por qué tu web se siente lenta aunque tenga buena puntuación</title>
 <meta name="description" content="Una buena puntuación en PageSpeed no garantiza que tu web se sienta rápida. Esta es la diferencia entre los tests de laboratorio y la experiencia real.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://connectia.one/es/blog/por-que-tu-web-es-rapida-en-tests-pero-lenta-para-usuarios.html">
@@ -14,10 +14,10 @@
 <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="192x192" href="../../favicon-192.png">
 <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
-<meta property="og:type" content="article"><meta property="og:title" content="Por qué tu web se siente lenta aunque tenga buena puntuación | Connectia">
+<meta property="og:type" content="article"><meta property="og:title" content="Por qué tu web se siente lenta aunque tenga buena puntuación">
 <meta property="og:description" content="Una buena puntuación en PageSpeed no garantiza que tu web se sienta rápida. Esta es la diferencia entre los tests de laboratorio y la experiencia real."><meta property="og:url" content="https://connectia.one/es/blog/por-que-tu-web-es-rapida-en-tests-pero-lenta-para-usuarios.html">
-<meta property="og:image" content="https://connectia.one/og.jpg"><meta property="og:site_name" content="Connectia">
-<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://connectia.one/assets/blog/es-por-que-tu-web-es-rapida-en-tests-pero-lenta-para-usuarios.jpg"><meta property="og:site_name" content="Connectia">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://connectia.one/assets/blog/es-por-que-tu-web-es-rapida-en-tests-pero-lenta-para-usuarios.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -40,7 +40,7 @@
   </div>
 </section>
 
-<section>
+<section class="post-cover-wrap"><figure class="post-cover"><img src="../../assets/blog/es-por-que-tu-web-es-rapida-en-tests-pero-lenta-para-usuarios.jpg" alt="Portada del artículo: Por qué tu web se siente lenta aunque tenga buena puntuación" width="1200" height="630" fetchpriority="high"></figure>
   <div class="article-body">
 <p>Es una frustración habitual: el informe de PageSpeed dice 95, los Core Web Vitals están todos en verde, y aun así los visitantes reales siguen describiendo la web como lenta. No es una contradicción, es una diferencia entre dos cosas distintas que se suelen confundir bajo la etiqueta "velocidad".</p>
 <h2>Datos de laboratorio frente a datos del mundo real</h2>
@@ -53,7 +53,7 @@
 <h2>Por qué se suele pasar por alto</h2>
 <p>La mayoría de las auditorías de velocidad se quedan en la puntuación de laboratorio porque es lo más fácil de medir y de reportar. Los datos del mundo real requieren o bien tráfico suficiente para alimentar el Chrome User Experience Report, o una monitorización dedicada, y su interpretación exige más criterio que leer un único número. Es sinceramente más fácil optimizar para una buena nota de laboratorio que arreglar lo que experimentan los visitantes reales, y esa es exactamente la razón por la que esta diferencia persiste en tantas webs.</p>
 <h2>Qué es lo que de verdad cierra esa diferencia</h2>
-<p>Probar con conexiones limitadas y dispositivos antiguos, no solo con el wifi rápido de la oficina en un portátil nuevo. Revisar los datos de campo de Core Web Vitals en Google Search Console, que reflejan visitantes reales y no una simulación. Priorizar la capacidad de respuesta a la interacción (INP) tanto como la velocidad de carga inicial, porque una página que carga rápido pero se siente torpe al interactuar sigue ahuyentando visitantes. Y tratar la estabilidad del layout como un problema real de UX, no como un detalle técnico menor, porque una página que salta es una de las formas más rápidas de que un sitio se sienta poco fiable aunque objetivamente sea rápido.</p>
+<p>Probar con conexiones limitadas y dispositivos antiguos, no solo con el wifi rápido de la oficina en un portátil nuevo. Revisar los datos de campo de Core Web Vitals en Google <a href="como-usar-google-search-console-guia-para-empezar.html">Search Console</a>, que reflejan visitantes reales y no una simulación. Priorizar la capacidad de respuesta a la interacción (INP) tanto como la velocidad de carga inicial, porque una página que carga rápido pero se siente torpe al interactuar sigue ahuyentando visitantes. Y tratar la estabilidad del layout como un problema real de UX, no como un detalle técnico menor, porque una página que salta es una de las formas más rápidas de que un sitio se sienta poco fiable aunque objetivamente sea rápido.</p>
 <h2>Una forma rápida de comprobarlo en tu propia web</h2>
 <p>Abre las herramientas de desarrollador de Chrome, ve a la pestaña Red (Network), y pon el throttling en "Slow 4G" o similar. Recarga la página que te preocupa y obsérvala cargar de verdad, no solo el cronómetro final. Después revisa el informe de Core Web Vitals de Search Console, dentro de la sección de Experiencia, que muestra datos de visitantes reales agrupados por URL. Si los datos de campo son notablemente peores que la puntuación de laboratorio, esa diferencia es exactamente donde debe enfocarse la solución, y suele ser más concreta y más fácil de arreglar de lo que sugiere una queja vaga de "la web se siente lenta". Es exactamente el tipo de comprobación que debería formar parte de cualquier proyecto de <a href="../webs.html">diseño web</a> desde el principio, no un añadido de última hora una vez la web ya está publicada.</p>
   </div>
@@ -75,13 +75,33 @@
 </section>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué puntuación de PageSpeed es buena?","acceptedAnswer":{"@type":"Answer","text":"Por encima de 90 es un objetivo razonable en laboratorio, pero no debería ser lo único que se revise. Los datos de campo de visitantes reales, disponibles en el informe de Core Web Vitals de Google Search Console, importan más para entender la experiencia real del usuario."}},{"@type":"Question","name":"¿Por qué mi web se siente más lenta en móvil que en ordenador?","acceptedAnswer":{"@type":"Answer","text":"Los dispositivos móviles varían enormemente en potencia, y las conexiones móviles son menos constantes que la mayoría de wifis de oficina o de casa. Una página que se siente instantánea en un ordenador puede sentirse torpe en un móvil antiguo o económico con una conexión más débil, que es exactamente la diferencia entre datos de laboratorio y datos de campo."}},{"@type":"Question","name":"¿El tamaño de las imágenes influye tanto de verdad?","acceptedAnswer":{"@type":"Answer","text":"A menudo más que cualquier otro factor individual. Las imágenes sin optimizar son la causa más común de un Largest Contentful Paint lento, y suelen ser lo más fácil de arreglar: comprimir y dimensionar correctamente las imágenes puede producir una mejora mayor que la mayoría de otros cambios técnicos."}},{"@type":"Question","name":"¿Core Web Vitals es realmente un factor de posicionamiento de Google?","acceptedAnswer":{"@type":"Answer","text":"Sí, aunque es una señal más entre muchas, no la decisiva. Lo que importa de forma más directa es que una web lenta y torpe pierde visitantes independientemente de en qué posición aparezca, lo que hace que merezca la pena arreglarla por sí misma, no solo por el SEO."}}]}</script>
 
-<section class="cta-banner">
-  <div class="section-label">Contactar</div>
-  <h2>¿Quieres arreglar esto<br><span class="dim">en tu propia web?</span></h2>
-  <p>Una llamada de 30 minutos basta para identificar dónde está de verdad tu mayor oportunidad. Sin discurso de venta, sin auditoría plantilla.</p>
-  <a href="../contacto.html" class="btn-primary">Hablemos →</a>
+<section id="presupuesto" style="background:var(--surface)">
+  <div class="contact-grid">
+    <div>
+      <div class="section-label">Presupuesto</div>
+      <h2>Cuéntame qué necesitas.<br><span class="dim">Te contesto con precio.</span></h2>
+      <p>Sin comerciales por medio: lees mi respuesta, decides y, si no encaja, no pasa nada. Cuanto más concreto seas, más ajustado va el presupuesto.</p>
+      <ul class="trust-bar" style="flex-direction:column;margin-top:1.4rem"><li>Te respondo yo, en menos de 24 h laborables</li><li>Alcance, plazo y precio cerrado, por escrito</li><li>Si no veo una oportunidad real, te lo digo</li><li>Sin permanencia ni letra pequeña</li></ul>
+      <ol class="q-steps"><li><b>1</b><div><strong>Me lees</strong><span>Me cuentas tu caso en un minuto.</span></div></li><li><b>2</b><div><strong>Te contesto</strong><span>Te llamo o te escribo con dudas y una primera idea.</span></div></li><li><b>3</b><div><strong>Propuesta</strong><span>Alcance, plazo y precio cerrado por escrito.</span></div></li></ol>
+    </div>
+    <div>
+      <form class="contact-form quote-form" action="https://formspree.io/f/mpqngnoa" method="POST" data-lang="es">
+        <input type="hidden" name="_subject" value="Nuevo presupuesto web: Blog: por-que-tu-web-es-rapida-en-tests-pero-lenta-para-usuarios">
+        <input type="hidden" name="topic" value="Blog: por-que-tu-web-es-rapida-en-tests-pero-lenta-para-usuarios">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <div class="form-group"><label for="q-name-43134">Nombre</label><input id="q-name-43134" type="text" name="name" autocomplete="name" required></div>
+        <div class="form-group"><label for="q-mail-43134">Email</label><input id="q-mail-43134" type="email" name="email" autocomplete="email" required></div>
+        <div class="form-group"><label for="q-tel-43134">Teléfono (opcional)</label><input id="q-tel-43134" type="tel" name="phone" autocomplete="tel"></div>
+        <div class="form-group"><label for="q-msg-43134">¿Qué necesitas y para cuándo?</label><textarea id="q-msg-43134" name="message" rows="4" placeholder="Ej.: Tengo una clínica en Alcoy y quiero salir en Google Maps antes de septiembre" required></textarea></div>
+        <button type="submit" class="btn-primary" style="width:100%;justify-content:center;padding:1rem">Pedir presupuesto gratis →</button>
+        <p style="font-size:.75rem;color:var(--text-muted);text-align:center;margin:0">Respondo personalmente. Tus datos se usan solo para contestarte.</p>
+        <p style="font-size:.85rem;text-align:center;margin:.2rem 0 0">¿Prefieres escribir directamente? <a href="mailto:santipayadelacruz@gmail.com?subject=Nuevo presupuesto web: Blog: por-que-tu-web-es-rapida-en-tests-pero-lenta-para-usuarios">santipayadelacruz@gmail.com</a></p>
+      </form>
+    </div>
+  </div>
 </section>
 
+<!--autolinks--><section class="related-links"><div class="section-label">Relacionado</div><h2>Sigue explorando</h2><h3 style="margin:1.6rem 0 .6rem;font-size:1rem;opacity:.8">Servicios relacionados</h3><div class="acc-links"><a href="../webs.html">Diseño Web</a><a href="../web-rapida.html">Página web en pocos días: 24 h, 3 días, 1 semana</a><a href="../web-rapida/pagina-web-en-una-semana.html">Página web en una semana</a></div><h3 style="margin:1.6rem 0 .6rem;font-size:1rem;opacity:.8">Guías relacionadas</h3><div class="acc-links"><a href="senales-de-que-tu-web-necesita-rehacerse-o-solo-mejorarse.html">Señales de que tu web necesita rehacerse o solo mejorarse</a><a href="senales-de-que-tu-web-te-esta-costando-leads.html">Señales de que tu web te está costando leads</a><a href="por-que-impresionar-es-el-objetivo-equivocado-para-una-web.html">Por qué impresionar es el objetivo equivocado para una web</a></div><h3 style="margin:1.6rem 0 .6rem;font-size:1rem;opacity:.8">Dónde trabajamos</h3><div class="acc-links"><a href="../seo-local.html">SEO local por zonas: Alcoy, Alicante y toda España</a><a href="../web-rapida.html">Página web en pocos días: 24 h, 3 días, 1 semana</a><a href="../blog.html">Blog</a></div><h3 style="margin:1.6rem 0 .6rem;font-size:1rem;opacity:.8">Fuentes oficiales</h3><div class="acc-links"><a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">web.dev: Core Web Vitals ↗</a><a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener">Google: contenido útil ↗</a></div></section><!--/autolinks-->
 <section>
   <div class="section-label">Sigue leyendo</div>
   <h2>Más artículos del blog</h2>

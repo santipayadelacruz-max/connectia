@@ -31,6 +31,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How quickly do you respond?","acceptedAnswer":{"@type":"Answer","text":"Usually within a few hours. Always within one business day."} },{"@type":"Question","name":"Is the first call really free?","acceptedAnswer":{"@type":"Answer","text":"Yes. 30 minutes, no pitch, no strings attached."} }]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://connectia.one/contact.html#webpage","url":"https://connectia.one/contact.html","name":"Contact Connectia | Free Audit, No Pitch | Get in Touch","description":"Get in touch with Connectia. Tell us about your project and we will be glad to help. Honest advice, no sales pitch, usually a reply within a few hours.","inLanguage":"en","dateModified":"2026-10-27","isPartOf":{"@type":"WebSite","name":"Connectia","url":"https://connectia.one/"},"author":{"@type":"Person","name":"Santiago Payá de la Cruz","sameAs":["https://www.linkedin.com/in/santipdlc/"]},"publisher":{"@type":"Organization","name":"Connectia","url":"https://connectia.one/"}}</script>
 </head>
 <body class="page-wrap">
 <section class="page-hero" style="padding-bottom:3rem">
@@ -90,7 +91,7 @@ document.getElementById('contact-form').addEventListener('submit',async function
   btn.textContent='Sending…';btn.disabled=true;
   const res=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
   if(res.ok){this.style.display='none';document.getElementById('form-success').style.display='block'}
-  else{btn.textContent='Send →';btn.disabled=false;alert('Something went wrong. Please email us directly.');}
+  else{btn.textContent='Send →';btn.disabled=false;this.insertAdjacentHTML('beforeend','<p style="color:#ff8a7a;font-size:.85rem;text-align:center;margin-top:.7rem">Something went wrong. Email santipayadelacruz@gmail.com.</p>');}
 });
 </script></div>
     <div style="display:flex;flex-direction:column;gap:1.8rem">

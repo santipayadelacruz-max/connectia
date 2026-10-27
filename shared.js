@@ -31,7 +31,7 @@
     seo:'seo.html', geo:'geo.html', sea:'sea.html',
     apps:'apps.html', automation:'automation.html',
     content:'content.html', webdesign:'web-design.html',
-    about:'about.html', contact:'contact.html', blog:'blog.html',
+    about:'about.html', contact:'contact.html', blog:'blog.html', cookies:'cookies.html', privacy:'privacy.html',
     'seo-audit':'seo/audit.html','seo-technical':'seo/technical.html',
     'seo-content':'seo/content-strategy.html','seo-international':'seo/international.html',
     'seo-local':'seo/local.html',
@@ -44,7 +44,7 @@
     seo:'seo.html', geo:'geo.html', sea:'sea.html',
     apps:'apps.html', automation:'automatizacion.html',
     content:'contenido.html', webdesign:'webs.html',
-    about:'nosotros.html', contact:'contacto.html', blog:'blog.html',
+    about:'nosotros.html', contact:'contacto.html', blog:'blog.html', cookies:'cookies.html', privacy:'privacidad.html',
     'seo-audit':'seo/auditoria.html','seo-technical':'seo/tecnico.html',
     'seo-content':'seo/estrategia-contenidos.html','seo-international':'seo/internacional.html',
     'seo-local':'seo/local.html',
@@ -67,7 +67,11 @@
     const destMap = target === 'es' ? ES : EN;
     // Match against relFile (path relative to the current language root),
     // not the bare filename — subpages like 'seo/audit.html' only match this way.
-    const key = keys.find(k => srcMap[k] === relFile) || 'index';
+    const key = (isES && (relFile === 'seo-local.html' || relFile.startsWith('seo-local/') || relFile === 'web-rapida.html' || relFile.startsWith('web-rapida/') || relFile.startsWith('diseno-web/'))) ? (relFile.indexOf('web') > -1 && relFile.indexOf('seo') < 0 ? 'webdesign' : 'seo-local') : (!isES && (relFile === 'local-seo.html' || relFile.startsWith('local/'))) ? 'seo-local' : (!isES && (relFile === 'fast-website.html' || relFile.startsWith('fast-website/'))) ? 'webdesign' : (keys.find(k => srcMap[k] === relFile) || 'index');
+    if (relFile === 'seo-local-guia.html' || relFile === 'local-seo-guide.html') {
+      location.href = target === 'es' ? pre + 'es/seo-local-guia.html' : (isES ? pre + '../local-seo-guide.html' : pre + 'local-seo-guide.html');
+      return;
+    }
     const destFile = destMap[key];
     if (target === 'es' && !isES) {
       // From EN root or subpage → go into /es/...
@@ -128,22 +132,24 @@
           <button class="lang-btn ${!isES?'active':''}" onclick="switchLang('en')">EN</button>
           <button class="lang-btn ${isES?'active':''}" onclick="switchLang('es')">ES</button>
         </div>
-        <a href="${h('contact')}" class="nav-cta">${t('Contact →','Contactar →')}</a>
-        <button class="nav-burger" aria-label="Menu" onclick="document.getElementById('nav-mobile').classList.toggle('open')">
+        <a href="${h('contact')}" class="nav-cta" data-quote>${t('Free quote →','Presupuesto gratis →')}</a>
+        <button class="nav-burger" aria-label="Menu" aria-controls="nav-mobile" onclick="document.getElementById('nav-mobile').classList.toggle('open')">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
     <div class="nav-mobile" id="nav-mobile">
       <div class="m-section">${t('Services','Servicios')}</div>
-      ${services.map(s=>`
-        <a href="${h(s.key)}">${s.icon} ${s.label}</a>
-        ${s.subs.map(sub=>`<a class="m-sub" href="${sub.f}">↳ ${sub.l}</a>`).join('')}
-      `).join('')}
+      ${services.map(s=>s.subs.length ? `
+        <details class="m-acc"><summary>${s.icon} ${s.label}</summary>
+          <a class="m-sub" href="${h(s.key)}">${t('Overview','Ver todo')} ${s.label}</a>
+          ${s.subs.map(sub=>`<a class="m-sub" href="${sub.f}">${sub.l}</a>`).join('')}
+        </details>` : `<a href="${h(s.key)}">${s.icon} ${s.label}</a>`).join('')}
+      ${isES ? `<a href="${hf('seo-local.html')}">📍 SEO local por zonas</a>` : ''}
       <div class="m-section">${t('Company','Empresa')}</div>
       <a href="${h('blog')}">Blog</a>
       <a href="${h('about')}">${t('About','Nosotros')}</a>
-      <a href="${h('contact')}" style="color:var(--accent);font-weight:600">${t('Contact','Contactar')}</a>
+      <a href="${h('contact')}" class="m-cta">${t('Free 30-min call →','Llamada gratuita de 30 min →')}</a>
       <div style="display:flex;gap:.5rem;padding:.75rem 0;border-bottom:none">
         <button class="lang-btn ${!isES?'active':''}" onclick="switchLang('en')">EN</button>
         <button class="lang-btn ${isES?'active':''}" onclick="switchLang('es')">ES</button>
@@ -168,6 +174,13 @@
           <li><a href="${h('seo-technical')}">${t('Technical SEO','SEO Técnico')}</a></li>
           <li><a href="${h('seo-international')}">${t('International SEO','SEO Internacional')}</a></li>
           <li><a href="${h('seo-local')}">${t('Local SEO','SEO Local')}</a></li>
+          ${isES ? `<li><a href="${hf('seo-local.html')}">SEO local por zonas</a></li>
+          <li><a href="${hf('seo-local/seo-alcoy.html')}">SEO en Alcoy</a></li>
+          <li><a href="${hf('seo-local/seo-alicante.html')}">SEO en Alicante</a></li>
+          <li><a href="${hf('seo-local/seo-valencia.html')}">SEO en Valencia</a></li>` : `<li><a href="${hf('local-seo.html')}">Local SEO by city</a></li>
+          <li><a href="${hf('local/seo-consultant-zurich.html')}">SEO in Zurich</a></li>
+          <li><a href="${hf('local/seo-consultant-london.html')}">SEO in London</a></li>
+          <li><a href="${hf('local/seo-consultant-new-york-city.html')}">SEO in New York</a></li>`}
         </ul>
       </div>
       <div class="footer-col">
@@ -177,6 +190,7 @@
           <li><a href="${h('sea')}">${t('Paid Media','Paid Media')}</a></li>
           <li><a href="${h('content')}">${t('Content & Copy','Contenido y Copy')}</a></li>
           <li><a href="${h('webdesign')}">${t('Web Design','Diseño Web')}</a></li>
+          <li><a href="${isES ? hf('web-rapida.html') : hf('fast-website.html')}">${t('Website in 7 days','Web en pocos días')}</a></li>
           <li><a href="${h('apps')}">${t('Apps & Tools','Apps')}</a></li>
           <li><a href="${h('automation')}">${t('AI Automation','Automatización IA')}</a></li>
         </ul>
@@ -192,32 +206,10 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>${t('© 2025 Connectia. All rights reserved.','© 2025 Connectia. Todos los derechos reservados.')}</span>
-      <span><a href="mailto:santipayadelacruz@gmail.com" style="color:var(--text-muted)">santipayadelacruz@gmail.com</a></span>
+      <span>${t('© 2026 Connectia. All rights reserved.','© 2026 Connectia. Todos los derechos reservados.')}</span>
+      <span><a href="${h('privacy')}" style="color:var(--text-muted)">${t('Privacy','Privacidad')}</a> · <a href="${h('cookies')}" style="color:var(--text-muted)">Cookies</a> · <a href="mailto:santipayadelacruz@gmail.com" style="color:var(--text-muted)">santipayadelacruz@gmail.com</a></span>
     </div>`;
   document.body.append(footer);
-
-  /* ── Cursor ── */
-  if (!window.matchMedia('(hover:none)').matches) {
-    const dot  = Object.assign(document.createElement('div'), {id:'cursor-dot'});
-    const ring = Object.assign(document.createElement('div'), {id:'cursor-ring'});
-    document.body.append(dot, ring);
-    let mx = window.innerWidth/2, my = window.innerHeight/2;
-    let rx = mx, ry = my;
-    dot.style.opacity  = '0';
-    ring.style.opacity = '0';
-    document.addEventListener('mousemove', e => {
-      mx = e.clientX; my = e.clientY;
-      dot.style.opacity  = '1';
-      ring.style.opacity = '1';
-      dot.style.transform = `translate(calc(${mx}px - 50%), calc(${my}px - 50%))`;
-    });
-    (function loop() {
-      rx += (mx - rx) * .15; ry += (my - ry) * .15;
-      ring.style.transform = `translate(calc(${rx}px - 50%), calc(${ry}px - 50%))`;
-      requestAnimationFrame(loop);
-    })();
-  }
 
   /* ── Scroll nav + logo morph ── */
   window.addEventListener('scroll', () => {
@@ -266,6 +258,7 @@
 
   /* ── FAQ accordion ── */
   document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.setAttribute('aria-expanded','false');
     btn.addEventListener('click', () => {
       const answer = btn.nextElementSibling;
       const isOpen = answer.classList.contains('open');
@@ -273,7 +266,95 @@
         a.classList.remove('open');
         a.previousElementSibling.classList.remove('open');
       });
-      if (!isOpen) { answer.classList.add('open'); btn.classList.add('open'); }
+      document.querySelectorAll('.faq-question').forEach(b => b.setAttribute('aria-expanded','false'));
+      if (!isOpen) { answer.classList.add('open'); btn.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+    });
+  });
+
+
+  /* ── UX: skip link + main landmark ── */
+  const skip = document.createElement('a');
+  skip.className = 'skip-link'; skip.href = '#contenido-principal';
+  skip.textContent = t('Skip to content','Saltar al contenido');
+  document.body.prepend(skip);
+  const firstSection = document.querySelector('section');
+  if (firstSection && !document.getElementById('contenido-principal')) firstSection.id = 'contenido-principal';
+
+  /* ── UX: barra de confianza bajo los CTAs del hero ── */
+  const heroActions = document.querySelector('.hero-actions, .page-hero-actions');
+  const isContact = /contact|contacto/.test(currentFile);
+  if (heroActions && !isContact && !document.querySelector('.trust-bar') && !document.querySelector('.proof-strip')) {
+    const ul = document.createElement('ul');
+    ul.className = 'trust-bar';
+    ul.innerHTML = [t('Reply in under 24h','Respuesta en menos de 24 h'),
+                    t('Fixed price','Precio cerrado'),
+                    t('You talk to who does the work','Hablas con quien hace el trabajo'),
+                    t('Start in 48h','Arranque en 48 h')].map(x => `<li>${x}</li>`).join('');
+    heroActions.after(ul);
+  }
+
+  /* nav CTA: ir al formulario de presupuesto si la página lo tiene */
+  document.querySelectorAll('a[data-quote]').forEach(a => { if (document.getElementById('presupuesto')) a.setAttribute('href', '#presupuesto'); });
+
+  /* ── UX: CTA fijo en móvil ── */
+  if (!isContact) {
+    const bar = document.createElement('div');
+    bar.className = 'sticky-cta';
+    const hasQ = !!document.getElementById('presupuesto');
+    bar.innerHTML = hasQ ? `<a class="btn-primary" href="#presupuesto">${t('Get a free quote →','Pedir presupuesto gratis →')}</a>` : `<a class="btn-primary" href="${h('contact')}?s=auditoria">${t('Get a free quote →','Pedir presupuesto gratis →')}</a>`;
+    document.body.append(bar);
+    const toggleBar = () => bar.classList.toggle('show', window.scrollY > 500);
+    window.addEventListener('scroll', toggleBar, {passive:true}); toggleBar();
+  }
+
+  /* ── UX: blog (progreso de lectura + índice desplegable) ── */
+  const art = document.querySelector('.article-body');
+  if (art) {
+    const pg = document.createElement('div'); pg.className = 'read-progress'; document.body.append(pg);
+    window.addEventListener('scroll', () => {
+      const r = art.getBoundingClientRect();
+      const total = r.height - window.innerHeight * .5;
+      pg.style.width = Math.max(0, Math.min(1, (-r.top + window.innerHeight * .3) / total)) * 100 + '%';
+    }, {passive:true});
+    const hs = art.querySelectorAll('h2');
+    if (hs.length > 3) {
+      const d = document.createElement('details'); d.className = 'acc toc';
+      d.innerHTML = `<summary>${t('In this article','En este artículo')}</summary><div class="acc-body"><ul class="feature-list">${
+        [...hs].map((x,i) => { x.id = x.id || 'sec-' + (i+1); return `<li><a href="#${x.id}">${x.textContent}</a></li>`; }).join('')}</ul></div>`;
+      art.before(d);
+    }
+  }
+
+  /* ── UX: formulario, preselección del servicio y errores sin alert() ── */
+  const form = document.getElementById('contact-form');
+  if (form) {
+    const q = new URLSearchParams(location.search).get('s');
+    const sel = form.querySelector('select[name=service]');
+    if (q && sel) {
+      const want = {seo:'SEO', geo:'GEO', auditoria:'SEO'}[q];
+      if (want) [...sel.options].forEach(o => { if (o.textContent.includes(want)) sel.value = o.value || o.textContent; });
+    }
+  }
+
+
+  /* ── UX: formularios de presupuesto (Formspree) sin alert() ── */
+  document.querySelectorAll('form.quote-form').forEach(f => {
+    f.addEventListener('submit', async e => {
+      e.preventDefault();
+      const es = f.dataset.lang === 'es';
+      const btn = f.querySelector('button[type=submit]');
+      const label = btn.textContent;
+      btn.textContent = es ? 'Enviando…' : 'Sending…'; btn.disabled = true;
+      f.querySelectorAll('.form-msg').forEach(n => n.remove());
+      try {
+        const res = await fetch(f.action, {method:'POST', body:new FormData(f), headers:{'Accept':'application/json'}});
+        if (res.ok) {
+          f.innerHTML = '<div style="background:rgba(45,212,168,.07);border:1px solid rgba(45,212,168,.2);border-radius:14px;padding:2rem;text-align:center"><div style="font-size:1.8rem;margin-bottom:.6rem">✓</div><h3 style="margin-bottom:.4rem">' + (es ? 'Recibido.' : 'Received.') + '</h3><p style="color:var(--text-body);font-size:.9rem;margin:0">' + (es ? 'Te respondo en menos de 24 horas laborables.' : 'I will reply within 24 business hours.') + '</p></div>';
+        } else throw new Error('bad');
+      } catch (_) {
+        btn.textContent = label; btn.disabled = false;
+        f.insertAdjacentHTML('beforeend', '<p class="form-msg" style="color:#ff8a7a;font-size:.85rem;text-align:center;margin:0">' + (es ? 'Algo salió mal. Escríbeme a santipayadelacruz@gmail.com.' : 'Something went wrong. Email santipayadelacruz@gmail.com.') + '</p>');
+      }
     });
   });
 

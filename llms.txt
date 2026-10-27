@@ -1,0 +1,33 @@
+# Connectia
+
+> Connectia is an independent SEO, GEO (AI search visibility) and fast-website consultancy run by Santiago Payá de la Cruz. It helps businesses get found in Google, Maps and AI assistants such as ChatGPT, Perplexity and Gemini, with work measured in calls, quotes and enquiries. Languages: English and Spanish. Delivery: fully remote. Pricing is fixed and given in writing after a free 30-minute call; no ranking guarantees are made.
+
+## Main pages (English)
+- [Connectia](https://connectia.one/index.html)
+- [SEO](https://connectia.one/seo.html)
+- [GEO Optimization](https://connectia.one/geo.html)
+- [SEO Consultant by City](https://connectia.one/local-seo.html)
+- [Website in Days, Not Months](https://connectia.one/fast-website.html)
+- [About Connectia](https://connectia.one/about.html)
+- [Contact Connectia](https://connectia.one/contact.html)
+- [Blog](https://connectia.one/blog.html)
+
+## Páginas principales (español)
+- [Connectia](https://connectia.one/es/index.html)
+- [SEO](https://connectia.one/es/seo.html)
+- [Optimización GEO](https://connectia.one/es/geo.html)
+- [SEO local por zonas: Alcoy, Alicante y toda España](https://connectia.one/es/seo-local.html)
+- [Página web en pocos días: 24 h, 3 días, 1 semana](https://connectia.one/es/web-rapida.html)
+- [Sobre Connectia](https://connectia.one/es/nosotros.html)
+- [Contactar con Connectia](https://connectia.one/es/contacto.html)
+- [Blog](https://connectia.one/es/blog.html)
+
+## Location pages
+- [SEO consultant by city (619 cities, EN)](https://connectia.one/local-seo.html): per-city pages on local SEO, sectors, typical searches and FAQs.
+- [SEO local por zonas (655 localidades, ES)](https://connectia.one/es/seo-local.html): una página por localidad, con sectores, búsquedas típicas y preguntas frecuentes.
+- [How local SEO works: visual guide (EN)](https://connectia.one/local-seo-guide.html): what customers see, how Google decides, 90-day plan.
+- [Cómo funciona el SEO local: guía visual (ES)](https://connectia.one/es/seo-local-guia.html): lo que ve el cliente, cómo decide Google, plan a 90 días.
+
+## Optional
+- [Sitemap](https://connectia.one/sitemap.xml)
+- [Privacy](https://connectia.one/privacy.html) · [Cookies](https://connectia.one/cookies.html)

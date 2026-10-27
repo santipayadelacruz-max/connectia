@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Analytics 4 vs Matomo vs Plausible: qué analítica usar</title>
+<meta name="description" content="Comparativa de GA4, Matomo y Plausible: privacidad, cookies, complejidad, coste y para qué tipo de negocio encaja cada herramienta de analítica.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#080808">
+<link rel="canonical" href="https://connectia.one/es/blog/google-analytics-4-vs-matomo-vs-plausible-analitica-para-pymes.html">
+<link rel="alternate" hreflang="es" href="https://connectia.one/es/blog/google-analytics-4-vs-matomo-vs-plausible-analitica-para-pymes.html">
+<link rel="icon" href="../../favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../favicon-192.png">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<meta property="og:type" content="article"><meta property="og:title" content="Google Analytics 4 vs Matomo vs Plausible: qué analítica usar">
+<meta property="og:description" content="Comparativa de GA4, Matomo y Plausible: privacidad, cookies, complejidad, coste y para qué tipo de negocio encaja cada herramienta de analítica."><meta property="og:url" content="https://connectia.one/es/blog/google-analytics-4-vs-matomo-vs-plausible-analitica-para-pymes.html">
+<meta property="og:image" content="https://connectia.one/assets/blog/es-google-analytics-4-vs-matomo-vs-plausible-analitica-para-pymes.jpg"><meta property="og:site_name" content="Connectia">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://connectia.one/assets/blog/es-google-analytics-4-vs-matomo-vs-plausible-analitica-para-pymes.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://connectia.one/es/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://connectia.one/es/blog.html"},{"@type":"ListItem","position":3,"name":"Google Analytics 4 vs Matomo vs Plausible: qué analítica usar en una pyme","item":"https://connectia.one/es/blog/google-analytics-4-vs-matomo-vs-plausible-analitica-para-pymes.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Google Analytics 4 vs Matomo vs Plausible: qué analítica usar en una pyme","description":"Comparativa de GA4, Matomo y Plausible: privacidad, cookies, complejidad, coste y para qué tipo de negocio encaja cada herramienta de analítica.","datePublished":"2026-09-14","dateModified":"2026-09-14","author":{"@type":"Person","name":"Santiago Payá de la Cruz"},"publisher":{"@type":"Organization","name":"Connectia","logo":{"@type":"ImageObject","url":"https://connectia.one/og.jpg"}},"mainEntityOfPage":"https://connectia.one/es/blog/google-analytics-4-vs-matomo-vs-plausible-analitica-para-pymes.html","inLanguage":"es"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Puedo usar dos herramientas a la vez?","acceptedAnswer":{"@type":"Answer","text":"Sí, pero puede complicar el consentimiento y la interpretación. Úsalo solo si hay una razón clara."}},{"@type":"Question","name":"¿Es obligatorio usar GA4?","acceptedAnswer":{"@type":"Answer","text":"No. Es una opción entre varias. Elige según tus necesidades y tu capacidad de configurarla bien."}},{"@type":"Question","name":"¿Una analítica sin cookies cuenta mejor o peor?","acceptedAnswer":{"@type":"Answer","text":"Cuenta de otra manera: es más simple y menos intrusiva, pero con menos detalle sobre usuarios individuales."}},{"@type":"Question","name":"¿Qué datos son imprescindibles para una pyme?","acceptedAnswer":{"@type":"Answer","text":"Fuentes de tráfico, páginas más visitadas, conversiones (llamadas, formularios, ventas) y búsquedas de Search Console."}}]}</script>
+</head>
+<body class="page-wrap">
+<section class="page-hero"><div class="hero-glow"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="../index.html">Inicio</a><span>/</span><a href="../blog.html">Blog</a><span>/</span><span>Comparativas</span></div>
+    <div class="section-label">Comparativas</div>
+    <h1>GA4, Matomo<br><span class="accent">o Plausible:</span><br><span class="dim">qué analítica usar.</span></h1>
+    <p class="lead">Lo importante no es la herramienta, es saber cuántos contactos te trae cada canal. Elige la que vayas a mirar de verdad.</p>
+    <div class="post-meta">
+      <span>Por Santiago Payá de la Cruz</span><span class="dot">•</span>
+      <span>14 de septiembre de 2026</span><span class="dot">•</span>
+      <span>8 min de lectura</span>
+    </div>
+  </div>
+</section>
+
+<section class="post-cover-wrap"><figure class="post-cover"><img src="../../assets/blog/es-google-analytics-4-vs-matomo-vs-plausible-analitica-para-pymes.jpg" alt="Portada del artículo: Google Analytics 4 vs Matomo vs Plausible: qué analítica usar" width="1200" height="630" fetchpriority="high"></figure>
+  <div class="article-body">
+<h2>Qué necesita medir una pyme</h2>
+<p>Antes de elegir herramienta, define tres o cuatro preguntas: ¿de dónde vienen las visitas?, ¿qué páginas atraen consultas?, ¿qué acciones suponen contacto o venta? y ¿qué canal aporta clientes reales?</p>
+<p>Si tu analítica no responde a esas preguntas con claridad, da igual lo completa que sea. Menos métricas, mejor elegidas, suele servir más que un panel infinito.</p>
+<h2>Google Analytics 4</h2>
+<p>GA4 es gratuita, muy potente y se integra con Google Ads y <a href="como-usar-google-search-console-guia-para-empezar.html">Search Console</a>. Permite analizar eventos, conversiones y recorridos con mucho detalle, y conectar datos con otras herramientas de Google.</p>
+<p>Su complejidad es alta y requiere una configuración cuidadosa de eventos y consentimiento. En Europa, además, hay que tratar con atención cookies, consentimiento y transferencias de datos.</p>
+<h2>Matomo</h2>
+<p>Matomo es una alternativa de código abierto que puede instalarse en tu propio servidor o usarse en la nube. Ofrece mucho control de datos y es popular en organizaciones que priorizan la privacidad y la propiedad de la información.</p>
+<p>Tiene una interfaz más tradicional y, si se autoaloja, exige mantenimiento. Es una buena opción cuando quieres datos propios y flexibilidad.</p>
+<h2>Plausible</h2>
+<p>Plausible es una analítica ligera, sencilla y centrada en la privacidad. Su panel cabe en una sola pantalla y se entiende sin formación. Se puede usar en la nube o autoalojar.</p>
+<p>Es ideal para quien solo necesita ver visitas, fuentes de tráfico y conversiones básicas. No sustituye a GA4 si necesitas análisis muy profundo o integración avanzada con publicidad.</p>
+<h2>Privacidad, cookies y consentimiento</h2>
+<p>En la Unión Europea, el uso de cookies de analítica puede requerir consentimiento. Algunas herramientas funcionan sin cookies y con configuraciones pensadas para minimizar datos personales, lo que simplifica el cumplimiento.</p>
+<p>La normativa y su interpretación evolucionan: consulta con un profesional de protección de datos y revisa la configuración concreta que vayas a usar. Esta guía no es asesoramiento legal.</p>
+<h2>Errores frecuentes al medir</h2>
+<p>Los más habituales:</p>
+<ul><li>Instalar la analítica sin definir objetivos ni conversiones.</li><li>No filtrar el tráfico interno.</li><li>Duplicar etiquetas y contar dos veces.</li><li>Confiar solo en visitas y no en consultas.</li><li>No conectar Search Console para ver búsquedas reales.</li></ul>
+<h2>Con qué me quedaría</h2>
+<p>Para casi cualquier pyme, Google Analytics 4 con las conversiones bien definidas cubre lo necesario, si te molestas en configurarlo. Matomo y Plausible tienen sentido si priorizas privacidad o quieres algo más simple.</p>
+<p>Lo que sí te pido: define qué es una conversión (llamada, formulario, reserva) antes de elegir. Sin eso, cualquier herramienta te dará gráficos bonitos y ninguna respuesta.</p>
+<h2>Medir lo que da dinero</h2>
+<p>Si quieres que te deje la analítica montada y un informe mensual que entiendas en cinco minutos, <a href="#presupuesto">pídeme presupuesto</a>.</p>
+<p><strong>Para profundizar:</strong> <a href="como-usar-google-search-console-guia-para-empezar.html">Search Console</a>, <a href="../seo.html">SEO</a>.</p>
+  </div>
+
+  <div class="author-box">
+    <div class="author-avatar">SP</div>
+    <div>
+      <div class="author-name">Santiago Payá de la Cruz</div>
+      <div class="author-role">Fundador de Connectia</div>
+      <div class="author-bio">Especialista en SEO y crecimiento digital con experiencia en multinacionales (Mettler-Toledo) y agencias (Estudio34, adSalsa). Fundador de Connectia. <a href="../nosotros.html">Más sobre Santiago →</a></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--surface)">
+  <div class="section-label">FAQ</div>
+  <h2>Preguntas frecuentes</h2>
+  <div class="faq-list"><div class="faq-item"><button class="faq-question">¿Puedo usar dos herramientas a la vez?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Sí, pero puede complicar el consentimiento y la interpretación. Úsalo solo si hay una razón clara.</p></div></div><div class="faq-item"><button class="faq-question">¿Es obligatorio usar GA4?<span class="faq-icon">+</span></button><div class="faq-answer"><p>No. Es una opción entre varias. Elige según tus necesidades y tu capacidad de configurarla bien.</p></div></div><div class="faq-item"><button class="faq-question">¿Una analítica sin cookies cuenta mejor o peor?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Cuenta de otra manera: es más simple y menos intrusiva, pero con menos detalle sobre usuarios individuales.</p></div></div><div class="faq-item"><button class="faq-question">¿Qué datos son imprescindibles para una pyme?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Fuentes de tráfico, páginas más visitadas, conversiones (llamadas, formularios, ventas) y búsquedas de Search Console.</p></div></div></div>
+</section>
+
+<!--autolinks--><section class="related-links"><div class="section-label">Relacionado</div><h2>Sigue explorando</h2><h3 style="margin:1.6rem 0 .6rem;font-size:1rem;opacity:.8">Servicios relacionados</h3><div class="acc-links"><a href="../seo.html">SEO</a><a href="../webs.html">Diseño Web</a><a href="../sea.html">SEA &amp; Paid Media</a></div><h3 style="margin:1.6rem 0 .6rem;font-size:1rem;opacity:.8">Guías relacionadas</h3><div class="acc-links"><a href="rank-math-vs-yoast-seo-cual-instalar-en-wordpress.html">Rank Math vs Yoast SEO: cuál instalar en WordPress</a><a href="seo-vs-sea-que-conviene-a-una-pyme.html">SEO vs SEA: qué conviene a una pyme y cuándo combinarlos</a><a href="cuanto-cuesta-contratar-un-consultor-seo-modelos-de-precio.html">Cuánto cuesta un consultor SEO: modelos de precio y qué esperar</a></div><h3 style="margin:1.6rem 0 .6rem;font-size:1rem;opacity:.8">Dónde trabajamos</h3><div class="acc-links"><a href="../seo-local.html">SEO local por zonas: Alcoy, Alicante y toda España</a><a href="../web-rapida.html">Página web en pocos días: 24 h, 3 días, 1 semana</a><a href="../blog.html">Blog</a></div><h3 style="margin:1.6rem 0 .6rem;font-size:1rem;opacity:.8">Fuentes oficiales</h3><div class="acc-links"><a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="noopener">Google: guía de inicio en SEO ↗</a><a href="https://developers.google.com/search/docs" target="_blank" rel="noopener">Google Search Central ↗</a></div></section><!--/autolinks-->
+<section id="presupuesto" style="background:var(--surface)">
+  <div class="contact-grid">
+    <div>
+      <div class="section-label">Presupuesto</div>
+      <h2>Cuéntame qué necesitas.<br><span class="dim">Te contesto con precio.</span></h2>
+      <p>Sin comerciales por medio: lees mi respuesta, decides y, si no encaja, no pasa nada. Cuanto más concreto seas, más ajustado va el presupuesto.</p>
+      <ul class="trust-bar" style="flex-direction:column;margin-top:1.4rem"><li>Te respondo yo, en menos de 24 h laborables</li><li>Alcance, plazo y precio cerrado, por escrito</li><li>Si no veo una oportunidad real, te lo digo</li><li>Sin permanencia ni letra pequeña</li></ul>
+      <ol class="q-steps"><li><b>1</b><div><strong>Me lees</strong><span>Me cuentas tu caso en un minuto.</span></div></li><li><b>2</b><div><strong>Te contesto</strong><span>Te llamo o te escribo con dudas y una primera idea.</span></div></li><li><b>3</b><div><strong>Propuesta</strong><span>Alcance, plazo y precio cerrado por escrito.</span></div></li></ol>
+    </div>
+    <div>
+      <form class="contact-form quote-form" action="https://formspree.io/f/mpqngnoa" method="POST" data-lang="es">
+        <input type="hidden" name="_subject" value="Nuevo presupuesto web: Blog: google-analytics-4-vs-matomo-vs-plausible-analitica-para-pymes">
+        <input type="hidden" name="topic" value="Blog: google-analytics-4-vs-matomo-vs-plausible-analitica-para-pymes">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <div class="form-group"><label for="q-name-47115">Nombre</label><input id="q-name-47115" type="text" name="name" autocomplete="name" required></div>
+        <div class="form-group"><label for="q-mail-47115">Email</label><input id="q-mail-47115" type="email" name="email" autocomplete="email" required></div>
+        <div class="form-group"><label for="q-tel-47115">Teléfono (opcional)</label><input id="q-tel-47115" type="tel" name="phone" autocomplete="tel"></div>
+        <div class="form-group"><label for="q-msg-47115">¿Qué necesitas y para cuándo?</label><textarea id="q-msg-47115" name="message" rows="4" placeholder="Ej.: Tengo una clínica en Alcoy y quiero salir en Google Maps antes de septiembre" required></textarea></div>
+        <button type="submit" class="btn-primary" style="width:100%;justify-content:center;padding:1rem">Pedir presupuesto gratis →</button>
+        <p style="font-size:.75rem;color:var(--text-muted);text-align:center;margin:0">Respondo personalmente. Tus datos se usan solo para contestarte.</p>
+        <p style="font-size:.85rem;text-align:center;margin:.2rem 0 0">¿Prefieres escribir directamente? <a href="mailto:santipayadelacruz@gmail.com?subject=Nuevo presupuesto web: Blog: google-analytics-4-vs-matomo-vs-plausible-analitica-para-pymes">santipayadelacruz@gmail.com</a></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-label">Sigue leyendo</div>
+  <h2>Más artículos del blog</h2>
+  <div class="related-grid"><a href="seo-vs-sea-que-conviene-a-una-pyme.html" class="blog-card"><span class="tag">Comparativas</span><div class="blog-card-title">SEO vs SEA: qué conviene a una pyme y cuándo combinarlos</div><div class="blog-card-excerpt">Comparativa de SEO y SEA para pymes: coste, plazos, control, riesgos y cuándo conviene cada uno o ambos a la vez.</div></a><a href="agencia-seo-vs-consultor-freelance-cual-elegir.html" class="blog-card"><span class="tag">Comparativas</span><div class="blog-card-title">Agencia SEO vs consultor freelance: cuál elegir según tu caso</div><div class="blog-card-excerpt">Comparativa honesta entre agencia SEO y consultor freelance: trato, coste, capacidad, riesgos y preguntas clave antes de contratar.</div></a><a href="ahrefs-vs-semrush-cual-elegir-para-seo.html" class="blog-card"><span class="tag">Comparativas</span><div class="blog-card-title">Ahrefs vs Semrush: cuál elegir para tu SEO (y alternativas gratis)</div><div class="blog-card-excerpt">Comparativa práctica de Ahrefs y Semrush para SEO: puntos fuertes, límites, para quién encaja cada una y alternativas gratuitas para empezar.</div></a></div>
+</section>
+
+<script src="../../shared.js"></script>
+</body>
+</html>
