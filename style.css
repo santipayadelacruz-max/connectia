@@ -1236,3 +1236,46 @@ section h2{margin-bottom:.8rem}
 .logo-item:hover .logo-img{opacity:1;transform:scale(1.05)}
 @media(max-width:768px){.logo-img{height:calc(var(--h,40)*.72px)}}
 @media(max-width:480px){.logo-img{height:calc(var(--h,40)*.62px)}}
+
+/* ══ HERO QUOTE CARD + BLOG SIDEBAR: use the empty side on desktop ══ */
+.hero-card{display:none}
+.hc-h{font-weight:700;font-size:1.15rem;color:var(--text-primary);margin-bottom:.35rem}
+.hc-p{font-size:.88rem;color:var(--text-body);margin:0 0 1rem;line-height:1.5}
+.hc-form{display:flex;flex-direction:column;gap:.6rem}
+.hc-form input,.hc-form textarea{width:100%;box-sizing:border-box;background:var(--black);border:1px solid var(--border2);border-radius:10px;color:var(--text-primary);padding:.7rem .85rem;font:inherit;font-size:.9rem}
+.hc-form textarea{resize:vertical;min-height:84px}
+.hc-form input:focus,.hc-form textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+.hc-form .btn-primary{width:100%;justify-content:center;padding:.9rem}
+.hc-list{list-style:none;margin:1rem 0 0;padding:0;display:grid;gap:.4rem;font-size:.8rem;color:var(--text-muted)}
+.hc-list li::before{content:"\2713";color:var(--accent);margin-right:.5rem;font-weight:700}
+@media(min-width:1100px){
+  .page-hero.has-card,.hero.has-card{display:grid;grid-template-columns:minmax(0,1fr) 380px;column-gap:3.5rem;align-items:center}
+  .hero.has-card h1{font-size:clamp(2.6rem,4.6vw,4.4rem)}
+  .hero.has-card .hero-content{max-width:none}
+  .has-card .hero-card{display:block;position:relative;z-index:2;background:var(--surface);border:1px solid var(--border2);border-radius:20px;padding:1.6rem;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+  .post-layout{display:grid;grid-template-columns:minmax(0,740px) 340px;column-gap:3.5rem;align-items:start}
+  .post-layout .article-body{max-width:none;min-width:0}
+  .post-layout .hero-card{display:block;position:sticky;top:96px;background:var(--surface);border:1px solid var(--border2);border-radius:18px;padding:1.4rem}
+}
+@media(min-width:1100px){
+  .post-layout>*{grid-column:1}
+  .post-layout>.hero-card{grid-column:2;grid-row:1/span 4;align-self:start}
+  .post-layout>.toc{margin-bottom:1.4rem}
+}
+
+/* answer block: breathing room between lead text and the four cards */
+.geo-lead p{margin-bottom:0}
+.geo-points{margin-top:1.8rem!important}
+.geo-answer .geo-lead>h2{margin-bottom:1rem}
+
+/* ══ DESKTOP SPLIT LAYOUTS (>=1100px): use the right side ══ */
+@media(min-width:1100px){
+  .geo-answer .geo-lead{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);column-gap:3.5rem;align-content:start}
+  .geo-answer .geo-lead>*{grid-column:1}
+  .geo-answer .geo-lead>.geo-points{grid-column:2;grid-row:1/span 4;grid-template-columns:1fr;align-self:center;margin-top:0!important}
+  section.split{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);column-gap:3.5rem;align-content:start}
+  section.split>.section-label,section.split>h2,section.split>p,section.split>.vz-sub{grid-column:1;max-width:none!important}
+  section.split>.sp-main{grid-column:2;grid-row:1/span 6;align-self:start}
+  section.split .vz-facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  section.split>*:not(.section-label):not(h2):not(p):not(.vz-sub):not(.sp-main){grid-column:1/-1}
+}
