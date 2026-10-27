@@ -3,7 +3,7 @@
 > Connectia is an independent SEO, GEO (AI search visibility) and fast-website consultancy run by Santiago Payá de la Cruz. It helps businesses get found in Google, Maps and AI assistants such as ChatGPT, Perplexity and Gemini, with work measured in calls, quotes and enquiries. Languages: English and Spanish. Delivery: fully remote. Pricing is fixed and given in writing after a free 30-minute call; no ranking guarantees are made.
 
 ## Main pages (English)
-- [Connectia](https://connectia.one/index.html)
+- [Connectia](https://connectia.one/)
 - [SEO](https://connectia.one/seo.html)
 - [GEO Optimization](https://connectia.one/geo.html)
 - [SEO Consultant by City](https://connectia.one/local-seo.html)
@@ -13,7 +13,7 @@
 - [Blog](https://connectia.one/blog.html)
 
 ## Páginas principales (español)
-- [Connectia](https://connectia.one/es/index.html)
+- [Connectia](https://connectia.one/es/)
 - [SEO](https://connectia.one/es/seo.html)
 - [Optimización GEO](https://connectia.one/es/geo.html)
 - [SEO local por zonas: Alcoy, Alicante y toda España](https://connectia.one/es/seo-local.html)
