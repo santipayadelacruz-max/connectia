@@ -68,7 +68,7 @@
     const destMap = target === 'es' ? ES : EN;
     // Match against relFile (path relative to the current language root),
     // not the bare filename — subpages like 'seo/audit.html' only match this way.
-    const key = (isES && (relFile === 'seo-local.html' || relFile.startsWith('seo-local/') || relFile === 'web-rapida.html' || relFile.startsWith('web-rapida/') || relFile.startsWith('diseno-web/'))) ? (relFile.indexOf('web') > -1 && relFile.indexOf('seo') < 0 ? 'webdesign' : 'seo-local') : (!isES && (relFile === 'local-seo.html' || relFile.startsWith('local/'))) ? 'seo-local' : (!isES && (relFile === 'fast-website.html' || relFile.startsWith('fast-website/'))) ? 'webdesign' : (keys.find(k => srcMap[k] === relFile) || 'index');
+    const key = (isES && (relFile === 'seo-local.html' || relFile.startsWith('seo-local/') || relFile === 'web-rapida.html' || relFile.startsWith('web-rapida/') || relFile.startsWith('diseno-web/') || relFile === 'diseno-web-por-zonas.html')) ? (relFile.indexOf('web') > -1 && relFile.indexOf('seo') < 0 ? 'webdesign' : 'seo-local') : (!isES && (relFile === 'local-seo.html' || relFile.startsWith('local/'))) ? 'seo-local' : (!isES && (relFile === 'web-design-by-city.html' || relFile.startsWith('websites/') || relFile === 'fast-website.html' || relFile.startsWith('fast-website/'))) ? 'webdesign' : (keys.find(k => srcMap[k] === relFile) || 'index');
     if (relFile === 'seo-local-guia.html' || relFile === 'local-seo-guide.html') {
       location.href = target === 'es' ? pre + 'es/seo-local-guia.html' : (isES ? pre + '../local-seo-guide.html' : pre + 'local-seo-guide.html');
       return;
@@ -176,31 +176,11 @@
           <li><a href="${h('seo-technical')}">${t('Technical SEO','SEO Técnico')}</a></li>
           <li><a href="${h('seo-international')}">${t('International SEO','SEO Internacional')}</a></li>
           <li><a href="${h('seo-local')}">${t('Local SEO','SEO Local')}</a></li>
-          ${isES ? `<li><a href="${hf('seo-local.html')}">SEO local por zonas</a></li>
-          <li><a href="${hf('seo-local-guia.html')}">Guía de SEO local</a></li>
-          <li><a href="${hf('seo-local/seo-alcoy.html')}">SEO en Alcoy</a></li>
-          <li><a href="${hf('seo-local/seo-alicante.html')}">SEO en Alicante</a></li>
-          <li><a href="${hf('seo-local/seo-valencia.html')}">SEO en Valencia</a></li>
-          <li><a href="${hf('seo-local/seo-madrid.html')}">SEO en Madrid</a></li>
-          <li><a href="${hf('seo-local/seo-barcelona.html')}">SEO en Barcelona</a></li>
-          <li><a href="${hf('seo-local/seo-sevilla.html')}">SEO en Sevilla</a></li>
-          <li><a href="${hf('seo-local/seo-malaga.html')}">SEO en Málaga</a></li>
-          <li><a href="${hf('seo-local/seo-bilbao.html')}">SEO en Bilbao</a></li>
-          <li><a href="${hf('seo-local/seo-zaragoza.html')}">SEO en Zaragoza</a></li>
-          ` : `<li><a href="${hf('local-seo.html')}">Local SEO by city</a></li>
-          <li><a href="${hf('local-seo-guide.html')}">Local SEO guide</a></li>
-          <li><a href="${hf('local/seo-consultant-zurich.html')}">SEO in Zurich</a></li>
-          <li><a href="${hf('local/seo-consultant-geneva.html')}">SEO in Geneva</a></li>
-          <li><a href="${hf('local/seo-consultant-basel.html')}">SEO in Basel</a></li>
-          <li><a href="${hf('local/seo-consultant-london.html')}">SEO in London</a></li>
-          <li><a href="${hf('local/seo-consultant-manchester.html')}">SEO in Manchester</a></li>
-          <li><a href="${hf('local/seo-consultant-edinburgh.html')}">SEO in Edinburgh</a></li>
-          <li><a href="${hf('local/seo-consultant-dublin.html')}">SEO in Dublin</a></li>
-          <li><a href="${hf('local/seo-consultant-new-york-city.html')}">SEO in New York</a></li>
-          <li><a href="${hf('local/seo-consultant-chicago.html')}">SEO in Chicago</a></li>
-          <li><a href="${hf('local/seo-consultant-los-angeles.html')}">SEO in Los Angeles</a></li>
-          <li><a href="${hf('local/seo-consultant-toronto.html')}">SEO in Toronto</a></li>
-          `}
+          ${isES ? `<li><a href="/es/seo-local.html">SEO local por zonas</a></li>
+          <li><a href="/es/diseno-web-por-zonas.html">Diseño web por zonas</a></li>
+          <li><a href="/es/seo-local-guia.html">Guía de SEO local</a></li>` : `<li><a href="/local-seo.html">Local SEO by city</a></li>
+          <li><a href="/web-design-by-city.html">Web design by city</a></li>
+          <li><a href="/local-seo-guide.html">Local SEO guide</a></li>`}
         </ul>
       </div>
       <div class="footer-col">
@@ -230,6 +210,13 @@
       <span><a href="${h('privacy')}" style="color:var(--text-muted)">${t('Privacy','Privacidad')}</a> · <a href="${h('cookies')}" style="color:var(--text-muted)">Cookies</a> · <a href="mailto:santipayadelacruz@gmail.com" style="color:var(--text-muted)">santipayadelacruz@gmail.com</a></span>
     </div>`;
   document.body.append(footer);
+  /* All locations live in the footer (static HTML in each page, moved here) */
+  const fl = document.getElementById('foot-locs');
+  if (fl) {
+    const fb = footer.querySelector('.footer-bottom');
+    footer.insertBefore(fl, fb);
+    if (window.innerWidth < 900) fl.querySelectorAll('details').forEach(d => d.removeAttribute('open'));
+  }
 
   /* ── Scroll nav + logo morph ── */
   window.addEventListener('scroll', () => {

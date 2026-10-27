@@ -25,6 +25,9 @@
 ## Location pages
 - [SEO consultant by city (619 cities, EN)](https://connectia.one/local-seo.html): per-city pages on local SEO, sectors, typical searches and FAQs.
 - [SEO local por zonas (655 localidades, ES)](https://connectia.one/es/seo-local.html): una página por localidad, con sectores, búsquedas típicas y preguntas frecuentes.
+
+- [Web design by city (619 cities, EN)](https://connectia.one/web-design-by-city.html): per-city pages on web design, sector needs, timelines and FAQs.
+- [Diseño web por zonas (515 localidades, ES)](https://connectia.one/es/diseno-web-por-zonas.html): una página por localidad con la web que necesita cada sector.
 - [How local SEO works: visual guide (EN)](https://connectia.one/local-seo-guide.html): what customers see, how Google decides, 90-day plan.
 - [Cómo funciona el SEO local: guía visual (ES)](https://connectia.one/es/seo-local-guia.html): lo que ve el cliente, cómo decide Google, plan a 90 días.
 

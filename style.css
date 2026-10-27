@@ -1180,3 +1180,59 @@ details.acc .feature-list{margin-top:0}
 .vz-card .vz-badge{margin-bottom:.4rem}
 @media(max-width:900px){.vz-zone{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){.vz-zone{grid-template-columns:1fr}}
+
+/* ══ COMPACT LAYOUT v12: less white space, covers and icons that scale ══ */
+section{padding-top:3.2rem;padding-bottom:3.2rem}
+.page-hero{padding-top:3.6rem;padding-bottom:2.4rem}.page-hero h1{font-size:clamp(2.1rem,4.4vw,3.5rem)}
+.hero{padding-bottom:3.5rem}
+.cta-banner{padding-top:3.5rem;padding-bottom:3.5rem}
+.post-cover-wrap{padding-top:1.6rem;padding-bottom:0}
+.post-cover img{height:auto}.post-cover{max-width:720px;margin:0 0 1.2rem;border-radius:14px}
+.post-cover-wrap+section{padding-top:1.6rem}
+svg{max-width:100%}
+.vz-ic{max-width:none}
+section h2{margin-bottom:.8rem}
+.section-label{margin-bottom:.5rem}
+@media(max-width:880px){
+  section{padding-top:2.6rem;padding-bottom:2.6rem}
+  .page-hero{padding-top:3rem;padding-bottom:2rem}
+  .cta-banner{padding-top:3rem;padding-bottom:3rem}
+}
+@media(max-width:768px){
+  section{padding-top:2.2rem;padding-bottom:2.2rem}
+  .page-hero{padding-top:2.6rem;padding-bottom:1.6rem}
+  .post-cover-wrap{padding-top:1.1rem}
+  .post-cover{margin-bottom:.8rem;border-radius:12px}
+  .cta-banner{padding-top:2.4rem;padding-bottom:2.4rem}
+}
+@media(max-width:480px){
+  section{padding-top:1.9rem;padding-bottom:1.9rem}
+  .page-hero{padding-top:2.3rem;padding-bottom:1.4rem}
+}
+.toc{margin:0 0 1.6rem;max-width:740px}
+
+/* ══ FOOTER LOCATIONS DIRECTORY ══ */
+.foot-locs{max-width:1400px;margin:0 auto;padding:1.6rem 0 0;border-top:1px solid var(--border);grid-column:1/-1}
+.fl-top{display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;align-items:center;margin-bottom:.8rem;font-size:.78rem}
+.fl-top b{color:var(--text-primary);text-transform:uppercase;letter-spacing:.08em;font-size:.7rem}
+.fl-top a{color:var(--accent)}
+.fl-sec{border-bottom:1px solid var(--border);padding:.2rem 0}
+.fl-sec>summary{cursor:pointer;list-style:none;font-size:.82rem;font-weight:600;color:var(--text-primary);padding:.7rem 0;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.fl-sec>summary::-webkit-details-marker{display:none}
+.fl-sec>summary::after{content:"+";color:var(--accent);font-size:1.1rem;font-weight:400}
+.fl-sec[open]>summary::after{content:"\2212"}
+.fl-sec>summary span{margin-left:auto;font-weight:400;color:var(--text-muted);font-size:.72rem}
+.fl-groups{column-width:15rem;column-gap:1.6rem;padding:.2rem 0 1rem}
+.fl-g{margin:0 0 .9rem;break-inside:avoid-column}
+.fl-g h4{margin:0 0 .3rem;font-size:.66rem;text-transform:uppercase;letter-spacing:.09em;color:var(--accent);font-weight:700;break-after:avoid-column}
+.fl-l{font-size:.68rem;line-height:1.55;color:var(--text-muted)}
+.fl-l a{display:inline-block;margin:0 .5rem 0 0;color:var(--text-muted);text-decoration:none;white-space:nowrap}
+.fl-l a:hover,.fl-l a:focus-visible{color:var(--accent);text-decoration:underline}
+.fl-g.big{break-inside:auto}
+@media(max-width:700px){.fl-groups{column-width:100%}.fl-l{font-size:.7rem;line-height:1.7}}
+
+/* ══ BRAND CAROUSEL: real logos on transparent PNG ══ */
+.logo-img{display:block;height:calc(var(--h,40)*1px);width:auto;max-width:none;opacity:.88;transition:opacity .25s,transform .25s}
+.logo-item:hover .logo-img{opacity:1;transform:scale(1.05)}
+@media(max-width:768px){.logo-img{height:calc(var(--h,40)*.72px)}}
+@media(max-width:480px){.logo-img{height:calc(var(--h,40)*.62px)}}
