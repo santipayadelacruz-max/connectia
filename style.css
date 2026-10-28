@@ -1279,3 +1279,16 @@ section h2{margin-bottom:.8rem}
   section.split .vz-facts{grid-template-columns:repeat(2,minmax(0,1fr))}
   section.split>*:not(.section-label):not(h2):not(p):not(.vz-sub):not(.sp-main){grid-column:1/-1}
 }
+
+/* ══ v16 hero fixes ══ */
+.btn-primary,.btn-secondary{position:relative}
+body::before{display:none}
+@media(min-width:1100px){
+  .has-card>*:not(.hero-card):not(.hero-glow):not(.hero-grid){grid-column:1}
+  .has-card>.hero-card{grid-column:2;grid-row:1/span 6;align-self:center}
+  .page-hero.has-card .page-hero-content{max-width:none}
+}
+.hero-glow{-webkit-mask-image:radial-gradient(ellipse 70% 75% at 50% 50%,#000 30%,transparent 100%);mask-image:radial-gradient(ellipse 70% 75% at 50% 50%,#000 30%,transparent 100%)}
+@media(min-width:1100px){
+  .post-layout>.hero-card{margin-top:-27rem;z-index:3}
+}
