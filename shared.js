@@ -222,7 +222,6 @@
   window.addEventListener('scroll', () => {
     const y = window.scrollY;
     nav.classList.toggle('scrolled', y > 40);
-    nav.classList.toggle('logo-morphed', y > 80);
   }, {passive:true});
 
   /* ── Scroll reveal ── */
@@ -399,7 +398,7 @@
     var G=es?[['Más clientes desde Google','Quiero conseguir más clientes desde Google. Mi negocio es: '],['Que me recomiende la IA','Quiero aparecer en ChatGPT y otras IAs. Mi negocio es: '],['Web nueva','Necesito una web nueva. Mi negocio es: '],['Campañas de pago','Quiero lanzar campañas de pago rentables. Mi negocio es: '],['Otra cosa','Os cuento mi caso: ']]
             :[['More enquiries from Google','I want more enquiries from Google. My business is: '],['Get recommended by AI','I want to show up in ChatGPT and other AI tools. My business is: '],['New website','I need a new website. My business is: '],['Paid campaigns','I want paid campaigns that pay for themselves. My business is: '],['Something else','Here is my situation: ']];
     document.querySelectorAll('form textarea[name="message"]').forEach(function(t){
-      var f=t.closest('form'); if(!f||f.querySelector('.q-chips')) return;
+      var f=t.closest('form'); if(!f||f.classList.contains('hc-form')||f.querySelector('.q-chips')) return;
       var box=document.createElement('div'); box.className='q-chips'; box.setAttribute('role','group');
       box.setAttribute('aria-label',es?'¿Qué quieres conseguir?':'What do you want to achieve?');
       G.forEach(function(g){var b=document.createElement('button');b.type='button';b.className='q-chip';b.textContent=g[0];b.setAttribute('aria-pressed','false');
@@ -423,12 +422,108 @@
         requestAnimationFrame(step);});},{threshold:.5}); io.observe(el);});
   })();
 
-  /* Reading progress bar on blog posts */
+
+  /* Guided quote wizard: segments the lead step by step, sends everything to the same Formspree form */
   (function(){
-    var a=document.querySelector('.article-body'); if(!a) return;
-    var bar=document.createElement('div'); bar.className='read-bar'; bar.setAttribute('aria-hidden','true'); document.body.appendChild(bar);
-    var tick=false; function upd(){tick=false; var r=a.getBoundingClientRect(); var total=r.height-window.innerHeight*.6; var p=total>0?Math.min(Math.max(-r.top/total,0),1):0; bar.style.transform='scaleX('+p+')';}
-    window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd);}},{passive:true}); upd();
+    var targets=[].slice.call(document.querySelectorAll('form.quote-form:not(.hc-form), form#contact-form'));
+    if(!targets.length||!window.fetch) return;
+    var es=document.documentElement.lang==='es';
+    var T=function(a,b){return es?b:a};
+    var SV=[['seo','SEO',1],['geo',T('AI search (GEO)','Buscadores de IA (GEO)'),1],['sea','Paid Media',1],['web',T('Website','Web'),1],['aut',T('Automation','Automatización'),1],['app',T('Custom app or tool','App o herramienta'),1],['con',T('Content','Contenido'),1],['nose',T('Not sure yet','Aún no lo sé'),1]];
+    var BIZ=[T('Local business or freelancer','Negocio local o autónomo'),T('Small or mid-sized company','Pyme'),'E-commerce',T('Large company or B2B','Empresa grande o B2B'),T('Agency or other','Agencia u otro')];
+    var WEB=[T('No website yet','Aún no tengo web'),T('Have one and it works','Tengo y funciona'),T('Have one, want to redo it','Tengo y quiero rehacerla')];
+    var GOAL=[T('More enquiries','Más consultas'),T('More online sales','Más ventas online'),T('Show up in AI answers','Aparecer en respuestas de IA'),T('Save team time','Ahorrar tiempo al equipo'),T('Improve what I have','Mejorar lo que ya tengo')];
+    var WHEN=[T('As soon as possible','Cuanto antes'),T('In 1 to 3 months','En 1 a 3 meses'),T('Just exploring','Solo estoy explorando')];
+    var BUD=[T('Under 1,000 EUR','Menos de 1.000 €'),'1.000 – 3.000 €'.replace('.',T(',','.')),'3.000 – 8.000 €'.replace('.',T(',','.')),T('Over 8,000 EUR','Más de 8.000 €'),T('Advise me','Prefiero que me orientes')];
+    var steps=[
+      {k:'services',q:T('What do you need help with?','¿En qué necesitas ayuda?'),h:T('Pick all that apply.','Elige todo lo que encaje.'),type:'multi',opts:SV.map(function(x){return x[1]}),keys:SV.map(function(x){return x[0]}),req:1},
+      {k:'business',q:T('Tell me about your business','Cuéntame de tu negocio'),type:'single',opts:BIZ,req:1,extra:{k:'website',q:T('And your website?','¿Y tu web?'),opts:WEB}},
+      {k:'goal',q:T('What do you want to achieve?','¿Qué quieres conseguir?'),type:'single',opts:GOAL,req:1,extra:{k:'timing',q:T('When do you want to start?','¿Para cuándo?'),opts:WHEN}},
+      {k:'budget',q:T('Rough investment you have in mind','Inversión aproximada que tienes en mente'),h:T('Optional. It helps me quote in the right range.','Opcional. Me ayuda a ajustar el presupuesto.'),type:'single',opts:BUD,req:0},
+      {k:'contact',q:T('Where do I send the quote?','¿Dónde te envío el presupuesto?'),type:'contact'}
+    ];
+    var preset=null; window.cqPreset=function(key){preset=key;targets.forEach(function(f){if(f._cq)f._cq.preset(key)})};
+    function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+    targets.forEach(function(orig,idx){
+      var action=orig.getAttribute('action'); if(!action) return;
+      var ans={services:[],business:'',website:'',goal:'',timing:'',budget:''}, cur=0, uid='cq'+idx;
+      var w=el('form','cq'); w.setAttribute('novalidate',''); w.setAttribute('aria-label',T('Quote request','Solicitud de presupuesto'));
+      var prog=el('div','cq-prog'); var bar=el('i'); prog.appendChild(bar); var cnt=el('div','cq-count'); w.appendChild(cnt); w.appendChild(prog);
+      var body=el('div','cq-body'); w.appendChild(body);
+      var nav=el('div','cq-nav'); var back=el('button','cq-back',T('Back','Atrás')); back.type='button';
+      var next=el('button','btn-primary cq-next'); next.type='button'; nav.appendChild(back); nav.appendChild(next); w.appendChild(nav);
+      var note=el('p','cq-note',T('I reply personally within 24 business hours. Your details are used only to answer you.','Te respondo personalmente en 24 horas laborables. Tus datos se usan solo para contestarte.')); w.appendChild(note);
+      var hp=document.createElement('input'); hp.type='text'; hp.name='_gotcha'; hp.tabIndex=-1; hp.autocomplete='off'; hp.style.display='none'; w.appendChild(hp);
+      function opt(group,name,label,type,checked,onchg){
+        var l=el('label','cq-opt'); var i=document.createElement('input'); i.type=type; i.name=uid+name; i.checked=!!checked;
+        i.addEventListener('change',onchg); l.appendChild(i); l.appendChild(el('span','',label)); return l}
+      function group(title,hint,type,name,opts,sel,onpick){
+        var fs=el('fieldset','cq-fs'); var lg=el('legend','',title); fs.appendChild(lg); if(hint) fs.appendChild(el('p','cq-hint',hint));
+        var box=el('div','cq-opts');
+        opts.forEach(function(o,i){box.appendChild(opt(fs,name,o,type,sel(o,i),function(){onpick(o,i,this.checked)}))});
+        fs.appendChild(box); return fs}
+      function valid(){var s=steps[cur];
+        if(s.type==='multi') return ans.services.length>0;
+        if(s.type==='single'){ if(s.req&&!ans[s.k]) return false; if(s.extra&&!ans[s.extra.k]) return false; return true}
+        if(s.type==='contact'){var n=w.querySelector('[name=name]'),m=w.querySelector('[name=email]'); return !!(n&&m&&n.value.trim().length>1&&/^\S+@\S+\.\S+$/.test(m.value.trim()))}
+        return true}
+      function refresh(){next.disabled=!valid(); }
+      function render(){
+        body.innerHTML=''; var s=steps[cur];
+        cnt.textContent=T('Step ','Paso ')+(cur+1)+' / '+steps.length; bar.style.width=((cur+1)/steps.length*100)+'%';
+        back.style.visibility=cur?'visible':'hidden';
+        next.textContent=cur===steps.length-1?T('Send my request →','Enviar mi solicitud →'):T('Continue →','Continuar →');
+        if(s.type==='multi'){
+          body.appendChild(group(s.q,s.h,'checkbox','svc',s.opts,function(o,i){return ans.services.indexOf(o)>-1},function(o,i,c){var k=ans.services.indexOf(o); if(c&&k<0)ans.services.push(o); if(!c&&k>-1)ans.services.splice(k,1); refresh()}));
+        } else if(s.type==='single'){
+          body.appendChild(group(s.q,s.h,'radio',s.k,s.opts,function(o){return ans[s.k]===o},function(o){ans[s.k]=o;refresh()}));
+          if(s.extra) body.appendChild(group(s.extra.q,'','radio',s.extra.k,s.extra.opts,function(o){return ans[s.extra.k]===o},function(o){ans[s.extra.k]=o;refresh()}));
+        } else {
+          var fs=el('fieldset','cq-fs'); fs.appendChild(el('legend','',s.q));
+          function f(label,name,type,auto,req){var g=el('div','form-group'); var l=el('label','',label); var i=document.createElement(type==='area'?'textarea':'input'); if(type!=='area')i.type=type; else i.rows=3; i.name=name; i.id=uid+name; l.htmlFor=i.id; if(auto)i.autocomplete=auto; i.value=ans['_'+name]||''; i.addEventListener('input',function(){ans['_'+name]=i.value;refresh()}); g.appendChild(l); g.appendChild(i); fs.appendChild(g)}
+          f(T('Name','Nombre'),'name','text','name'); f('Email','email','email','email'); f(T('Phone (optional)','Teléfono (opcional)'),'phone','tel','tel'); f(T('Anything else? (optional)','¿Algo más? (opcional)'),'message','area');
+          body.appendChild(fs);
+        }
+        refresh();
+        var first=body.querySelector('input,textarea'); if(first&&cur>0&&w._started) first.focus({preventScroll:true});
+      }
+      function summary(){return [T('Services','Servicios')+': '+ans.services.join(', '),T('Business','Negocio')+': '+ans.business,T('Website','Web')+': '+ans.website,T('Goal','Objetivo')+': '+ans.goal,T('Timing','Plazo')+': '+ans.timing,T('Budget','Inversión')+': '+(ans.budget||'-')].join('\n')}
+      function send(){
+        var fd=new FormData(); var get=function(n){var e=w.querySelector('[name='+n+']');return e?e.value.trim():''};
+        fd.append('_subject',T('New guided quote: ','Nuevo presupuesto guiado: ')+ans.services.join(' + ')+' | '+ans.business);
+        fd.append('topic',T('Guided quote','Presupuesto guiado')); fd.append('services',ans.services.join(', ')); fd.append('business_type',ans.business); fd.append('website_status',ans.website);
+        fd.append('goal',ans.goal); fd.append('timing',ans.timing); fd.append('budget',ans.budget||''); fd.append('name',get('name')); fd.append('email',get('email')); fd.append('_replyto',get('email')); fd.append('phone',get('phone'));
+        fd.append('message',summary()+(get('message')?'\n\n'+get('message'):'')+'\n\nPage: '+location.pathname); fd.append('_gotcha',hp.value);
+        next.disabled=true; next.textContent=T('Sending…','Enviando…'); w.querySelectorAll('.cq-err').forEach(function(n){n.remove()});
+        fetch(action,{method:'POST',body:fd,headers:{'Accept':'application/json'}}).then(function(r){if(!r.ok)throw 0;
+          w.innerHTML=''; var d=el('div','cq-done'); d.appendChild(el('div','cq-check','✓')); d.appendChild(el('h3','',T('Received, thank you.','Recibido, gracias.'))); d.appendChild(el('p','',T('I will reply within 24 business hours with questions and a first idea.','Te respondo en 24 horas laborables con preguntas y una primera idea.'))); w.appendChild(d);
+          try{if(window.gtag)gtag('event','generate_lead')}catch(e){}
+        }).catch(function(){next.disabled=false;next.textContent=T('Send my request →','Enviar mi solicitud →'); var p=el('p','cq-err',T('Something went wrong. Email santipayadelacruz@gmail.com.','Algo salió mal. Escríbeme a santipayadelacruz@gmail.com.')); nav.before(p)});
+      }
+      next.addEventListener('click',function(){ if(!valid())return; w._started=1; if(cur<steps.length-1){cur++;render(); w.scrollIntoView({block:'nearest'})} else send()});
+      back.addEventListener('click',function(){if(cur>0){cur--;render()}});
+      w.addEventListener('submit',function(e){e.preventDefault(); if(valid()) next.click()});
+      w.addEventListener('keydown',function(e){if(e.key==='Enter'&&e.target.tagName==='INPUT'&&e.target.type!=='checkbox'&&e.target.type!=='radio'){e.preventDefault(); if(valid()) next.click()}});
+      w._cq={preset:function(key){var m={seo:0,geo:1,sea:2,web:3,aut:4,app:5,con:6}; var o=SV[m[key]]; if(!o) return; ans.services=[o[1]]; cur=0; render()}};
+      render(); orig.parentNode.insertBefore(w,orig); orig.style.display='none';
+      var alt=orig.querySelector('a[href^="mailto:"]'); if(alt){var p=el('p','cq-alt',T('Prefer to write directly? ','¿Prefieres escribir directamente? ')); var a=document.createElement('a'); a.href=alt.href; a.textContent=alt.textContent; p.appendChild(a); w.appendChild(p)}
+      w._orig=orig; if(preset) w._cq.preset(preset);
+      // hide the fixed mobile CTA while the wizard is on screen
+      if('IntersectionObserver' in window){new IntersectionObserver(function(en){en.forEach(function(e){document.body.classList.toggle('q-in-view',e.isIntersecting)})},{threshold:.15}).observe(w)}
+    });
+    // finder "Get a quote" buttons preselect the service
+    document.querySelectorAll('.fd-panel .btn-secondary[href="#presupuesto"]').forEach(function(a){a.addEventListener('click',function(){var id=(a.closest('.fd-panel')||{}).id||''; window.cqPreset(id.replace('fd-',''))})});
+  })();
+
+
+  /* Replace emoji icons with clean line SVG icons across the whole site */
+  (function(){
+    var P={"search": "<circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"M21 21l-4.3-4.3\"/>", "bot": "<rect x=\"4\" y=\"8\" width=\"16\" height=\"12\" rx=\"3\"/><path d=\"M12 8V4M9 13v1M15 13v1M9 17h6\"/>", "trend": "<path d=\"M3 17l6-6 4 4 8-9\"/><path d=\"M15 6h6v6\"/>", "pen": "<path d=\"M12 20h9\"/><path d=\"M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z\"/>", "globe": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18\"/>", "phone": "<rect x=\"7\" y=\"2\" width=\"10\" height=\"20\" rx=\"2.5\"/><path d=\"M11 18h2\"/>", "gear": "<circle cx=\"12\" cy=\"12\" r=\"3\"/><path d=\"M19.4 15a1.7 1.7 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.8-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1.1-1.5 1.7 1.7 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.8 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1.1 1.7 1.7 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.8.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.8V9a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z\"/>", "chart": "<path d=\"M4 20V10M10 20V4M16 20v-7M22 20H2\"/>", "link": "<path d=\"M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1\"/><path d=\"M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1\"/>", "target": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><circle cx=\"12\" cy=\"12\" r=\"5\"/><circle cx=\"12\" cy=\"12\" r=\"1.2\"/>", "cart": "<circle cx=\"9\" cy=\"20\" r=\"1.4\"/><circle cx=\"18\" cy=\"20\" r=\"1.4\"/><path d=\"M2 3h3l2.7 12.4a2 2 0 002 1.6h7.7a2 2 0 002-1.5L21 8H6\"/>", "palette": "<path d=\"M12 3a9 9 0 100 18c1.4 0 2-1 1.6-2-.4-1 .2-2 1.4-2H17a4 4 0 004-4c0-5-4-10-9-10z\"/><circle cx=\"8\" cy=\"11\" r=\"1\"/><circle cx=\"12\" cy=\"7.5\" r=\"1\"/><circle cx=\"16\" cy=\"11\" r=\"1\"/>", "wrench": "<path d=\"M14.7 6.3a4 4 0 005 5L21 13l-8 8a2.8 2.8 0 01-4-4l8-8z\"/><path d=\"M14.7 6.3L12 3l-2 2 2.7 2.7\"/>", "doc": "<path d=\"M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z\"/><path d=\"M14 3v5h5M9 13h6M9 17h6\"/>", "mail": "<rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"M3 7l9 6 9-6\"/>", "bolt": "<path d=\"M13 2L4 14h7l-1 8 9-12h-7z\"/>", "bank": "<path d=\"M3 10l9-6 9 6M5 10v8M9 10v8M15 10v8M19 10v8M3 21h18\"/>", "brief": "<rect x=\"3\" y=\"7\" width=\"18\" height=\"13\" rx=\"2\"/><path d=\"M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2M3 13h18\"/>", "factory": "<path d=\"M3 21V10l6 4V10l6 4V6h6v15z\"/><path d=\"M7 17h2M13 17h2M18 17h1\"/>", "laptop": "<rect x=\"4\" y=\"5\" width=\"16\" height=\"11\" rx=\"2\"/><path d=\"M2 20h20\"/>", "compass": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M15.5 8.5L13.5 13.5 8.5 15.5 10.5 10.5z\"/>", "health": "<path d=\"M12 21s-7-4.5-9-9a5 5 0 019-3 5 5 0 019 3c-2 4.5-9 9-9 9z\"/><path d=\"M12 9v6M9 12h6\"/>", "scale": "<path d=\"M12 3v18M5 21h14M5 7h14M5 7l-3 7a3.5 3.5 0 006 0zM19 7l-3 7a3.5 3.5 0 006 0z\"/>", "truck": "<path d=\"M2 6h12v10H2zM14 10h4l4 3v3h-8\"/><circle cx=\"7\" cy=\"18\" r=\"1.8\"/><circle cx=\"18\" cy=\"18\" r=\"1.8\"/>", "home": "<path d=\"M3 11l9-8 9 8M5 10v10h14V10M10 20v-6h4v6\"/>", "gem": "<path d=\"M6 3h12l4 6-10 12L2 9z\"/><path d=\"M2 9h20M9 3l3 6 3-6M12 21L9 9M12 21l3-12\"/>", "cap": "<path d=\"M2 9l10-5 10 5-10 5z\"/><path d=\"M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5\"/>", "users": "<circle cx=\"9\" cy=\"8\" r=\"3.5\"/><path d=\"M2.5 20a6.5 6.5 0 0113 0M16 4.5a3.5 3.5 0 010 7M18 14a6 6 0 013.5 6\"/>", "ruler": "<path d=\"M3 17L17 3l4 4L7 21z\"/><path d=\"M8 12l2 2M11 9l2 2M14 6l2 2\"/>", "flask": "<path d=\"M9 3h6M10 3v6L4.5 19a1.8 1.8 0 001.6 2.5h11.8a1.8 1.8 0 001.6-2.5L14 9V3\"/><path d=\"M7.5 15h9\"/>", "handshake": "<path d=\"M2 12l5-5 4 2 4-2 5 5-9 8z\"/><path d=\"M12 20l-3-3M15 17l-2-2\"/>", "cog": "<path d=\"M21 12a9 9 0 11-3-6.7M21 4v5h-5\"/>", "headset": "<path d=\"M4 14v-2a8 8 0 0116 0v2\"/><rect x=\"2\" y=\"14\" width=\"5\" height=\"6\" rx=\"2\"/><rect x=\"17\" y=\"14\" width=\"5\" height=\"6\" rx=\"2\"/>", "news": "<path d=\"M4 4h13a2 2 0 012 2v14H6a2 2 0 01-2-2zM19 8h2v10a2 2 0 01-2 2M8 8h7M8 12h7M8 16h4\"/>", "build": "<path d=\"M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6\"/>", "spark": "<path d=\"M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z\"/>"}, E={"🔍": "search", "🤖": "bot", "📈": "trend", "✍": "pen", "🌐": "globe", "🌍": "globe", "📱": "phone", "⚙": "gear", "📊": "chart", "🔗": "link", "🎯": "target", "🛒": "cart", "🛍": "cart", "🎨": "palette", "🔧": "wrench", "📄": "doc", "📝": "doc", "📋": "doc", "📧": "mail", "⚡": "bolt", "🏦": "bank", "💼": "brief", "🏭": "factory", "💻": "laptop", "🖥": "laptop", "🧭": "compass", "🩺": "health", "⚖": "scale", "🚚": "truck", "🚢": "truck", "🏠": "home", "💎": "gem", "🎓": "cap", "📐": "ruler", "🔬": "flask", "🤝": "handshake", "🔄": "cog", "🎧": "headset", "📰": "news", "🏗": "build", "🍽": "home"};
+    document.querySelectorAll('.svc-mini-icon,.service-row-icon,.card-icon,.value-icon,.vz-emo').forEach(function(n){
+      var t=(n.textContent||'').trim(); if(!t||n.querySelector('svg')) return;
+      var k=null; for(var c in E){ if(t.indexOf(c)===0){k=E[c];break} }
+      n.innerHTML='<svg class="ico-svg" viewBox="0 0 24 24" aria-hidden="true">'+P[k||'spark']+'</svg>'; n.setAttribute('aria-hidden','true');
+    });
   })();
 
 })();
