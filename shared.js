@@ -370,7 +370,7 @@
   (function(){
     if(document.documentElement.lang!=='es') return;
     var t=document.querySelector('.logo-track'); if(!t) return;
-    var rank=['cabify','rituals','engel','elle','lidl','pronovias','eni','oxfam','amplifon','pierre','mettler','endress','tmb','generaloptica','cunef'];
+    var rank=['cabify','rituals','engel','elle','pronovias','lidl','eni','oxfam','amplifon','pierre','mettler','endress','tmb','generaloptica','cunef'];
     var seen={},items=[];
     t.querySelectorAll('.logo-item').forEach(function(it){var im=it.querySelector('img');if(!im)return;
       var m=im.getAttribute('src').match(/\/([a-z]+)\.png/);var k=m?m[1]:im.getAttribute('src');
