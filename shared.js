@@ -365,4 +365,70 @@
     });
   });
 
+
+  /* ES: best-known brands first in the logo carousel (rebuilds one clean loop) */
+  (function(){
+    if(document.documentElement.lang!=='es') return;
+    var t=document.querySelector('.logo-track'); if(!t) return;
+    var rank=['cabify','rituals','engel','elle','lidl','pronovias','eni','oxfam','amplifon','pierre','mettler','endress','tmb','generaloptica','cunef'];
+    var seen={},items=[];
+    t.querySelectorAll('.logo-item').forEach(function(it){var im=it.querySelector('img');if(!im)return;
+      var m=im.getAttribute('src').match(/\/([a-z]+)\.png/);var k=m?m[1]:im.getAttribute('src');
+      if(!seen[k]){seen[k]=1;items.push({k:k,el:it.cloneNode(true)});}});
+    if(items.length<4) return;
+    items.sort(function(a,b){var x=rank.indexOf(a.k),y=rank.indexOf(b.k);return (x<0?99:x)-(y<0?99:y);});
+    var html='';items.forEach(function(i){html+=i.el.outerHTML+'<div class="logo-divider"></div>';});
+    t.innerHTML=html+html;
+  })();
+
+
+  /* Where-to-start finder */
+  (function(){
+    var f=document.getElementById('finder'); if(!f) return;
+    var tabs=[].slice.call(f.querySelectorAll('.fd-tab')), pans=[].slice.call(f.querySelectorAll('.fd-panel'));
+    function show(i,focus){tabs.forEach(function(t,k){t.setAttribute('aria-selected',k===i?'true':'false');t.tabIndex=k===i?0:-1});
+      pans.forEach(function(p,k){p.hidden=k!==i}); if(focus) tabs[i].focus();}
+    f.classList.add('fd-on'); show(0,false);
+    tabs.forEach(function(t,i){t.addEventListener('click',function(){show(i,false)});
+      t.addEventListener('keydown',function(e){var n=i; if(e.key==='ArrowRight'||e.key==='ArrowDown')n=(i+1)%tabs.length; else if(e.key==='ArrowLeft'||e.key==='ArrowUp')n=(i-1+tabs.length)%tabs.length; else return; e.preventDefault(); show(n,true);});});
+  })();
+
+  /* Quick-pick goal chips on every quote form: one tap pre-fills the message */
+  (function(){
+    var es=document.documentElement.lang==='es';
+    var G=es?[['Más clientes desde Google','Quiero conseguir más clientes desde Google. Mi negocio es: '],['Que me recomiende la IA','Quiero aparecer en ChatGPT y otras IAs. Mi negocio es: '],['Web nueva','Necesito una web nueva. Mi negocio es: '],['Campañas de pago','Quiero lanzar campañas de pago rentables. Mi negocio es: '],['Otra cosa','Os cuento mi caso: ']]
+            :[['More enquiries from Google','I want more enquiries from Google. My business is: '],['Get recommended by AI','I want to show up in ChatGPT and other AI tools. My business is: '],['New website','I need a new website. My business is: '],['Paid campaigns','I want paid campaigns that pay for themselves. My business is: '],['Something else','Here is my situation: ']];
+    document.querySelectorAll('form textarea[name="message"]').forEach(function(t){
+      var f=t.closest('form'); if(!f||f.querySelector('.q-chips')) return;
+      var box=document.createElement('div'); box.className='q-chips'; box.setAttribute('role','group');
+      box.setAttribute('aria-label',es?'¿Qué quieres conseguir?':'What do you want to achieve?');
+      G.forEach(function(g){var b=document.createElement('button');b.type='button';b.className='q-chip';b.textContent=g[0];b.setAttribute('aria-pressed','false');
+        b.addEventListener('click',function(){var prev=box.querySelector('[aria-pressed="true"]');var old=prev?prev.dataset.fill:'';
+          if(!t.value.trim()||t.value===old){t.value=g[1]}
+          box.querySelectorAll('.q-chip').forEach(function(x){x.setAttribute('aria-pressed','false')});
+          b.setAttribute('aria-pressed','true'); b.dataset.fill=g[1]; t.focus(); t.setSelectionRange(t.value.length,t.value.length);});
+        box.appendChild(b);});
+      var host=t.closest('.form-group')||t; host.parentNode.insertBefore(box,host);
+    });
+  })();
+
+  /* Stat counters on the home pages: count up when they scroll into view */
+  (function(){
+    var nums=[].slice.call(document.querySelectorAll('.stats-panel-num')); if(!nums.length||!('IntersectionObserver' in window)) return;
+    if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    nums.forEach(function(el){var n=el.firstChild; if(!n||n.nodeType!==3) return; var target=parseInt(n.nodeValue,10); if(isNaN(target)) return;
+      n.nodeValue='0';
+      var io=new IntersectionObserver(function(en){en.forEach(function(e){if(!e.isIntersecting) return; io.disconnect();
+        var t0=null; function step(ts){if(!t0)t0=ts; var p=Math.min((ts-t0)/1100,1); n.nodeValue=String(Math.round(target*(1-Math.pow(1-p,3)))); if(p<1)requestAnimationFrame(step); else n.nodeValue=String(target);}
+        requestAnimationFrame(step);});},{threshold:.5}); io.observe(el);});
+  })();
+
+  /* Reading progress bar on blog posts */
+  (function(){
+    var a=document.querySelector('.article-body'); if(!a) return;
+    var bar=document.createElement('div'); bar.className='read-bar'; bar.setAttribute('aria-hidden','true'); document.body.appendChild(bar);
+    var tick=false; function upd(){tick=false; var r=a.getBoundingClientRect(); var total=r.height-window.innerHeight*.6; var p=total>0?Math.min(Math.max(-r.top/total,0),1):0; bar.style.transform='scaleX('+p+')';}
+    window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd);}},{passive:true}); upd();
+  })();
+
 })();
