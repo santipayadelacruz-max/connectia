@@ -1401,3 +1401,20 @@ nav.logo-morphed .logo-full{max-width:0}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 /* v20: tighter top of the home hero on mobile (no big empty gap under the header) */
 @media(max-width:768px){.hero{padding-top:84px!important;padding-bottom:2.2rem!important;min-height:0!important}}
+/* v20: no orphan cards when a grid has 5 or 6 items */
+@media(min-width:900px){
+  .vz-facts:has(>:nth-child(5)):not(:has(>:nth-child(7))),.vz-zone:has(>:nth-child(5)):not(:has(>:nth-child(7))){grid-template-columns:repeat(3,minmax(0,1fr))}
+  .vz-facts:has(>:nth-child(5)):not(:has(>:nth-child(6)))>:nth-child(5),.vz-zone:has(>:nth-child(5)):not(:has(>:nth-child(6)))>:nth-child(5){grid-column:span 2}
+}
+@media(min-width:1100px){
+  section.split .vz-facts:has(>:nth-child(5)){grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+/* v20: quick-answer block when the fact cards sit below the text */
+@media(min-width:1100px){
+  .geo-answer .geo-lead:not(:has(>.geo-points)){display:block;max-width:62rem}
+  .geo-answer>.geo-points{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media(min-width:1100px){
+  section.split.geo-answer>.geo-lead:not(:has(>.geo-points)),section.split.geo-answer>.section-label,section.split.geo-answer>.geo-points{grid-column:1/-1}
+}
+@media(min-width:1100px){section.split.geo-answer>.geo-lead:not(:has(>.geo-points)){max-width:62rem!important}}
