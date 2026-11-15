@@ -222,6 +222,7 @@
   window.addEventListener('scroll', () => {
     const y = window.scrollY;
     nav.classList.toggle('scrolled', y > 40);
+    nav.classList.toggle('logo-morphed', y > 80);
   }, {passive:true});
 
   /* ── Scroll reveal ── */

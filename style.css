@@ -1394,9 +1394,10 @@ html,body{overflow-x:clip}
 
 /* ══ v20 logo: static wordmark (the morph clipped on mobile) ══ */
 .nav-logo{overflow:visible;align-items:center;line-height:1.25;white-space:nowrap}
-.logo-short,.logo-one{display:none!important}
-.logo-full,nav.logo-morphed .logo-full{max-width:none;opacity:1;transform:none}
-nav.logo-morphed .logo-dot{transform:none}
+.logo-full{max-width:200px}
+nav.logo-morphed .logo-full{max-width:0}
 .nav-logo{align-self:stretch;height:100%;display:flex;align-items:center;margin:0;padding:0}
 .nav-logo span{line-height:1}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+/* v20: tighter top of the home hero on mobile (no big empty gap under the header) */
+@media(max-width:768px){.hero{padding-top:84px!important;padding-bottom:2.2rem!important;min-height:0!important}}
